@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/splay-am-pd/schemas/bh_feasibility.schema.json",
+  "title": "UH-3 b_H-feasibility record per universal hypothesis (SA-01)",
+  "type": "object",
+  "required": ["hypothesis_id", "b_H", "records"],
+  "properties": {
+    "hypothesis_id": {
+      "type": "string",
+      "pattern": "^H-[0-9]{4}$"
+    },
+    "b_H": {
+      "type": "object",
+      "required": ["p", "q"],
+      "properties": {
+        "p": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "q": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "n",
+          "b_H",
+          "b_n_star",
+          "comparison",
+          "verdict",
+          "failure_witness"
+        ],
+        "properties": {
+          "n": {
+            "type": "integer",
+            "minimum": 2
+          },
+          "b_H": {
+            "type": "object",
+            "required": ["p", "q"],
+            "properties": {
+              "p": {
+                "type": "string",
+                "pattern": "^[1-9][0-9]*$"
+              },
+              "q": {
+                "type": "string",
+                "pattern": "^[1-9][0-9]*$"
+              }
+            }
+          },
+          "b_n_star": {
+            "type": "object",
+            "required": ["p", "q"],
+            "properties": {
+              "p": {
+                "type": "string",
+                "pattern": "^[1-9][0-9]*$"
+              },
+              "q": {
+                "type": "string",
+                "pattern": "^[1-9][0-9]*$"
+              }
+            }
+          },
+          "comparison": {
+            "type": "string",
+            "description": "Exact boolean of p_H*q_n >= p_n*q_H, rendered as 'p_H*q_n >= p_n*q_H -> true|false'."
+          },
+          "verdict": {
+            "type": "string",
+            "enum": ["PASS", "FAIL"]
+          },
+          "failure_witness": {
+            "type": ["object", "null"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "reused_bn_witness"
+              },
+              "witness_kind": {
+                "type": "string",
+                "enum": ["transient_path", "cycle", "prefix_plus_cycles"]
+              },
+              "repeat_count": {
+                "type": ["string", "null"],
+                "description": "Exact minimal integer k with k > L_{b_H}(P_0)/(-L_{b_H}(C)); required for prefix_plus_cycles, null otherwise.",
+                "pattern": "^([1-9][0-9]*|null)$"
+              },
+              "witness_file": {
+                "type": "string"
+              },
+              "witness_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{64}$"
+              },
+              "slack_under_bH_num": {
+                "type": "string",
+                "pattern": "^-?[0-9]+$"
+              },
+              "slack_under_bH_den": {
+                "type": "string",
+                "pattern": "^[1-9][0-9]*$"
+              },
+              "negative": {
+                "type": "boolean",
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

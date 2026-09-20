@@ -53,8 +53,14 @@ WP-5 for every universal hypothesis.
 
 ```text
 UH-0  H well-defined on every tested state (total, state-only function)
-UH-1  H(T,T) = 0 (exact, else additive-overhead track, never conflated)
-UH-2  H ≥ 0 on discovery sizes (else separate proof obligation)
+UH-1  H(T,T) = 0 on every certified diagonal (exact finite gate). Any nonzero
+      value rejects the candidate from the universal Pair-Access track.
+      Additive-overhead variants use a different hypothesis class/ID and
+      never survive UH-1.
+UH-2  H(s) >= 0 for every s in R_n on every certified size (exact finite
+      gate). Any negative value is an exact counterexample and rejects the
+      universal Pair-Access candidate. The remaining "proof obligation" is
+      solely the arbitrary-n nonnegativity proof, which belongs to UH-9.
 UH-3  candidate b_H feasible: b_H ≥ b_n* for every certified n (exact, §SA-01.4)
 UH-4  V_{b_H} ≤ H ≤ U_{b_H} on small certified states, with U_{b_H}, V_{b_H}
       recomputed at the hypothesis's own b_H (never the b_n* tables)
@@ -88,9 +94,18 @@ Rule (frozen):
 b_H < b_n*  ⇒  REJECT immediately. The b_H slack graph then has a negative
                diagonal-rooted path or reachable negative cycle, so the
                ordinary finite canonical geometry does not exist (future
-               regret can be +∞). The failure witness is the certified b_n*
-               lower witness itself: the verifier recomputes its slack under
-               b_H and checks p_H·sum_a − q_H·sum_y < 0 exactly.
+               regret can be +∞). The failure witness branches on the
+               certified b_n* lower-witness type:
+               TRANSIENT witness P with Y(P)/A(P) = b_n*: the same path
+               has L_{b_H}(P) < 0; the verifier checks
+               p_H·sum_a − q_H·sum_y < 0 exactly.
+               CYCLIC witness (diagonal prefix P_0 + zero-slack cycle C
+               with L_{b_n*}(C) = 0): either the cycle infeasibility
+               certificate L_{b_H}(C) < 0 (a negative directed cycle alone
+               contradicts the Bellman inequalities and suffices to
+               reject), or, when a diagonal-rooted finite negative path is
+               requested, P_0·C^k with the exact minimal integer
+               k > L_{b_H}(P_0) / (−L_{b_H}(C)); repeat_count k is stored.
 
 b_H = b_n*  ⇒  reuse the WP-3 canonical tables (no recomputation).
 
@@ -112,6 +127,10 @@ b_n_star: {p, q}       (decimal integer strings, reduced, sealed)
 comparison: "p_H*q_n >= p_n*q_H -> true|false"   (exact boolean)
 verdict: "PASS" | "FAIL"
 failure_witness: null | { type: "reused_bn_witness",
+                          witness_kind: "transient_path" | "cycle"
+                                        | "prefix_plus_cycles",
+                          repeat_count: null | "<exact integer k, only for
+                                         prefix_plus_cycles>",
                           witness_file, witness_sha256,
                           slack_under_bH_num, slack_under_bH_den,
                           negative: true }

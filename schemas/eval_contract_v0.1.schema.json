@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/splay-am-pd/schemas/eval_contract_v0.1.schema.json",
+  "title": "EC-v0.1 universal-hypothesis evaluation contract (SA-01 companion, never silently extends candidate_H)",
+  "type": "object",
+  "required": [
+    "hypothesis_id",
+    "b_hypothesis",
+    "b_is_universal_candidate",
+    "track",
+    "discovery_sizes",
+    "contract_version"
+  ],
+  "properties": {
+    "hypothesis_id": {
+      "type": "string",
+      "pattern": "^H-[0-9]{4}$"
+    },
+    "b_hypothesis": {
+      "type": "object",
+      "description": "One exact n-independent universal candidate constant, frozen at hypothesis-freeze time.",
+      "required": ["p", "q"],
+      "properties": {
+        "p": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "q": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      }
+    },
+    "b_is_universal_candidate": {
+      "type": "boolean",
+      "const": true
+    },
+    "track": {
+      "type": "string",
+      "enum": ["universal"]
+    },
+    "discovery_sizes": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 2
+      }
+    },
+    "holdout_sizes": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 2
+      }
+    },
+    "contract_version": {
+      "type": "string",
+      "const": "EC-v0.1"
+    }
+  }
+}
