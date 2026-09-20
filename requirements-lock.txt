@@ -1,0 +1,9 @@
+# requirements-lock.txt — WP-1 exact runtime dependencies: stdlib only.
+# python: 3.13.7 (requires-python >= 3.12 satisfied; spec recommends 3.12.x)
+# third-party packages: NONE for WP-1 gates (json, hashlib, math, itertools,
+# subprocess, sys, os from the standard library only).
+# zstandard is installed in this environment and used for .zst transport
+# files; it carries no scientific content (compression outside canonical
+# hashing: logical-stream SHA-256 recorded separately).
+# Discovery/analysis backends (HiGHS, numpy, pandas, sympy, jsonschema) are
+# pinned when WP-2/WP-4 introduce them; they are absent here by design.

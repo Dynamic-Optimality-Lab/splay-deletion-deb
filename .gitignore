@@ -1,0 +1,21 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+# Virtual environments
+.venv/
+venv/
+# Rust build output (builds are reproducible from Cargo.lock)
+target/
+# Test and coverage output
+.pytest_cache/
+.coverage
+htmlcov/
+# OS and editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+# Temporary solver and scratch files (never sealed)
+*.tmp
+scratch/
+# NOTE: artifacts/ is intentionally NOT ignored. Sealed exact artifacts are
+# part of the tamper-evident record and are committed with their SHA-256 seals.

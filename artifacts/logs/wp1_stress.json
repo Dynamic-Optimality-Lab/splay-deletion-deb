@@ -1,0 +1,8 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "n6_digest": "bf50765dc7d5c34af031ad593b2d2bfe2dc4085b9e7b942837adf150848afdd2",
+  "phase": "WP-1-STRESS",
+  "wall_seconds": 0.3
+}

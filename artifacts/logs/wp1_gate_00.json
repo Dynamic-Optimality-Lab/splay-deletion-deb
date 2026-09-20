@@ -1,0 +1,27 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "gate": "00",
+  "pass": [
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-FILES",
+    "G00-SPEC-HASH",
+    "G00-PAPERS",
+    "G00-T0",
+    "G00-SCHEMAS"
+  ],
+  "phase": "WP-1",
+  "wall_seconds": 0.0
+}

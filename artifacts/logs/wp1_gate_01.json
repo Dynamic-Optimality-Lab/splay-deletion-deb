@@ -1,0 +1,17 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "gate": "01",
+  "pass": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M04-FIX",
+    "M05",
+    "M06"
+  ],
+  "phase": "WP-1",
+  "wall_seconds": 0.0
+}

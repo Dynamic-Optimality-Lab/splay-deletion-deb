@@ -1,0 +1,12 @@
+root_depth: 0
+access_cost_offset: 1
+empty_sequence_cost: 0
+keep_subsequence_cost: c_B_x
+delete_subsequence_cost: 0
+reachable_sources: all_diagonal_states
+empty_future_allowed_for_V: true
+ratio_empty_path_allowed: false
+forced_state_test: exact_U_equals_V
+critical_path_test: exact_total_scaled_slack_equals_zero
+critical_cycle_test: exact_total_scaled_slack_equals_zero
+candidate_validity: local_potential_certificate

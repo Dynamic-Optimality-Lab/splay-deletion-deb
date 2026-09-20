@@ -1,0 +1,249 @@
+{
+  "entries": [
+    {
+      "after": "(..)",
+      "before": "(..)",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-001",
+      "key": 1,
+      "n": 1,
+      "provenance": "hand"
+    },
+    {
+      "after": "(.(..))",
+      "before": "((..).)",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-002",
+      "key": 1,
+      "n": 2,
+      "provenance": "hand"
+    },
+    {
+      "after": "((..).)",
+      "before": "((..).)",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-003",
+      "key": 2,
+      "n": 2,
+      "provenance": "hand"
+    },
+    {
+      "after": "(.(..))",
+      "before": "(.(..))",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-004",
+      "key": 1,
+      "n": 2,
+      "provenance": "hand"
+    },
+    {
+      "after": "((..).)",
+      "before": "(.(..))",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-005",
+      "key": 2,
+      "n": 2,
+      "provenance": "hand"
+    },
+    {
+      "after": "(.(.(..)))",
+      "before": "(((..).).)",
+      "cases": [
+        "LL"
+      ],
+      "cost": 3,
+      "depth": 2,
+      "id": "F-006",
+      "key": 1,
+      "n": 3,
+      "provenance": "hand"
+    },
+    {
+      "after": "((..)(..))",
+      "before": "(((..).).)",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-011",
+      "key": 2,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "(((..).).)",
+      "before": "(((..).).)",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-012",
+      "key": 3,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "(.((..).))",
+      "before": "((.(..)).)",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-013",
+      "key": 1,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "((..)(..))",
+      "before": "((.(..)).)",
+      "cases": [
+        "LR"
+      ],
+      "cost": 3,
+      "depth": 2,
+      "id": "F-008",
+      "key": 2,
+      "n": 3,
+      "provenance": "hand"
+    },
+    {
+      "after": "((.(..)).)",
+      "before": "((.(..)).)",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-014",
+      "key": 3,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "(.(.(..)))",
+      "before": "((..)(..))",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-015",
+      "key": 1,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "((..)(..))",
+      "before": "((..)(..))",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-010",
+      "key": 2,
+      "n": 3,
+      "provenance": "hand"
+    },
+    {
+      "after": "(((..).).)",
+      "before": "((..)(..))",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-016",
+      "key": 3,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "(.((..).))",
+      "before": "(.((..).))",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-017",
+      "key": 1,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "((..)(..))",
+      "before": "(.((..).))",
+      "cases": [
+        "RL"
+      ],
+      "cost": 3,
+      "depth": 2,
+      "id": "F-009",
+      "key": 2,
+      "n": 3,
+      "provenance": "hand"
+    },
+    {
+      "after": "((.(..)).)",
+      "before": "(.((..).))",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-018",
+      "key": 3,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "(.(.(..)))",
+      "before": "(.(.(..)))",
+      "cases": [],
+      "cost": 1,
+      "depth": 0,
+      "id": "F-019",
+      "key": 1,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "((..)(..))",
+      "before": "(.(.(..)))",
+      "cases": [
+        "ZIG"
+      ],
+      "cost": 2,
+      "depth": 1,
+      "id": "F-020",
+      "key": 2,
+      "n": 3,
+      "provenance": "triple-agreement-v0.1.0"
+    },
+    {
+      "after": "(((..).).)",
+      "before": "(.(.(..)))",
+      "cases": [
+        "RR"
+      ],
+      "cost": 3,
+      "depth": 2,
+      "id": "F-007",
+      "key": 3,
+      "n": 3,
+      "provenance": "hand"
+    }
+  ],
+  "version": "fixtures-v0.1"
+}

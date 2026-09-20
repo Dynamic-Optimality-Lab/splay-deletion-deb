@@ -1,0 +1,8 @@
+[project]
+name = "splay-am-pd"
+version = "0.1.0"
+description = "SPLAY-AM-PD v0.1 exact pair-dynamics experiment"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

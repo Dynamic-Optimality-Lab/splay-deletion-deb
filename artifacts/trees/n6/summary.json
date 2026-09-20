@@ -1,0 +1,9 @@
+{
+  "all_bst_valid": true,
+  "catalan_tree_count": 132,
+  "duplicate_shapes": 0,
+  "logical_stream_sha256": "27686321e7e93318735efb6b0e17f094ea3c5b15be862bd52eda493c6a254982",
+  "n": 6,
+  "round_trip_ok": true,
+  "tree_count": 132
+}

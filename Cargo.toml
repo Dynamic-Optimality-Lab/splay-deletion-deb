@@ -1,0 +1,3 @@
+[workspace]
+members = ["crates/splay_model"]
+resolver = "2"

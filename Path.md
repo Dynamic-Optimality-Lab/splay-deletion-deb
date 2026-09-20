@@ -40,7 +40,12 @@
 
 **Follows WorkPlan.md?** YES — this remediation changes the plan itself per owner direction + external audit; it is recorded here with item-by-item line evidence. No execution deviation (no implementation exists yet to deviate).
 
-**Collateral truthfulness note (not part of the audit):** the repo working tree currently holds *uncommitted* partial WP-1 scaffold from the interrupted 2026-09-20 implementation start (`README.md`, `CHANGELOG.md`, `CITATIONS.md`, `.gitignore`, `external/papers/` with downloaded L2/L3 PDFs). Those files are NOT covered by this commit; WP-1 remains `PENDING` and its Path section still reads NOT YET CREATED/WITTEN until the phase resumes and completes its gates. Nothing here alters that status.
+**Collateral truthfulness note (closed 2026-09-21):** the partial WP-1 scaffold
+that sat uncommitted during audit rounds was completed, verified, and committed
+with the WP-1 implementation (see WP-1 entry). No file was rewritten blindly:
+`README.md`/`CHANGELOG.md`/`CITATIONS.md`/`.gitignore`/L2-L3 PDFs were kept and
+accuracy-patched where the frozen plan had moved on (16 schemas, n≤6 suite,
+spec v0.1.1).
 
 ---
 
@@ -97,13 +102,112 @@
 
 **Follows WorkPlan.md?** YES — hardening per owner direction + external audit, recorded here with line-level evidence. No execution deviation (implementation still pending).
 
-**Scope per WorkPlan.md §3:** freeze L1/L2/L3 + spec + prereg (`experiment.yaml`, `sizes.yaml`, `exact_contract.yaml`, allowed/forbidden claims, `prereg_sha256.txt`); `FORMAL_NOTES.md` T0-01..T0-14 + `proof_status.json`; scaffold §13 layout; pin `rust-toolchain.toml`/`Cargo.lock`/`requirements-lock.txt`; Python transparent reference + independent auditor + hand fixtures + cost/rotation canaries; canonical BST enumeration + Catalan + independent enumerator.
-**Files (WorkPlan §3 list):** NOT YET CREATED — pending: `IMPLEMENTATION_SPEC.md`, `FORMAL_NOTES.md`, `prereg/*`, `external/*`, `math/*`, `schemas/*.schema.json` (14), `crates/splay_model/src/*`, `python/reference/*`, `python/audit/independent_*`, `artifacts/trees/n{n}/*`, `scripts/run_phase00-02.sh`, logs.
-**Code + how (WorkPlan §3):** NOT YET WRITTEN — planned: Rust pointer-BST rotations + 5-case `splay` with invariant asserts (semantics frozen here, per plan v0.1.1); Python immutable-tuple reference (primitives include `find_path`, `compute_depth`, `validate_bst`) vs pointer-dict independent audit vs third slow functional implementation (`n≤5`); `l`-recursive generator → ASCII-sort `tree_id`; inorder-rank reconstruction; exact Catalan check; root-key-interval second enumerator; exhaustive two-impl agreement through `n≤6` (per plan v0.1.2).
-**Model training:** NONE per plan — nothing trained, nothing to report.
-**Benchmarks/gates:** M01–M06 (M03–M04: two-impl through `n≤6`, triple through `n≤5`, per plan v0.1.2), E01–E03 — NOT YET RUN. No `FOUNDATION_NOT_FROZEN` / `SPLAY_SEMANTICS_MISMATCH` / `TREE_ENUMERATION_MISMATCH` emitted (no run to fail).
-**Follows WorkPlan.md?** N/A yet (not started) — adherence will be judged entry-by-entry once Step 1 begins. No deviation.
-**Next action:** Step 1 — freeze sources + prereg + scaffold + pin deps → gate 00; then reference Splay + canaries → gate 01; then enumeration → gate 02. Each sub-step gets its own dated Path entry with file list + test output + adherence verdict before moving on.
+---
+
+## WP-1 — Foundation, frozen contract & reference Splay + BST universe (SPEC 00, 01, 02) — status: `GATED_PASS` (2026-09-21)
+
+**Scope per WorkPlan.md §3 (plan v0.1.5):** all items executed. Literature
+L2/L3 frozen+hashed, L1 paywall-recorded; spec + prereg frozen
+(`prereg_sha256.txt` = `276529e5…3627`, gate-verified); `FORMAL_NOTES.md`
+T0-01..T0-14 PROVED+REVIEWED with T0-GATE-A/B binding (ledger
+`math/proof_status.json` all-PROVED; T0-GATE-A satisfied for WP-2,
+T0-GATE-B re-checked before any Phase-06 seal); layout scaffolded;
+`rust-toolchain.toml` 1.92.0 + `Cargo.lock` generated, `pyproject.toml`
+(requires-python >=3.12, env 3.13.7), `requirements-lock.txt` (stdlib-only
+for WP-1); reference (tuple) + independent (pointer-object, imports only
+itself — verified by import scan) + functional third (index-array
+copy-on-write) implementations; 20 fixtures (10 hand + 10 triple-agreement);
+canaries; canonical enumeration + Catalan + interval-enumerator cross-check.
+**Out-discipline held:** no `b_n*`/potential/feature/`H` code or artifact
+anywhere in WP-1 scope.
+
+**Files (WorkPlan §3 list — all created, verified present):**
+`README.md` (accuracy-patched: spec v0.1.1, 16 schemas, n≤6 suite),
+`IMPLEMENTATION_SPEC.md` (normative freeze, hash above),
+`SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.1.md` (pre-existing),
+`FORMAL_NOTES.md`, `CHANGELOG.md` (+0.1.5 plan entry), `CITATIONS.md`,
+`LICENSE` (kept), `pyproject.toml`, `requirements-lock.txt`, `Cargo.toml`,
+`Cargo.lock` (generated, unedited), `rust-toolchain.toml`, `.gitignore`,
+`prereg/` (6 files), `external/MANIFEST.json` + papers (L2/L3 + SHA256SUMS;
+L1 `UNFROZEN_PAYWALL` with reliance note), `math/` (7 files),
+`schemas/` (16/16 JSON-validated), `crates/splay_model/src/` (6 modules),
+`python/reference/` (tree/splay/enumerate/functional/fixtures_hand/fixtures),
+`python/audit/` (2 modules), `tests/test_wp1.py` + `tests/unit/` +
+`tests/exhaustive/`, `artifacts/trees/n1..n8` (3 files each incl.
+SHA256SUMS), `artifacts/logs/` (gate + stress JSON),
+`scripts/run_phase00.{ps1,sh}`, `run_phase01.{ps1,sh}`, `run_phase02.{ps1,sh}`,
+`freeze_fixtures.py`, `stress_wp1.py`.
+
+**Code + how (as planned):** Rust pointer-index BST, no-recursion rotation
+core with `debug_assert` consistency, 5-case `splay` with root/BST
+post-conditions, exact-u128 Catalan, ASCII-sort canonical IDs; `cargo check
+--tests` PASS. Rust native test *execution* is BLOCKED by environment (no
+`link.exe`/MSVC linker) — recorded here, not a plan deviation: semantics
+are verified by the Python triple gates below, and the Rust unit tests
+(LL/RR/zig fixtures, Catalan, round-trips) will execute where MSVC exists.
+Python reference exposes all required primitives (`parse_shape`,
+`serialize_shape`, `assign_inorder_keys`, `find_path`, `compute_depth`,
+`validate_bst`, `rotate_*`, `splay`).
+**Model training:** NONE per plan — nothing trained, nothing to report (verified:
+no fitting/learning code anywhere in WP-1 scope).
+
+**Bugs found by the gates (evidence the gates work, all fixed + rerun green):**
+B1 author inorder-labeling order bug (`tree.py`/`enumerate.py` read the
+counter after right recursion; failed M03 on `(.(..))`) — fixed by capturing
+the key before right recursion; the independent impl was already correct.
+B2 hand-fixture error F-006/F-007 (`["LL","ZIG"]` — a 3-chain needs one
+zig-zig only; all three implementations agreed `["LL"]`) — hand entries
+corrected, machine cross-check won as designed. B3 `freeze_fixtures.py`
+path bugs (two issues, fixed). B4 hash-compare case bug in gate00 (fixed;
+artifacts were correct). B5 PS5.1 native-stderr termination in
+`run_phase00.ps1` (fixed via preference guard). B6 Rust test typo (fixed).
+
+**Benchmarks/gates (final full run 2026-09-21, 30/30 PASS, 0.3 s):**
+gate00 18/18 (13 files, spec-hash, 2 papers, 14 T0, 16 schemas, 8 unit
+tests), gate01 M01/M02/M03 (n=2 triple)/M04 (n=3, 15 ops triple)/M04-FIX
+(20 fixtures)/M05/M06, gate02 E01 (Catalan 1,2,5,14,42,132,429,1430) /
+E02-E03 / E-IND (interval agreement n≤6) / M04-EXT (n=4: 56 ops, n=5: 210
+ops triple) / G02-EXH. Stress `wp1_stress.json`: n=6 ref-vs-ind 792/792
+identical; enumerate rerun byte-identical; transition digest stable
+(`62853f23dc0952a1`, n=4); reversed-zig-zag faulty variant detected;
+depth-offset detected. No `FOUNDATION_NOT_FROZEN` / `SPLAY_SEMANTICS_MISMATCH`
+/ `TREE_ENUMERATION_MISMATCH`; no STOP triggered. Covers STOP-01/02/03/15,
+threats T2/T3, INV-001..INV-006 (INV-007/008 structural; pair side is WP-2).
+
+**Console logging (user instruction; language mapping frozen here):**
+implementation languages are Python/Rust/PowerShell (frozen stack), which
+have no `console.log` primitive. The faithful equivalent is used —
+`print()` in Python via `console_log()` helpers, `Write-Host` in `.ps1`
+via step lines, `echo` in `.sh` — each preceded by an identification
+comment `# console.log equivalent [ID]: purpose`. 25 statements, verified
+by search with exact file:line (line numbers as committed):
+`scripts/run_phase00.ps1`:7 [WP1-P00-01], :11 [WP1-P00-02], :18 [WP1-P00-03];
+`scripts/run_phase01.ps1`:4 [WP1-P01-01], :8 [WP1-P01-02];
+`scripts/run_phase02.ps1`:4 [WP1-P02-01], :9 [WP1-P02-02], :14 [WP1-P02-03];
+`scripts/freeze_fixtures.py`:43 [WP1-FIX-01], :70 [WP1-FIX-02];
+`scripts/stress_wp1.py`:90 [WP1-S-01], :98 [WP1-S-02], :120 [WP1-S-03],
+:134 [WP1-S-04];
+`tests/test_wp1.py`:81 [WP1-T-00], :95 [WP1-T-01], :133 [WP1-T-02],
+:159 [WP1-T-03], :192 [WP1-T-04], :231 [WP1-T-05], :240 [WP1-T-06];
+`python/reference/enumerate.py`:138 [WP1-ENUM-01], :148 [WP1-ENUM-02],
+:182 [WP1-ENUM-03]. (POSIX `.sh` drivers carry the same IDs.)
+Library code (tree/splay/enumerate core, Rust modules) is print-free by
+design; audit code has no reference imports by construction + scan.
+
+**Follows WorkPlan.md?** YES — every §3 scope/file/code/benchmark/model
+(NONE)/gate element executed with evidence above. No WorkPlan deviation
+(no deviation-log row). Environment limitation (MSVC linker) and the six
+fixed bugs are recorded here, not deviations.
+
+**Step history:** Step 1 freeze+scaffold (prereg/spec/notes/schemas/
+toolchain/manifests) → Step 2 Splay core (3 impls, fixtures, canaries,
+B1/B2 found+fixed) → Step 3 enumeration + artifacts n1..n8 (B5 found+fixed)
+→ stress (B1–B6 all closed) → compliance sweep (closed Cargo.lock,
+unit/exhaustive dirs, SHA256SUMS-per-size, README accuracy) → this entry.
+
+**Next action:** WP-2 (transitions, `R_n`, discovery, `b_n*` seal) — needs
+frozen WP-1 Splay + trees (satisfied) and T0-GATE-A/B (satisfied, re-checked
+at seal). Per-size Path sub-entries will follow.
 
 ---
 
@@ -114,7 +218,9 @@
 **Code + how:** NOT YET WRITTEN — planned per WorkPlan §4 (table lookups, BFS order + re-sort, LP→convergents→Farey pipeline, label-correcting exact solver, zero-slack path/cycle search, big-int fallback, canonical-hash discipline).
 **Model training:** NONE per plan (LP = quarantined proposer, not a model) — nothing trained.
 **Benchmarks/gates:** T01–T03, R01–R04, B01–B05 — NOT YET RUN (rejected-`b` negative diagnostics preserved separately; B06 is discharged in WP-3, per plan v0.1.1). No failure labels emitted.
-**Follows WorkPlan.md?** N/A yet. Entry Dependency: BLOCKED on WP-1 `GATED_PASS` (needs frozen Splay + trees + T0-13 status). No deviation.
+**Follows WorkPlan.md?** N/A yet (WP-2 not started). Entry Dependency: UNBLOCKED
+2026-09-21 — WP-1 `GATED_PASS` (frozen Splay + trees + T0-GATE-A/B satisfied,
+re-checked at seal). No deviation.
 **Next action:** begin only after WP-1 gates pass; sizes executed in order 2→7 (+8 stretch as resources allow); each `n` gets a per-size Path sub-entry (counts, `p/q`, subtype, witness hashes, verifier PASS/FAIL).
 
 ---
@@ -158,7 +264,8 @@
 
 **Scope per WorkPlan.md §8:** P15-01..05 lemmas (declared domain, complete case split, no finite premises, independent audit, optional formalization) → P16 telescoping + Levy–Tarjan convention match → P17 negative family only if motif systematic (`T_k,X_k,Y_k`, `f/g`, `g/f→∞`) → P18 `FINAL_RESULT.json` + single claim level + SHA-256 manifest + deterministic archive + clean reproduction + Experiment-0 bundle/Tables A–E/mining report + §36 answers + AI-use declaration.
 **Files:** NOT YET CREATED — pending: `math/proof_*.md`, `math/latex/*`, `artifacts/seal/*`, archive, audits, final reports/logs, `scripts/run_phase15-18.sh` + `reproduce_all.sh`.
-**Benchmarks/gates:** P01–P02, S01–S03 — NOT YET RUN. No claim level emitted (current truthful level would be `FINITE_INFRASTRUCTURE_ONLY`-at-best, and even that requires WP-1; so **no level claimed yet**).
+**Benchmarks/gates:** P01–P02, S01–S03 — NOT YET RUN. Current level remains
+`FINITE_INFRASTRUCTURE_ONLY` (WP-1); no higher level claimed.
 **Follows WorkPlan.md?** N/A yet. Dependency: BLOCKED on WP-5 (positive needs surviving `H`; negative needs systematic motif; seal needs everything executed). No deviation.
 **Next action:** activate P17 only on evidence; otherwise pursue P15/P16 for the best WP-5 survivor; seal exactly what exists — never more.
 
@@ -168,7 +275,7 @@
 
 | Date (UTC) | WP phase | What deviated from WorkPlan.md | Cause | Impact on gates/claims | Corrective action (new version/ID) | Status |
 |---|---|---|---|---|---|---|
-| — | — | NONE TO DATE. Step 0 followed `WorkPlan.md §0` verbatim. | — | — | — | — |
+| — | — | NONE TO DATE. Step 0 followed `WorkPlan.md §0` verbatim; WP-1 executed per `WorkPlan.md` §3 with evidence (no deviation). | — | — | — | — |
 
 *Rules: any deviation gets a row within the same editing session; the WP-phase section above gains a `DEVIATED` flag + cross-reference; silent deviation is forbidden (AI policy). Post-holdout hypothesis/feature edits are deviations by definition and create new IDs per WorkPlan §9.*
 
@@ -178,7 +285,7 @@
 
 | Date (UTC) | Size / scope | Label emitted | Trigger (exact) | Artifact preserved | Follow-up |
 |---|---|---|---|---|---|
-| — | — | NONE TO DATE. No runs executed, so no stops or failures. | — | — | — |
+| — | — | NONE TO DATE. WP-1 runs executed 2026-09-21 (30/30 gate checks green, stress green); no stop/failure label emitted. Six fixed bugs (B1–B6) were passing-control findings, not stops. | — | — |
 
 ---
 
@@ -209,15 +316,23 @@ n | C_n | |R_n| | b_n* (p/q) | subtype | #forced | #FORCED_DELTA | #crit SCCs | 
 
 ## Claim-level tracker (only WP-6 may advance this; fail-closed)
 
-- **Current truthful level:** NO LEVEL CLAIMED (nothing built yet; even `FINITE_INFRASTRUCTURE_ONLY` requires WP-1 gates).
-- History: (none) — every future change recorded here with date, evidence, and the exact newly-satisfied gates.
+- **Current truthful level:** `FINITE_INFRASTRUCTURE_ONLY` (since 2026-09-21:
+WP-1 `GATED_PASS` — foundation built, gates 00/01/02 green, T0 ledger sealed;
+no exact `b_n*`, no theorem-level claim).
+- History: 2026-09-21 advanced NO LEVEL → `FINITE_INFRASTRUCTURE_ONLY` on the
+  evidence in the WP-1 entry (30/30 gate checks + 8 sealed tree universes +
+  stress `wp1_stress.json`).
 
 ---
 
 ## Next 3 actions (always concrete)
 
-1. PLAN FROZEN at v0.1.5 — start PHASE 00 (WP-1): complete the interrupted scaffold (prereg, spec freeze incl. amendment v0.1.1 rev.2, formal notes, 16 schemas, code, tests, tree artifacts) → gates 00/01/02 → Path entries. Note: `README.md`, `CHANGELOG.md`, `CITATIONS.md`, `.gitignore`, `external/papers/` (L2/L3 PDFs) already exist in the working tree uncommitted; they will be verified/completed, not rewritten blindly.
-2. WP-1 Step 2: reference + independent + functional Splay + fixtures + canaries (M01–M06, two-impl `n≤6` / triple `n≤5`) → Path entry; then enumeration (E01–E03) → Path entry.
-3. First mathematical milestone: exact `b_2*`, `b_3*`, `b_4*`, `b_5*` with two-sided certificates + first critical corridors (WP-2/WP-3) — that is where the mathematics starts talking back.
+1. WP-2 Step 1: single-tree transition tables (`n·C_n` records + inverse
+   conservation, T01–T03) with independent Python re-derivation → Path sub-entry.
+2. WP-2 Step 2: diagonal-reachable `R_n` BFS + parents + closure + independent
+   audit (R01–R04) → Path sub-entry.
+3. WP-2 Step 3: LP discovery (proposal-only) + exact two-sided `b_n*` seal
+   per `n` (B01–B05, T0-GATE-B enforced, nonempty witness rules) → per-size
+   Path sub-entries (counts, `p/q`, subtype, witness hashes, verifier verdict).
 
 *End of Path.md — updated every session work is done; mirrored 1:1 with WorkPlan.md phases so adherence is checkable line-by-line.*

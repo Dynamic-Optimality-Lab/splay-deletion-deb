@@ -1,0 +1,36 @@
+experiment_id: SPLAY-AM-PD-v0.1
+problem: Sleator-Tarjan dynamic optimality conjecture
+bridge: Levy-Tarjan approximate monotonicity
+splay_variant: bottom_up
+keys:
+  labeling: inorder_rank
+  minimum_n: 1
+cost:
+  definition: depth_before_splay_plus_one
+pair_state:
+  authoritative_domain: diagonal_reachable_only
+  allow_unreachable_constraints: false
+transitions:
+  keep: both_splay_same_key
+  delete: full_tree_splays_subsequence_tree_stays
+edge_order:
+  mode_order: [KEEP, DELETE]
+  key_order: ascending
+arithmetic:
+  authoritative: exact_integer_scaled_rational
+  floating_point_allowed_for_discovery_only: true
+primary_sizes:
+  exact_target: [2, 3, 4, 5, 6, 7]
+  stretch: [8]
+criticality:
+  distinguish_transient_and_cyclic: true
+  zero_slack_at_optimum_is_primary: true
+mining:
+  forced_derivatives_before_scalar_regression: true
+  state_history_features_allowed_only_as_diagnostic: true
+  final_H_must_be_state_only: true
+verification:
+  require_upper_certificate: true
+  require_lower_witness: true
+  require_independent_verifier: true
+  require_exact_sanity_bounds: true
