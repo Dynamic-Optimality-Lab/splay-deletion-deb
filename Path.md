@@ -12,7 +12,7 @@
 **What was done (deep detail):**
 1. Cloned `https://github.com/Dynamic-Optimality-Lab/splay-deletion-deb` into workspace `Splay-Wtv/splay-deletion-deb`. Evidence: `git log --oneline` → single commit `f122c99 Initial commit`; `git ls-files` → `LICENSE` only; `git status` → clean; `git branch -a` → `main` + `origin/main` only.
 2. Previous-results clearing check: probed for `artifacts/`, `WorkPlan.md`, `Path.md`, any code/caches — all `Test-Path … → False`. Only `LICENSE` (MIT, Dynamic Optimality Lab 2026) exists. **Conclusion: nothing to delete; the "only new results after the changes" guarantee holds vacuously at plan time.** Recorded in `WorkPlan.md §0`. No files were deleted, no history rewritten — so nothing could have been silently lost.
-3. Deep-studied the full frozen spec (`SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.md`, §§0–36, PHASE 00–18, T1–T22, INV-001–INV-040, full test matrix, §31 checklist, §33 Experiment-0 bundle, §34 tables, §36 purpose questions) end-to-end before writing any plan. Verified key quantitative anchors: Catalan counts 1,2,5,14,42,132,429,1430; pairs `C_n²`; edges `E_n=2nR_n`; cost `c=depth+1`; edge order `K(1..n),D(1..n)`; `pair_id=A_id·C_n+B_id`; sanity `1≤b_n*≤n`; denominator bound `q≤nR_n`; certificate = upper feasible potential + zero-slack path/cycle witness + independent verifier; discovery `n=2..5` / validation `n=6` / held-out `n=7`; H-GATE-0..9 ladder; 8 claim levels.
+3. Deep-studied the full frozen spec (`SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.md`, §§0–36, PHASE 00–18, T1–T22, INV-001–INV-040, full test matrix, §31 checklist, §33 Experiment-0 bundle, §34 tables, §36 purpose questions) end-to-end before writing any plan. Verified key quantitative anchors: Catalan counts 1,2,5,14,42,132,429,1430; pairs `C_n²`; edges `E_n=2nR_n`; cost `c=depth+1`; edge order `K(1..n),D(1..n)`; `pair_id=A_id·C_n+B_id`; sanity `1≤b_n*≤n`; denominator bound `q≤nR_n`; certificate = upper feasible potential + zero-slack path/cycle witness + independent verifier; discovery `n=2..5` / validation `n=6` / held-out `n=7`; H-GATE-0..9 ladder; 7 claim levels.
 4. Created `WorkPlan.md` (6 phases WP-1…WP-6, coverage matrix SPEC 00–18 → WP, per-phase scope/files/code-how/model-benchmarks/anti-overfitting, global charter §9, cross-cutting rules §10) and this `Path.md`. Both written into the repo (`splay-deletion-deb/WorkPlan.md`, `splay-deletion-deb/Path.md`).
 5. No implementation code written yet; no artifacts produced; no gates run. No AI-driven semantic change: cost/reachability/encoding untouched; no rounding; no hypothesis mutation (none exist yet); no kernel defined; no finite-evidence promotion; no counterexample exists to suppress.
 
@@ -20,6 +20,27 @@
 
 **Evidence:** git outputs + `Test-Path` results quoted above (re-runnable: `git log --oneline -5; git ls-files; Test-Path artifacts` in repo dir).
 **Plan commit:** `24c6adb` on `main` (2026-09-20) — `WorkPlan.md` + `Path.md` committed and pushed to `origin/main`; working tree clean. Standing instruction from owner: commit + push whenever a unit of work is done — applied here and to be applied going forward.
+
+---
+
+## Audit remediation — WorkPlan.md v0.1.1 (2026-09-20) ✅ DONE
+
+**What was done (deep detail):** the owner supplied an external audit verdict checked against the exact frozen spec at `/mnt/data/SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.md` (SHA-256 `29070d39f54d40c3f8b1ccdde8b588545749dc3f60e8949c430036a0185f1565`). Verdict: mathematical architecture PASS, 19→6 coverage PASS, but not freeze-ready — 4 blockers, 4 clarifications, 1 typo, 1 recommendation. All 10 items were patched into `WorkPlan.md` (now revision v0.1.1, stamped in its header) with no research-architecture change:
+
+1. **BLOCKER — append-only preservation (`WorkPlan.md` §0 + §8 seal):** replaced the gate-passing commit rule with the frozen-spec rule: every pipeline run (failed gates, counterexamples, invalid candidates, mutation failures, stops) is preserved with hashes; only gate-passing artifacts enter the sealed set; a failed gate never authorizes erasure; logs append-only; at seal, unexpected scientific artifacts cause audit failure or manifest-with-status, never deletion. Verified: `WorkPlan.md:17` (`append-only artifact rule`), `WorkPlan.md:171` (seal wording).
+2. **BLOCKER — T0 gates (`WorkPlan.md` §3 + §4 + §12):** added frozen `T0-GATE-A` (T0-13 PROVED+REVIEWED before `q ≤ n·R_n` use) and `T0-GATE-B` (all T0-01..T0-14 PROVED+REVIEWED before any Phase-06 `b_n*` seal; no `EXACT_BN_*` while any T0 UNPROVED/BLOCKED); WP-2 may build infra but cannot seal without them. Verified: `WorkPlan.md:59`, `WorkPlan.md:87` (T0-GATE-A), `WorkPlan.md:212-213` (§12 acceptance).
+3. **BLOCKER — nonempty witnesses (`WorkPlan.md` §4):** TRANSIENT witness must begin at a diagonal, contain ≥1 edge, use legal edges, `sum_a > 0`, `p*sum_a − q*sum_y = 0` (`ratio_empty_path_allowed = false`); CYCLIC witness must be a nonempty cycle with `sum_a_cycle > 0` plus diagonal prefix. Verified: `WorkPlan.md:88`.
+4. **BLOCKER — Splay freeze boundary (`WorkPlan.md` §3):** `splay_model` semantics fully implemented, cross-checked and frozen in WP-1; WP-2 tabulates/optimizes only, never alters Splay or cost without a new experiment version. Verified: `WorkPlan.md:65`.
+5. **CLARIFICATION — status namespace (`WorkPlan.md` §1 + §4):** `criticality_subtype` (`TRANSIENT`/`CYCLIC`/`MIXED`/`CLASSIFICATION_INCOMPLETE`) vs `top_level_status` (`EXACT_BN_*`) never blurred. Verified: `WorkPlan.md:36`, `WorkPlan.md:88`.
+6. **CLARIFICATION — FGAP algorithm (`WorkPlan.md` §5):** `FGAP(e)` iff `G(s)=0` AND `G(t)=0` AND `U_scaled(t) − U_scaled(s) = L(e)`; only then `FGAP` + `FORCED_DELTA=true` + `Delta_H_scaled=L(e)`; endpoints-`U=V` alone insufficient. Verified: `WorkPlan.md:107`.
+7. **CLARIFICATION — per-`n` data scope (`WorkPlan.md` §6 + §9):** frozen split DATA GENERATION (all certified `n`: full `F-v0.1` table over every `s ∈ R_n`, kernel ablation every certified `n`) / SELECTION (`n=2..5`) / VALIDATION (`n=6`) / HELD OUT (`n=7`). Verified: `WorkPlan.md:131`, §9 item 2.
+8. **CLARIFICATION — B06 ownership (`WorkPlan.md` §2 table + §4 + §5):** WP-2 rejected-`b` negatives are diagnostics only and do NOT discharge B06; B06 is discharged in WP-3 (Spec Phase 08, frozen `b⁻` rule). Verified: `WorkPlan.md:45`, `WorkPlan.md:93`, `WorkPlan.md:113`.
+9. **TYPO — claim levels (`WorkPlan.md` §8 + this file):** `8` → `7`; the listed set is unchanged and correct. Verified: `WorkPlan.md:163`; `Path.md` Step 0 item 3 corrected alongside.
+10. **RECOMMENDED — one exact `b` per H (`WorkPlan.md` §7):** each `H-*.json` freezes `b_hypothesis: {p, q}` + `b_is_universal_candidate: true`; `E_K`/`E_D` use that same `b` for every tested `n` (per-size `b_n*` stays in WP-3/WP-4 discovery only). Verified: `WorkPlan.md:145`, `WorkPlan.md:149`.
+
+**Follows WorkPlan.md?** YES — this remediation changes the plan itself per owner direction + external audit; it is recorded here with item-by-item line evidence. No execution deviation (no implementation exists yet to deviate).
+
+**Collateral truthfulness note (not part of the audit):** the repo working tree currently holds *uncommitted* partial WP-1 scaffold from the interrupted 2026-09-20 implementation start (`README.md`, `CHANGELOG.md`, `CITATIONS.md`, `.gitignore`, `external/papers/` with downloaded L2/L3 PDFs). Those files are NOT covered by this commit; WP-1 remains `PENDING` and its Path section still reads NOT YET CREATED/WITTEN until the phase resumes and completes its gates. Nothing here alters that status.
 
 ---
 
@@ -41,7 +62,7 @@
 **Files:** NOT YET CREATED — pending: `crates/{pair_graph,exact_solver,cli}/*`, `python/reference/{pair_graph,solve_small,verify_small}.py`, `python/audit/{verify_transition_table,verify_reachability,verify_bn_certificate,verify_no_float_seal}.py`, `artifacts/{transitions,reachability,candidates,certificates}/n{n}/*`, `scripts/run_phase03-06.sh`.
 **Code + how:** NOT YET WRITTEN — planned per WorkPlan §4 (table lookups, BFS order + re-sort, LP→convergents→Farey pipeline, label-correcting exact solver, zero-slack path/cycle search, big-int fallback, canonical-hash discipline).
 **Model training:** NONE per plan (LP = quarantined proposer, not a model) — nothing trained.
-**Benchmarks/gates:** T01–T03, R01–R04, B01–B06 — NOT YET RUN. No failure labels emitted.
+**Benchmarks/gates:** T01–T03, R01–R04, B01–B05 — NOT YET RUN (rejected-`b` negative diagnostics preserved separately; B06 is discharged in WP-3, per plan v0.1.1). No failure labels emitted.
 **Follows WorkPlan.md?** N/A yet. Entry Dependency: BLOCKED on WP-1 `GATED_PASS` (needs frozen Splay + trees + T0-13 status). No deviation.
 **Next action:** begin only after WP-1 gates pass; sizes executed in order 2→7 (+8 stretch as resources allow); each `n` gets a per-size Path sub-entry (counts, `p/q`, subtype, witness hashes, verifier PASS/FAIL).
 
@@ -53,7 +74,7 @@
 **Files:** NOT YET CREATED — pending: `canonical_potentials.rs` extension, `verify_uv.py`, `verify_critical_objects.py`, `artifacts/{potentials,critical}/n{n}/*`, `scripts/run_phase07-08.sh`.
 **Code + how:** NOT YET WRITTEN — planned per WorkPlan §5 (super-source/sink shortest paths, inverse-table reverse generation filtered by `R_n`, exact `r_P`, lexicographic canonical reps, SCC preservation, trajectory emission).
 **Model training:** NONE per plan — tables only.
-**Benchmarks/gates:** U01–U03, V01–V03, G01–G02, C01–C05 (+B06-class) — NOT YET RUN. No `CANONICAL_POTENTIAL_FAIL` emitted.
+**Benchmarks/gates:** U01–U03, V01–V03, G01–G02, C01–C05, B06 (discharged here via frozen `b⁻` diagnostic, per plan v0.1.1) — NOT YET RUN. No `CANONICAL_POTENTIAL_FAIL` emitted.
 **Follows WorkPlan.md?** N/A yet. Dependency: BLOCKED on WP-2 sealed `b_n*` per `n` (INV-028). No deviation.
 **Next action:** per-`n` Path sub-entries (`max U/V/G`, `#forced`, `#FORCED_DELTA`, `#SCCs` — the §22 summary row) once WP-2 seals.
 
@@ -73,7 +94,7 @@
 
 ## WP-5 — Candidate H synthesis + independent falsification + adversarial search (SPEC 12, 13, 14) ⭐ — status: `PENDING`
 
-**Scope per WorkPlan.md §7:** versioned state-only `H` freeze (H1–H6 priority, no neural nets, `H(T,T)=0`, `H≥0`, sandwich, exact `E_K/E_D≤0` on discovery + held-out); independent clean-room falsifier (`M_K/M_D` over `R_n×[n]` + first maximizers + out-of-domain panel + `COUNTEREXAMPLE` freeze + mutation controls); large-`n` adversaries (listed generators × engines, exact-residual evaluation, history-realizable stream, motif generalization). Ceiling: `CANDIDATE_H_SURVIVES_FINITE_TESTS`.
+**Scope per WorkPlan.md §7:** versioned state-only `H` freeze, each with frozen `b_hypothesis: {p, q}` + `b_is_universal_candidate: true` (one exact `n`-independent `b` used for `E_K`/`E_D` at every tested `n`, per plan v0.1.1); H1–H6 priority, no neural nets, `H(T,T)=0`, `H≥0`, sandwich, exact `E_K/E_D≤0` on discovery + held-out); independent clean-room falsifier (`M_K/M_D` over `R_n×[n]` + first maximizers + out-of-domain panel + `COUNTEREXAMPLE` freeze + mutation controls); large-`n` adversaries (listed generators × engines, exact-residual evaluation, history-realizable stream, motif generalization). Ceiling: `CANDIDATE_H_SURVIVES_FINITE_TESTS`.
 **Files:** NOT YET CREATED — pending: frozen `H-*.json` ledger, adversary suite, independent audit package (no discovery imports), `artifacts/falsification/…`, `scripts/run_phase12-14.sh`.
 **Code + how:** NOT YET WRITTEN — planned per WorkPlan §7 (exact rational residuals, sharded parallel eval + post-sort, heuristic-propose/exact-dispose).
 **Benchmarks/gates:** H01–H05, A01–A02, H-GATE-0..8 — NOT YET RUN. No `REJECTED`/`COUNTEREXAMPLE_FOUND` emitted (no candidates exist).
@@ -131,7 +152,7 @@ n | C_n | |R_n| | b_n* (p/q) | subtype | #forced | #FORCED_DELTA | #crit SCCs | 
 7 |   — |     — |         —  |      —  |      —  |            —  |         —  | PENDING (WP-2)
 ```
 
-*No decimal `b_n*` column will ever appear without an explicit "display-only" label (spec §34). No row is filled from expectations — only from `bn_certificate.json` + `verify_bn_certificate PASS`.*
+*No decimal `b_n*` column will ever appear without an explicit "display-only" label (spec §34). No row is filled from expectations — only from `bn_certificate.json` + `verify_bn_certificate PASS`. The `subtype` column uses the `criticality_subtype` namespace (`TRANSIENT`/`CYCLIC`/`MIXED`/`CLASSIFICATION_INCOMPLETE`); the corresponding `top_level_status` (`EXACT_BN_*`) is recorded with the verifier verdict, per plan v0.1.1.*
 
 ---
 
@@ -144,8 +165,8 @@ n | C_n | |R_n| | b_n* (p/q) | subtype | #forced | #FORCED_DELTA | #crit SCCs | 
 
 ## Next 3 actions (always concrete)
 
-1. Commit `WorkPlan.md` + `Path.md` to repo (records plan SHA; keeps "only new results" invariant: these two planning docs are the first new files).
-2. WP-1 Step 1: freeze L1/L2/L3 + spec copy + `prereg/*` + scaffold + pinned toolchains → run gate 00 → Path entry.
-3. WP-1 Step 2: reference + independent Splay + fixtures + canaries (M01–M06) → Path entry; then enumeration (E01–E03) → Path entry.
+1. Resume WP-1: complete the interrupted scaffold (prereg, spec freeze, formal notes, schemas, code, tests, tree artifacts) → gates 00/01/02 → Path entries. Note: `README.md`, `CHANGELOG.md`, `CITATIONS.md`, `.gitignore`, `external/papers/` (L2/L3 PDFs) already exist in the working tree uncommitted; they will be verified/completed, not rewritten blindly.
+2. WP-1 Step 2: reference + independent + functional Splay + fixtures + canaries (M01–M06) → Path entry; then enumeration (E01–E03) → Path entry.
+3. Enforce plan v0.1.1 additions as WP-1 executes: frozen `splay_model` semantics (no WP-1/2 spill), T0 ledger with T0-GATE-A/B binding later seals.
 
 *End of Path.md — updated every session work is done; mirrored 1:1 with WorkPlan.md phases so adherence is checkable line-by-line.*
