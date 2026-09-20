@@ -71,6 +71,19 @@
 
 **Follows WorkPlan.md?** YES — plan + spec-amendment work per owner direction + external audit. No execution deviation (implementation still pending).
 
+---
+
+## Audit remediation round 4 — byte-audit, BH suite, provenance; PLAN FROZEN v0.1.4 (2026-09-20) ✅ DONE
+
+**What was done (deep detail):** the owner supplied a fourth verdict (freeze-ready pending one verification caveat + two hardening edits). All three are now closed:
+
+1. **CAVEAT CLOSED — byte/content audit of `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.1.md`:** file read in full (164 read-lines); recomputed SHA-256 via `Get-FileHash` = `5A82106730D68D831104B9DD0B36B297FF4452D60EC0B3CA53B035566B3F317D`, byte-exact match to the hash stated in `WorkPlan.md` header and round-3 entry; `git status` confirms the file is unmodified since commit `452d6a6`. Normative content verified section by section: SA-01.1 rationale + extra-slack formula (file lines 15–33), OG-1..OG-3 with diagnostic-only decision power (37–48), UH-0..UH-9 with `REJECTED`-on-UH-failure semantics (52–71), UH-3 cross-multiplied check + three-case rule (75–98), `H-*.bH_feasibility.json` record schema (100–118), PASS-gate before sandwich work (120–122), v0.1 H-GATE mapping incl. H-GATE-3→OG-1 and H-GATE-4→OG-2+UH-4 (126–142), unchanged clause (146–155), ratification record (159–164). The amendment contains exactly the SA-01 rules the WorkPlan summarizes — no drift. The auditor may still inspect the pushed file directly; nothing further is needed on this item.
+2. **HARDENING — BH01–BH05 (`WorkPlan.md` §7):** UH-3 now has explicit mandatory coverage — BH01 exact `b_H ≥ b_n*` per certified `n`; BH02 witness-reuse with verifier-checked negative `b_H` slack; BH03 equality table-reuse byte/hash consistency; BH04 recomputed `U_bH,V_bH` canonical inequalities; BH05 independent-verifier agreement on `b_H` geometry. Planned runner `tests/test_bh_feasibility.py` added to the WP-5 files list. Placed at plan level (the amendment's gate text is unchanged, so its hash is stable by design).
+3. **HARDENING — release provenance (`WorkPlan.md` §8 seal):** `FINAL_RESULT.json` now carries `normative_spec_set: [{v0.1, 29070d39…f1565}, {v0.1.1-SA01, 5A821067…317D}]`; the archive name stays `SPLAY-AM-PD-v0.1.tar.zst` with the spec set embedded, so no future reproduction can silently omit SA-01.
+4. **FREEZE:** `WorkPlan.md` stamped v0.1.4 FROZEN ("no further plan edits without a new audit finding"). Per the auditor's stop-editing guidance, the next information comes from implementation (`b_2*`, `b_3*`, …, first critical corridors), not more planning.
+
+**Follows WorkPlan.md?** YES — hardening per owner direction + external audit, recorded here with line-level evidence. No execution deviation (implementation still pending).
+
 **Scope per WorkPlan.md §3:** freeze L1/L2/L3 + spec + prereg (`experiment.yaml`, `sizes.yaml`, `exact_contract.yaml`, allowed/forbidden claims, `prereg_sha256.txt`); `FORMAL_NOTES.md` T0-01..T0-14 + `proof_status.json`; scaffold §13 layout; pin `rust-toolchain.toml`/`Cargo.lock`/`requirements-lock.txt`; Python transparent reference + independent auditor + hand fixtures + cost/rotation canaries; canonical BST enumeration + Catalan + independent enumerator.
 **Files (WorkPlan §3 list):** NOT YET CREATED — pending: `IMPLEMENTATION_SPEC.md`, `FORMAL_NOTES.md`, `prereg/*`, `external/*`, `math/*`, `schemas/*.schema.json` (14), `crates/splay_model/src/*`, `python/reference/*`, `python/audit/independent_*`, `artifacts/trees/n{n}/*`, `scripts/run_phase00-02.sh`, logs.
 **Code + how (WorkPlan §3):** NOT YET WRITTEN — planned: Rust pointer-BST rotations + 5-case `splay` with invariant asserts (semantics frozen here, per plan v0.1.1); Python immutable-tuple reference (primitives include `find_path`, `compute_depth`, `validate_bst`) vs pointer-dict independent audit vs third slow functional implementation (`n≤5`); `l`-recursive generator → ASCII-sort `tree_id`; inorder-rank reconstruction; exact Catalan check; root-key-interval second enumerator; exhaustive two-impl agreement through `n≤6` (per plan v0.1.2).
@@ -122,7 +135,7 @@
 **Scope per WorkPlan.md §7 (spec v0.1.1, plan v0.1.3):** ratified two-track ladder — OG-1..OG-3 diagnostics reported for every universal hypothesis, UH-0..UH-8 decisive (UH-9 is WP-6); UH-3 `b_H`-feasibility precheck (`H-*.bH_feasibility.json`, exact cross-multiplication, reject/reuse/recompute rule) before any `U_{b_H},V_{b_H}` work; versioned state-only `H` freeze (frozen H schema followed exactly; universal-`b` fields in companion `H-*.eval_contract.json`), each validated at its own `b_H` with recomputed `U_{b_H},V_{b_H}` tables (never mixed with `b_n*` geometry); H1–H6 priority, no neural nets, `H(T,T)=0`, `H≥0`, sandwich, exact `E_K/E_D≤0` on discovery + held-out); independent clean-room falsifier (`M_K/M_D` over `R_n×[n]` + first maximizers + out-of-domain panel + `COUNTEREXAMPLE` freeze + mutation controls); large-`n` adversaries (listed generators × engines, exact-residual evaluation, history-realizable stream, motif generalization). Ceiling: `CANDIDATE_H_SURVIVES_FINITE_TESTS`.
 **Files:** NOT YET CREATED — pending: frozen `H-*.json` ledger, adversary suite, independent audit package (no discovery imports), `artifacts/falsification/…`, `scripts/run_phase12-14.sh`.
 **Code + how:** NOT YET WRITTEN — planned per WorkPlan §7 (exact rational residuals, sharded parallel eval + post-sort, heuristic-propose/exact-dispose).
-**Benchmarks/gates:** H01–H05, A01–A02, ratified UH-0..UH-8 decisive + OG-1..OG-3 diagnostics (spec v0.1.1) — NOT YET RUN. No `REJECTED`/`COUNTEREXAMPLE_FOUND` emitted (no candidates exist).
+**Benchmarks/gates:** H01–H05, A01–A02, BH01–BH05 (UH-3 suite), ratified UH-0..UH-8 decisive + OG-1..OG-3 diagnostics (spec v0.1.1) — NOT YET RUN. No `REJECTED`/`COUNTEREXAMPLE_FOUND` emitted (no candidates exist).
 **Follows WorkPlan.md?** N/A yet. Dependency: BLOCKED on WP-4 (needs derivative/kernel signal + held-out sizes). No deviation.
 **Next action:** per-hypothesis Path sub-entries (definition, gates 0–8 verdicts, maximizers/counterexamples, adversarial logs).
 
@@ -190,8 +203,8 @@ n | C_n | |R_n| | b_n* (p/q) | subtype | #forced | #FORCED_DELTA | #crit SCCs | 
 
 ## Next 3 actions (always concrete)
 
-1. Resume WP-1: complete the interrupted scaffold (prereg, spec freeze, formal notes, schemas, code, tests, tree artifacts) → gates 00/01/02 → Path entries. Note: `README.md`, `CHANGELOG.md`, `CITATIONS.md`, `.gitignore`, `external/papers/` (L2/L3 PDFs) already exist in the working tree uncommitted; they will be verified/completed, not rewritten blindly.
-2. WP-1 Step 2: reference + independent + functional Splay + fixtures + canaries (M01–M06) → Path entry; then enumeration (E01–E03) → Path entry.
-3. Enforce plan v0.1.3 additions as WP-1 executes: frozen `splay_model` semantics (no WP-1/2 spill), T0 ledger with T0-GATE-A/B binding later seals, third functional impl + `n≤6` suite scope; carry the ratified OG/UH tracks + UH-3 precheck forward so WP-5 validates every universal hypothesis at its own `b_H` only after feasibility PASS.
+1. PLAN FROZEN at v0.1.4 — resume WP-1 implementation: complete the interrupted scaffold (prereg, spec freeze, formal notes, schemas, code, tests incl. `tests/test_bh_feasibility.py` at the WP-5 stage, tree artifacts) → gates 00/01/02 → Path entries. Note: `README.md`, `CHANGELOG.md`, `CITATIONS.md`, `.gitignore`, `external/papers/` (L2/L3 PDFs) already exist in the working tree uncommitted; they will be verified/completed, not rewritten blindly.
+2. WP-1 Step 2: reference + independent + functional Splay + fixtures + canaries (M01–M06, two-impl `n≤6` / triple `n≤5`) → Path entry; then enumeration (E01–E03) → Path entry.
+3. First mathematical milestone: exact `b_2*`, `b_3*`, `b_4*`, `b_5*` with two-sided certificates + first critical corridors (WP-2/WP-3) — that is where the mathematics starts talking back.
 
 *End of Path.md — updated every session work is done; mirrored 1:1 with WorkPlan.md phases so adherence is checkable line-by-line.*
