@@ -552,47 +552,164 @@ def tarjan_zero_cycles(csr, dist, p, q):
     return cycles
 
 
-def edge_L(csr, ti, e, p, q):
-    """Scaled slack of a CSR edge (verified by recompute at call sites)."""
-    return p * int(csr.am[e]) - q * int(csr.ym[e])
+def shortest_future(csr, p, q):
+    """Exact V^Z via reverse propagation (no logging; callers log).
+
+    D = min over paths-from-s (empty path allowed, so D <= 0); V = -D.
+    Converges: at valid b no negative-slack cycle exists anywhere in R_n
+    (all states are diagonal-reachable, so such a cycle would break
+    validity). Returns (V, argmax) with argmax the last improving edge.
+    """
+    s = csr.size
+    off, tgt, am, ym = csr.off, csr.tgt, csr.am, csr.ym
+    roff, rsrc, rfwd = csr.roff, csr.rsrc, csr.rfwd
+    dist = [0] * s
+    argmax = [None] * s
+    inq = bytearray(s)
+    dq = deque()
+    for i in range(s):
+        dq.append(i)
+        inq[i] = 1
+    cap = 20 * len(tgt)
+    visits = 0
+    while dq:
+        t = dq.popleft()
+        inq[t] = 0
+        dt = dist[t]
+        for re in range(roff[t], roff[t + 1]):
+            visits += 1
+            if visits > cap:
+                raise AssertionError("future propagation exceeded visit cap")
+            u = rsrc[re]
+            e = rfwd[re]
+            nd = p * int(am[e]) - q * int(ym[e]) + dt
+            if nd < dist[u]:
+                dist[u] = nd
+                argmax[u] = (t, e)
+                if not inq[u]:
+                    dq.append(u)
+                    inq[u] = 1
+    return [-d for d in dist], argmax
 
 
-def find_transient(csr, dist, p, q):
-    """Nonempty diagonal-rooted zero-slack path, or None (complete rule)."""
-    tight = {}
+def tight_pred_lists(csr, U, p, q):
+    """All tight incoming edges per state (U[t]+L(e) == U[s]), det. order."""
+    lists = [[] for _ in range(csr.size)]
+    for s in range(csr.size):
+        for re in range(csr.roff[s], csr.roff[s + 1]):
+            t = csr.rsrc[re]
+            e = csr.rfwd[re]
+            if U[t] + p * int(csr.am[e]) - q * int(csr.ym[e]) == U[s]:
+                lists[s].append((t, e))
+    return lists
+
+
+def vtight_out_lists(csr, V, p, q):
+    """All V-tight outgoing edges per state (-L(e)+V[t] == V[s])."""
+    lists = [[] for _ in range(csr.size)]
     for i in range(csr.size):
         for e in range(csr.off[i], csr.off[i + 1]):
             j = csr.tgt[e]
-            if dist[i] + edge_L(csr, i, e, p, q) == dist[j]:
-                tight[j] = (i, e)
-    for s_idx in range(csr.size):
-        if s_idx not in tight:
+            if -(p * int(csr.am[e]) - q * int(csr.ym[e])) + V[j] == V[i]:
+                lists[i].append((j, e))
+    return lists
+
+
+def dfs_prefix(csr, tight_lists, target):
+    """U-optimal diagonal-rooted path to target (tight edges, DFS).
+
+    Exists: U[target] is attained by a simple diagonal path whose edges are
+    all tight (telescoping: per-edge U[b]<=U[a]+L with equality forced by
+    the optimal total); backward DFS completeness finds a route. Returns
+    edge list (possibly empty when target is diagonal) or None.
+    """
+    tc = csr.tree_count
+    a_id, b_id = divmod(csr.pids[target], tc)
+    if a_id == b_id:
+        return []
+    succ = {}
+    stack = [target]
+    while stack:
+        v = stack.pop()
+        for (t, e) in tight_lists[v]:
+            if t not in succ:
+                succ[t] = (v, e)
+                stack.append(t)
+    for d, (nxt, e) in succ.items():
+        da, db = divmod(csr.pids[d], tc)
+        if da != db:
             continue
-        t_idx, e_idx = tight[s_idx]
-        if dist[t_idx] + edge_L(csr, t_idx, e_idx, p, q) != 0:
-            continue
-        chain = [edge_tuple(csr, t_idx, e_idx, s_idx)]
-        cur = t_idx
-        guard = csr.size + 1
-        while True:
-            if csr.diag[cur] and dist[cur] == 0:
-                break
-            guard -= 1
-            if guard <= 0 or cur not in tight:
-                chain = None
-                break
-            pt, pe = tight[cur]
-            chain.append(edge_tuple(csr, pt, pe, cur))
-            cur = pt
-        if chain is None:
-            continue
-        chain.reverse()
-        sa, sy = edge_sums(csr, chain)
-        if sa <= 0 or p * sa - q * sy != 0:
-            continue
-        a0, b0 = divmod(chain[0][0], csr.tree_count)
-        if a0 == b0:
+        chain = []
+        cur = d
+        while cur != target:
+            nxt, e = succ[cur]
+            chain.append(edge_tuple(csr, cur, e, nxt))
+            cur = nxt
+        edge_sums(csr, chain)
+        return chain
+    return None
+
+
+def dfs_suffix(csr, vtight_lists, V, source):
+    """V-optimal path from source to a V==0 state (V-tight edges, DFS).
+
+    Exists: V[source] is attained by a simple path (no positive-regret
+    cycle exists at valid b) whose edges are all V-tight (telescoping);
+    DFS completeness finds a route. Total is exactly -V[source].
+    Returns edge list (possibly empty) or None.
+    """
+    stack = [source]
+    pred = {source: None}
+    while stack:
+        v = stack.pop()
+        if V[v] == 0:
+            chain = []
+            cur = v
+            while cur != source:
+                pv, pe = pred[cur]
+                chain.append(edge_tuple(csr, pv, pe, cur))
+                cur = pv
+            chain.reverse()
+            sa, sy = edge_sums(csr, chain)
             return chain
+        for (j, e) in vtight_lists[v]:
+            if j not in pred:
+                pred[j] = (v, e)
+                stack.append(j)
+    return None if V[source] != 0 else []
+
+
+def find_transient(csr, dist, V, p, q):
+    """Nonempty diagonal-rooted zero-slack path, or None (complete rule).
+
+    Complete: an edge lies on some nonempty zero diagonal-rooted path iff
+    U[t]+L(e)-V[s] == 0 (both directions by telescoping + sandwich, using
+    attained U/V optima: no negative-slack cycle exists at valid b). For
+    the first such edge in deterministic order, the path is the U-optimal
+    prefix to t, e itself, and the V-optimal suffix from s; total is
+    exactly U[t]+L(e)-V[s] == 0. Returns None iff no zero path exists.
+    """
+    U = dist
+    tight = tight_pred_lists(csr, U, p, q)
+    vtight = vtight_out_lists(csr, V, p, q)
+    for i in range(csr.size):
+        for e in range(csr.off[i], csr.off[i + 1]):
+            j = csr.tgt[e]
+            if U[i] + p * int(csr.am[e]) - q * int(csr.ym[e]) - V[j] != 0:
+                continue
+            pre = dfs_prefix(csr, tight, i)
+            if pre is None:
+                continue
+            suf = dfs_suffix(csr, vtight, V, j)
+            if suf is None:
+                continue
+            chain = pre + [edge_tuple(csr, i, e, j)] + suf
+            if not chain:
+                continue
+            sa, sy = edge_sums(csr, chain)
+            a0, b0 = divmod(chain[0][0], csr.tree_count)
+            if a0 == b0 and sa > 0 and p * sa - q * sy == 0:
+                return chain
     return None
 
 
@@ -654,7 +771,8 @@ def certify(n, tables, reach, p, q, cert_dir):
                 raise AssertionError("upper edge violation")
     pot = [{"P": str(dist[i]), "pair_id": csr.pids[i]} for i in range(csr.size)]
     h_pot = _dump_zst(os.path.join(cert_dir, "potential_upper.json.zst"), pot)
-    tpath = find_transient(csr, dist, p, q)
+    Vw, _ = shortest_future(csr, p, q)
+    tpath = find_transient(csr, dist, Vw, p, q)
     cycles = tarjan_zero_cycles(csr, dist, p, q)
     lowers = []
     if tpath is not None:

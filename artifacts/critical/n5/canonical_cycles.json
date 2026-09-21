@@ -1,0 +1,33 @@
+[
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 294,
+        "target": 1504
+      },
+      {
+        "key": 5,
+        "mode": "KEEP",
+        "source": 1504,
+        "target": 300
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 300,
+        "target": 895
+      },
+      {
+        "key": 5,
+        "mode": "KEEP",
+        "source": 895,
+        "target": 294
+      }
+    ],
+    "scc_id": 1715,
+    "sum_a": 10,
+    "sum_y": 16
+  }
+]

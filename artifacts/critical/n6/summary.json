@@ -1,0 +1,17 @@
+{
+  "b": {
+    "p": "8",
+    "q": "5"
+  },
+  "below_optimum": "NEGATIVE_CYCLE",
+  "critical_scc_count": 11,
+  "forced_delta_count": 84,
+  "forced_delta_share": {
+    "DELETE": 0,
+    "KEEP": 84
+  },
+  "logical_forced_delta_sha256": "431a0b03d92661b6f80870979d5514f4b1d8e23b2a58d7f64dbddc00a8208f23",
+  "logical_zero_sha256": "53bc84b32e70e16be48cebea91327482c5cfd8cd01f21fd0cfcc22966ac61594",
+  "n": 6,
+  "transient_corridor_count": 0
+}

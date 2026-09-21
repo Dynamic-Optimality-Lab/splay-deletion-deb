@@ -1,0 +1,1 @@
+[{"canonical_cycle": {"edges": [{"key": 2, "mode": "KEEP", "source": 0, "target": 0}], "sum_a": 1, "sum_y": 1}, "member_count": 2, "members": [0, 3], "prefix": [], "scc_id": 0}]

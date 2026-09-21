@@ -1,0 +1,343 @@
+[
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3832,
+        "target": 15027
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 15027,
+        "target": 3855
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 3855,
+        "target": 9418
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 9418,
+        "target": 3832
+      }
+    ],
+    "scc_id": 3530,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 2,
+        "mode": "KEEP",
+        "source": 1716,
+        "target": 11038
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 11038,
+        "target": 1728
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 1728,
+        "target": 5431
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 5431,
+        "target": 1716
+      }
+    ],
+    "scc_id": 9277,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 1190,
+        "target": 9813
+      },
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 9813,
+        "target": 15441
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 15441,
+        "target": 4266
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 4266,
+        "target": 1190
+      }
+    ],
+    "scc_id": 10647,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3038,
+        "target": 13571
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 13571,
+        "target": 3061
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 3061,
+        "target": 7962
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 7962,
+        "target": 3038
+      }
+    ],
+    "scc_id": 12238,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3037,
+        "target": 13565
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 13565,
+        "target": 3058
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 3058,
+        "target": 7953
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 7953,
+        "target": 3037
+      }
+    ],
+    "scc_id": 12339,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3565,
+        "target": 14753
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 14753,
+        "target": 3586
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 3586,
+        "target": 9141
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 9141,
+        "target": 3565
+      }
+    ],
+    "scc_id": 13577,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3831,
+        "target": 15026
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 15026,
+        "target": 3854
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 3854,
+        "target": 9417
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 9417,
+        "target": 3831
+      }
+    ],
+    "scc_id": 14285,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3566,
+        "target": 14759
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 14759,
+        "target": 3589
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 3589,
+        "target": 9150
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 9150,
+        "target": 3566
+      }
+    ],
+    "scc_id": 14849,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3964,
+        "target": 15159
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 15159,
+        "target": 3987
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 3987,
+        "target": 9550
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 9550,
+        "target": 3964
+      }
+    ],
+    "scc_id": 15536,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 3963,
+        "target": 15158
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 15158,
+        "target": 3986
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 3986,
+        "target": 9549
+      },
+      {
+        "key": 6,
+        "mode": "KEEP",
+        "source": 9549,
+        "target": 3963
+      }
+    ],
+    "scc_id": 16701,
+    "sum_a": 10,
+    "sum_y": 16
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 4097,
+        "target": 15292
+      },
+      {
+        "key": 5,
+        "mode": "KEEP",
+        "source": 15292,
+        "target": 4120
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 4120,
+        "target": 9683
+      },
+      {
+        "key": 5,
+        "mode": "KEEP",
+        "source": 9683,
+        "target": 4097
+      }
+    ],
+    "scc_id": 17173,
+    "sum_a": 10,
+    "sum_y": 16
+  }
+]

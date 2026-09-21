@@ -1,0 +1,1 @@
+{"0": {"edges": [{"forced_after": true, "forced_before": true, "key": 1, "mode": "KEEP", "source": 0, "target": 3}], "length": 1, "sum_a": 2, "sum_y": 2}, "3": {"edges": [{"forced_after": true, "forced_before": true, "key": 1, "mode": "KEEP", "source": 3, "target": 3}], "length": 1, "sum_a": 1, "sum_y": 1}}

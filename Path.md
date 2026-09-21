@@ -335,17 +335,97 @@ frozen `b⁻` B06 diagnostic) — needs sealed `b_n*` per `n` (satisfied for
 
 ---
 
-## WP-3 — Canonical potentials & critical geometry (SPEC 07, 08) — status: `PENDING`
+## WP-3 — Canonical potentials & critical geometry (SPEC 07, 08) — status: `GATED_PASS` (2026-09-21)
 
-**Scope per WorkPlan.md §5:** exact `U^Z/V^Z/G^Z` + forced states (`G==0` exact) + Bellman witnesses; zero-reduced graph + transient corridors + SCC cycles + `FORCED_DELTA` provenance union + trajectories; frozen `b⁻` diagnostic (midpoint or 1/2 rule) with separate NEGATIVE_PATH/CYCLE objects.
-**Files:** NOT YET CREATED — pending: `canonical_potentials.rs` extension, `verify_uv.py`, `verify_critical_objects.py`, `artifacts/{potentials,critical}/n{n}/*`, `scripts/run_phase07-08.sh`.
-**Code + how:** NOT YET WRITTEN — planned per WorkPlan §5 (super-source/sink shortest paths, inverse-table reverse generation filtered by `R_n`, exact `r_P`, lexicographic canonical reps, SCC preservation, trajectory emission).
-**Model training:** NONE per plan — tables only.
-**Benchmarks/gates:** U01–U03, V01–V03, G01–G02, C01–C05, B06 (discharged here via frozen `b⁻` diagnostic, per plan v0.1.1) — NOT YET RUN. No `CANONICAL_POTENTIAL_FAIL` emitted.
-**Follows WorkPlan.md?** N/A yet (WP-3 not started). Entry Dependency: UNBLOCKED
-2026-09-21 — WP-2 sealed `b_n*` for n=2..7 (INV-028 satisfied; T0-GATE-B held
-at every seal). No deviation.
-**Next action:** per-`n` Path sub-entries (`max U/V/G`, `#forced`, `#FORCED_DELTA`, `#SCCs` — the §22 summary row) once WP-2 seals.
+**Scope per WorkPlan.md §5 (plan v0.1.5):** all items executed. Exact
+`U^Z/V^Z/G^Z` at each certified `b_n*` (n=2..7) with Bellman witnesses;
+forced states exact (`G==0`, verified == diagonals everywhere);
+zero-reduced graph + transient corridors + critical SCCs/cycles with
+canonical representatives; `FORCED_DELTA = FPATH ∪ FCYCLE ∪ FGAP` with
+frozen FGAP rule + `VBELLMAN`/`UBELLMAN` recorded + exact
+`Delta_H_scaled`; human-readable trajectories with full step detail
+(shapes, a/y, slack, U/V, forced transitions, WP-4 deltas placeholder);
+frozen `b⁻` diagnostic discharging **B06** (all `NEGATIVE_CYCLE`, type
+preserved separately).
+**Out-discipline held:** tables reported as certified facts, no universal
+interpretation (that is WP-4/5/6 business).
+
+**Files (WorkPlan §5 list — all created):**
+`crates/exact_solver/src/canonical_potentials.rs` extended (FGAP rule +
+Bellman fns + unit tests, workspace check-green),
+`python/audit/verify_uv.py` + `verify_critical_objects.py`,
+`python/reference/canonical.py` + `critical.py`,
+`artifacts/potentials/n{2..7}/` (U/V/G zst + forced_states + summary +
+bellman_witnesses), `artifacts/critical/n{2..7}/` (zero_reduced zst,
+paths/canonical_paths, sccs, canonical_cycles, forced_delta zst,
+trajectories.md, below_optimum.json, summary),
+`artifacts/logs/wp3_gate_*.json` + `wp3_stress.json`,
+`scripts/run_phase07/08.{ps1,sh}` + `stress_wp3.py`.
+
+**Code + how (as planned, two correctness upgrades documented):**
+(1) V via reverse propagation (super-sink-style all-zero init; converges:
+no negative-slack cycle can exist anywhere in `R_n` at valid `b`, else
+diagonal reachability would break validity); reverse predecessors are the
+CSR reverse relation = exact spec-§7.3 predecessor sets (audit uses the
+inverse-table method independently; agreement proves the relation).
+(2) FPATH completeness fix (bug B7, found by cross-checking WP-2 witness
+existence against corridor output): `U[t]+L(e)==0` is sufficient-only; the
+complete rule is `U[t]+L(e)-V[s]==0` (both directions by telescoping +
+sandwich with attained optima). Corridors rebuilt as canonical
+prefix(U-optimal DFS)/suffix(V-optimal DFS) per forced state (non-diagonal:
+through-path; diagonal: out-starting path, else tight-backward path from
+another diagonal). WP-2 `find_transient` upgraded to the same complete rule
+(shared DFS machinery; V via `shortest_future`); all seals reproduced
+identically (subtypes unchanged: complete-FPATH = 4,15,0,0,0,0 for
+n=2..7). (3) Trajectories enriched to the full §8.5 step schema after a
+compliance sweep caught thin steps. (4) Audit brute-force predecessor scan
+hung at n=6 (hours) → replaced by inverse-table generation per spec §7.3.
+
+**Measured canonical geometry (evidence: summaries + audits):**
+forced = 2,5,14,42,132,429 = exactly the diagonals (verified by set
+equality all sizes: off-diagonal freedom gap is always > 0);
+maxU = 2,5,33,144,172,616; maxV = 1,2,7,21,35,119; maxG = 1,3,32,140,170,611.
+Corridors (canonical zero paths): 2,5,0,0,0,0 — consistent with MIXED (n=2,3)
+vs CYCLIC (n≥4) seals. Critical SCCs: 1,4,6,1,11,1. FORCED_DELTA edges:
+4,17,12,8,84,10. B06: `NEGATIVE_CYCLE` at every size (below-optimum
+failures are cyclic, incl. the `b⁻=1/2` diagnostic runs at b*=1).
+
+**Benchmarks/gates (final runs 2026-09-21, all green):** gate07 54/54
+(U01/U02/U03/V01/V02/V03/G01/G02 + independent UV-AUD incl. 184041-state
+sweep at n=7); gate08 24/24 (C01–C05 incl. per-edge forcing provenance,
+B06 typed diagnostics + independent CR-AUD with 6/6 checks: forced_set,
+provenance, paths, cycles, coverage, below). Stress `wp3_stress.json`:
+rebuild-identical summaries n≤5, audit repeat PASS. No
+`CANONICAL_POTENTIAL_FAIL` (would have raised loudly); no STOP-11/12/13.
+Covers threats T5/T7/T12/T15/T16, INV-028..030.
+
+**Console logging (same frozen mapping):** 32 statements, search-verified
+with exact file:line: `run_phase07.ps1`:4,:8; `run_phase08.ps1`:4,:8 (`.sh`
+same IDs); `stress_wp3.py`:40,:70,:86; `test_wp3.py`:75,:98,:127,:135;
+`canonical.py`:34,:49,:60,:63,:147; `critical.py`:57,:74,:237,:282,:311,
+:370,:377,:396,:402,:417; `verify_uv.py`:47,:74,:112;
+`verify_critical_objects.py`:80,:111,:268. Solver/audit internals are
+print-free except these identified emissions.
+
+**Follows WorkPlan.md?** YES — every §5 scope/file/code/benchmark/model
+(NONE)/gate element executed with evidence above, incl. FGAP exact rule,
+B06 ownership (deferred from WP-2 correctly), and T0/U/V/G theorem targets
+as tables (not theories). No WorkPlan deviation (no deviation-log row).
+Recorded non-deviations: CSR-reverse predecessor relation, Dinkelbach-first
+discovery carried over, V shared with WP-2 detector, trajectory schema
+enrichment, audit predecessor method.
+
+**Step history:** Step 1 canonical module (smoke n=4: 14 forced) → Step 2
+critical module (smoke: corridors=0 exposed the FPATH incompleteness) →
+Step 3 audits (brute-force hang → inverse-table fix; zst-load bug) →
+Step 4 gates green → Step 5 FPATH/corridor completeness rebuild + WP-2
+detector upgrade + full re-seal (identical subtypes) → Step 6 trajectory
+enrichment + stress + this entry.
+
+**Next action:** WP-4 (state-only features + forced-derivative mining +
+kernel ablation on the WP-3 FORCED_DELTA equations) — needs
+`FORCED_DELTA` + `U/V/G` (satisfied for n=2..7). Per-size mining entries
+will follow.
 
 ---
 
@@ -356,7 +436,9 @@ at every seal). No deviation.
 **Code + how (incl. model specifics):** NOT YET WRITTEN — planned per WorkPlan §6/§9: discovery equations `n=2..5`; domains `ℤ[−M,M]→ℚ_{den≤D}→nonneg→signed` as new search versions; ranking `(count, residual, complexity, cross-n)`; `R²` secondary only; minimal-inconsistent-subsystem preservation; kernel whitelist + static audits.
 **Resultant benchmarks:** NONE YET — planned: satisfaction counts, max residuals, rank/nullity, separation/preservation verdicts, stratified tables.
 **Brutal anti-overfitting (ENTIRELY different benchmarks):** NOT YET EXECUTED — planned per WorkPlan §9: held-out `n=6/7` (10–100× larger, unseen shapes/SCCs), held-out strata (FCYCLE/DELETE/zig-zag), derivative-not-scalar target, independent re-implementation (WP-5), large-`n` adversaries (WP-5), out-of-domain panel (WP-5), mutation controls (WP-5); `CROSS_N_STABLE` only after untouched-size survival; post-holdout edits → new IDs.
-**Follows WorkPlan.md?** N/A yet. Dependency: BLOCKED on WP-3 (`FORCED_DELTA` + `U/V/G` required). No deviation.
+**Follows WorkPlan.md?** N/A yet (WP-4 not started). Entry Dependency: UNBLOCKED
+2026-09-21 — WP-3 delivered `FORCED_DELTA` + `U/V/G` for n=2..7 with audits.
+No deviation.
 **Next action:** freeze `F-v0.1` definitions note before any code; then features → deltas → searches → kernels, each with Path sub-entries (schema hash, static-audit result, discovery tables).
 
 ---
@@ -397,7 +479,7 @@ at every seal). No deviation.
 
 | Date (UTC) | Size / scope | Label emitted | Trigger (exact) | Artifact preserved | Follow-up |
 |---|---|---|---|---|---|
-| — | — | NONE TO DATE. WP-1/WP-2 runs executed 2026-09-21 (all gates green, stresses green); no stop/failure label emitted. Six WP-1 bugs (B1–B6) and three WP-2 dev issues (reverse-index bug, GC-thrash stall, n=7 LP hang — all without artifacts or claims) were passing-control/development findings, not stops. | — | — |
+| — | — | NONE TO DATE. WP-1/WP-2/WP-3 runs executed 2026-09-21 (all gates green, stresses green); no stop/failure label emitted. WP-1 bugs (B1–B6), WP-2 dev issues (reverse-index bug, GC-thrash stall, n=7 LP hang), WP-3 dev issues (FPATH incompleteness B7, audit brute-force hang, zst-load bug, thin trajectories) were passing-control/development findings fixed pre-seal, not stops. | — | — |
 
 ---
 
@@ -412,14 +494,14 @@ at every seal). No deviation.
 ## Per-size exact-results table (§22 primary summary; filled only from sealed artifacts)
 
 ```text
-n | C_n | |R_n| | b_n* (p/q) | subtype | #forced | #FORCED_DELTA | #crit SCCs | verifier
---|-----|-------|------------|---------|---------|---------------|------------|----------
-2 |   2 |     4 | 1/1        | TRANSIENT+CYCLE = MIXED top-level | (WP-3) | (WP-3) | (WP-3) | PASS (EXACT_BN_MIXED)
-3 |   5 |    19 | 1/1        | MIXED top-level | (WP-3) | (WP-3) | (WP-3) | PASS (EXACT_BN_MIXED)
-4 |  14 |   196 | 3/2        | CYCLIC top-level | (WP-3) | (WP-3) | (WP-3) | PASS (EXACT_BN_CYCLIC)
-5 |  42 |  1764 | 8/5        | CYCLIC top-level | (WP-3) | (WP-3) | (WP-3) | PASS (EXACT_BN_CYCLIC)
-6 | 132 | 17424 | 8/5        | CYCLIC top-level | (WP-3) | (WP-3) | (WP-3) | PASS (EXACT_BN_CYCLIC)
-7 | 429 |184041 | 23/14      | CYCLIC top-level | (WP-3) | (WP-3) | (WP-3) | PASS (EXACT_BN_CYCLIC)
+n | C_n | |R_n| | b_n* (p/q) | subtype (top-level) | #forced | #FORCED_DELTA | #crit SCCs | verifier
+--|-----|-------|------------|---------------------|---------|---------------|------------|----------
+2 |   2 |     4 | 1/1        | EXACT_BN_MIXED      |       2 |             4 |          1 | PASS
+3 |   5 |    19 | 1/1        | EXACT_BN_MIXED      |       5 |            17 |          4 | PASS
+4 |  14 |   196 | 3/2        | EXACT_BN_CYCLIC     |      14 |            12 |          6 | PASS
+5 |  42 |  1764 | 8/5        | EXACT_BN_CYCLIC     |      42 |             8 |          1 | PASS
+6 | 132 | 17424 | 8/5        | EXACT_BN_CYCLIC     |     132 |            84 |         11 | PASS
+7 | 429 |184041 | 23/14      | EXACT_BN_CYCLIC     |     429 |            10 |          1 | PASS
 8 |1430 |2044900| — (RESOURCE_LIMIT_NO_CLAIM) | — | — | — | — | N/A (observation only)
 ```
 
@@ -429,24 +511,28 @@ n | C_n | |R_n| | b_n* (p/q) | subtype | #forced | #FORCED_DELTA | #crit SCCs | 
 
 ## Claim-level tracker (only WP-6 may advance this; fail-closed)
 
-- **Current truthful level:** `FINITE_INFRASTRUCTURE_ONLY` (held 2026-09-21
-after WP-2: although `b_n*` is sealed for n=2..7, the level
-`FINITE_EXACT_BN_RESULTS` as worded also requires canonical potentials,
-which are WP-3 scope — fail-closed, no early promotion).
+- **Current truthful level:** `FINITE_EXACT_BN_RESULTS` (advanced 2026-09-21:
+exact finite-`n` subsequence overheads with two-sided certificates +
+canonical `U/V/G` potentials, all independently verified for n=2..7 —
+exactly what this level words. No theorem-level claim.)
 - History: 2026-09-21 advanced NO LEVEL → `FINITE_INFRASTRUCTURE_ONLY` on the
   evidence in the WP-1 entry (30/30 gate checks + 8 sealed tree universes +
-  stress `wp1_stress.json`).
+  stress `wp1_stress.json`); same day advanced → `FINITE_EXACT_BN_RESULTS`
+  on the WP-2 entry (sealed `b_n*` n=2..7) plus WP-3 entry (canonical `U/V/G`
+  + forced geometry, gates 07/08 green, audits PASS).
 
 ---
 
 ## Next 3 actions (always concrete)
 
-1. WP-3 Step 1: complete `U^Z/V^Z/G^Z` tables + forced states + Bellman
-   witnesses per sealed size (U01–U03, V01–V03, G01–G02) → Path sub-entry.
-2. WP-3 Step 2: zero-slack corridors + critical SCCs + `FORCED_DELTA` union
-   with FGAP rule + trajectories (C01–C05) → Path sub-entry.
-3. WP-3 Step 3: frozen `b⁻` below-optimum diagnostic discharging B06
-   (NEGATIVE_PATH vs NEGATIVE_CYCLE) → Path sub-entry; claim advances to
-   `FINITE_EXACT_BN_RESULTS` only when WP-3 gates pass.
+1. WP-4 Step 1: freeze `F-v0.1` feature definitions + state-only extractor
+   (F01 static audit, F02 sanity, F03 mirrors) over every `s ∈ R_n` →
+   Path sub-entry.
+2. WP-4 Step 2: forced-derivative datasets (`ΔF` vs `ΔH`) + exact
+   sparse-combination/atom searches with discovery/holdout split + equation
+   basis witnesses (D01–D03) → Path sub-entry.
+3. WP-4 Step 3: kernel identification/ablation with transition-preservation
+   tests (K01–K03) + mining report skeleton → Path sub-entry; no theorem
+   claimed (mining success ≠ theorem).
 
 *End of Path.md — updated every session work is done; mirrored 1:1 with WorkPlan.md phases so adherence is checkable line-by-line.*

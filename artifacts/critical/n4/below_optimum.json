@@ -1,0 +1,29 @@
+{
+  "b_minus": {
+    "p": "5",
+    "q": "4"
+  },
+  "certified_b": {
+    "p": "3",
+    "q": "2"
+  },
+  "kind": "cyclic",
+  "label": "NEGATIVE_CYCLE",
+  "n": 4,
+  "sum_a": 4,
+  "sum_y": 6,
+  "witness": [
+    {
+      "key": 1,
+      "mode": "KEEP",
+      "source": 58,
+      "target": 138
+    },
+    {
+      "key": 4,
+      "mode": "KEEP",
+      "source": 138,
+      "target": 58
+    }
+  ]
+}

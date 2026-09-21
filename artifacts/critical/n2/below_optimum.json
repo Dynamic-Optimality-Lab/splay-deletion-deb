@@ -1,0 +1,23 @@
+{
+  "b_minus": {
+    "p": "1",
+    "q": "2"
+  },
+  "certified_b": {
+    "p": "1",
+    "q": "1"
+  },
+  "kind": "cyclic",
+  "label": "NEGATIVE_CYCLE",
+  "n": 2,
+  "sum_a": 1,
+  "sum_y": 1,
+  "witness": [
+    {
+      "key": 2,
+      "mode": "KEEP",
+      "source": 0,
+      "target": 0
+    }
+  ]
+}

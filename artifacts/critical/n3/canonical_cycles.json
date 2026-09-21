@@ -1,0 +1,54 @@
+[
+  {
+    "edges": [
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 6,
+        "target": 6
+      }
+    ],
+    "scc_id": 0,
+    "sum_a": 1,
+    "sum_y": 1
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 23,
+        "target": 23
+      }
+    ],
+    "scc_id": 3,
+    "sum_a": 1,
+    "sum_y": 1
+  },
+  {
+    "edges": [
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 1,
+        "target": 1
+      }
+    ],
+    "scc_id": 8,
+    "sum_a": 1,
+    "sum_y": 1
+  },
+  {
+    "edges": [
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 0,
+        "target": 0
+      }
+    ],
+    "scc_id": 9,
+    "sum_a": 1,
+    "sum_y": 1
+  }
+]

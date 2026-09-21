@@ -1,0 +1,116 @@
+[
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 87,
+        "target": 167
+      },
+      {
+        "key": 3,
+        "mode": "KEEP",
+        "source": 167,
+        "target": 87
+      }
+    ],
+    "scc_id": 32,
+    "sum_a": 4,
+    "sum_y": 6
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 57,
+        "target": 137
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 137,
+        "target": 57
+      }
+    ],
+    "scc_id": 53,
+    "sum_a": 4,
+    "sum_y": 6
+  },
+  {
+    "edges": [
+      {
+        "key": 2,
+        "mode": "KEEP",
+        "source": 28,
+        "target": 106
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 106,
+        "target": 28
+      }
+    ],
+    "scc_id": 87,
+    "sum_a": 4,
+    "sum_y": 6
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 72,
+        "target": 152
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 152,
+        "target": 72
+      }
+    ],
+    "scc_id": 163,
+    "sum_a": 4,
+    "sum_y": 6
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 71,
+        "target": 151
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 151,
+        "target": 71
+      }
+    ],
+    "scc_id": 168,
+    "sum_a": 4,
+    "sum_y": 6
+  },
+  {
+    "edges": [
+      {
+        "key": 1,
+        "mode": "KEEP",
+        "source": 58,
+        "target": 138
+      },
+      {
+        "key": 4,
+        "mode": "KEEP",
+        "source": 138,
+        "target": 58
+      }
+    ],
+    "scc_id": 185,
+    "sum_a": 4,
+    "sum_y": 6
+  }
+]

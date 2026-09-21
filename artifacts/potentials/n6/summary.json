@@ -1,0 +1,17 @@
+{
+  "G_nonnegative": true,
+  "b": {
+    "p": "8",
+    "q": "5"
+  },
+  "forced_count": 132,
+  "forced_fraction": 0.007575757575757576,
+  "logical_G_sha256": "e5eac2d9075d1d3a3bcc5475bdba5829f299968e3ff9d1bae77bd553917afb7f",
+  "logical_U_sha256": "e6e2d6bd56bf24eeeaf9b68e7c6536ae8e80e2a0b4f82695c9d69f53927f33ad",
+  "logical_V_sha256": "11bc9c8a59f824c80643c6927ad8060fba582462ae1ed2bb9243b4a3ed2d740f",
+  "max_G": "170",
+  "max_U": "172",
+  "max_V": "35",
+  "n": 6,
+  "reachable_pair_count": 17424
+}

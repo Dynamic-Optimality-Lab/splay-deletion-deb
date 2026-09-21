@@ -1,0 +1,15 @@
+[
+  {
+    "edges": [
+      {
+        "key": 2,
+        "mode": "KEEP",
+        "source": 0,
+        "target": 0
+      }
+    ],
+    "scc_id": 0,
+    "sum_a": 1,
+    "sum_y": 1
+  }
+]

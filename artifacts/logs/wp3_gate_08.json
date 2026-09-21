@@ -1,0 +1,41 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "gate": "08",
+  "pass": [
+    "C01-C04",
+    "C05",
+    "B06",
+    "CR-AUD",
+    "C01-C04",
+    "C05",
+    "B06",
+    "CR-AUD",
+    "C01-C04",
+    "C05",
+    "B06",
+    "CR-AUD",
+    "C01-C04",
+    "C05",
+    "B06",
+    "CR-AUD",
+    "C01-C04",
+    "C05",
+    "B06",
+    "CR-AUD",
+    "C01-C04",
+    "C05",
+    "B06",
+    "CR-AUD"
+  ],
+  "sizes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "wall_seconds": 49.1
+}
