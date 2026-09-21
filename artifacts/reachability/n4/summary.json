@@ -1,0 +1,11 @@
+{
+  "all_pairs_reachable_observed": true,
+  "all_pairs_reachable_theorem_used": false,
+  "catalan_tree_count": 14,
+  "forward_closure": true,
+  "logical_reachable_sha256": "bc79bcdbe563d8550ebf09348da9158c4c8d3775b40e5a45499310fef8782bdd",
+  "n": 4,
+  "raw_pair_count": 196,
+  "reachable_pair_count": 196,
+  "source_diagonal_count": 14
+}

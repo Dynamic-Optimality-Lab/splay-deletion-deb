@@ -1,0 +1,18 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "gate": "06",
+  "pass": [
+    "T0-GATE-B",
+    "B-SEAL",
+    "B03-B05",
+    "SEP-AUDIT",
+    "S02",
+    "S03"
+  ],
+  "sizes": [
+    7
+  ],
+  "wall_seconds": 29.3
+}

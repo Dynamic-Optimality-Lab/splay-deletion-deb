@@ -1,0 +1,12 @@
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "splay-pipeline"
+path = "src/main.rs"
+
+[dependencies]
+pair_graph = { path = "../pair_graph" }
+exact_solver = { path = "../exact_solver" }

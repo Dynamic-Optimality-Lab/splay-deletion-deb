@@ -1,0 +1,7 @@
+[package]
+name = "pair_graph"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+splay_model = { path = "../splay_model" }

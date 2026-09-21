@@ -1,0 +1,28 @@
+{
+  "audit_report": {
+    "file": "verify_bn_certificate.json",
+    "sha256": "028598a930eb7e198d4ceac6ef2eb5e7bae601ad96395617fa0ebd1f33d16c34"
+  },
+  "b": {
+    "p": "8",
+    "q": "5"
+  },
+  "criticality": "EXACT_BN_CYCLIC",
+  "independent_verifier": "PASS",
+  "lower_certificates": [
+    {
+      "file": "witness_cycle.json",
+      "type": "zero_slack_cycle"
+    }
+  ],
+  "n": 5,
+  "reachable_pair_count": 1764,
+  "reduced": true,
+  "sanity_lower_ok": true,
+  "sanity_upper_ok": true,
+  "upper_certificate": {
+    "file": "potential_upper.json.zst",
+    "sha256": "1974738635fa126c5c196868390012dd3095af8ae72f6c9d4fb718ba70c406b2",
+    "type": "feasible_integer_potential"
+  }
+}

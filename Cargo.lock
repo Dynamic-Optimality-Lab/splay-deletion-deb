@@ -3,5 +3,27 @@
 version = 4
 
 [[package]]
+name = "cli"
+version = "0.1.0"
+dependencies = [
+ "exact_solver",
+ "pair_graph",
+]
+
+[[package]]
+name = "exact_solver"
+version = "0.1.0"
+dependencies = [
+ "pair_graph",
+]
+
+[[package]]
+name = "pair_graph"
+version = "0.1.0"
+dependencies = [
+ "splay_model",
+]
+
+[[package]]
 name = "splay_model"
 version = "0.1.0"

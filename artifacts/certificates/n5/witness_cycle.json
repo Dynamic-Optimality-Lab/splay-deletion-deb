@@ -1,0 +1,57 @@
+{
+  "cycle": [
+    {
+      "key": 1,
+      "mode": "KEEP",
+      "source": 294,
+      "target": 1504
+    },
+    {
+      "key": 5,
+      "mode": "KEEP",
+      "source": 1504,
+      "target": 300
+    },
+    {
+      "key": 3,
+      "mode": "KEEP",
+      "source": 300,
+      "target": 895
+    },
+    {
+      "key": 5,
+      "mode": "KEEP",
+      "source": 895,
+      "target": 294
+    }
+  ],
+  "prefix": [
+    {
+      "key": 2,
+      "mode": "DELETE",
+      "source": 0,
+      "target": 1008
+    },
+    {
+      "key": 1,
+      "mode": "DELETE",
+      "source": 1008,
+      "target": 1596
+    },
+    {
+      "key": 3,
+      "mode": "KEEP",
+      "source": 1596,
+      "target": 895
+    },
+    {
+      "key": 5,
+      "mode": "KEEP",
+      "source": 895,
+      "target": 294
+    }
+  ],
+  "sum_a_cycle": 10,
+  "sum_scaled_slack_cycle": 0,
+  "sum_y_cycle": 16
+}

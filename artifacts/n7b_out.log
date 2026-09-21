@@ -1,0 +1,16 @@
+[WP2-N7-03] stage S2 discovery begin (LP skipped by size policy)
+[WP2-N7-03] load 0.3s
+[WP2-SOL-00] CSR build R=184041
+[WP2-SOL-00] CSR ready edges=2576574
+[WP2-SOL-01] parametric discovery begin R=184041
+[WP2-SOL-02] discovered b=23/14 probes=5
+[WP2-SOL-04] n=7 candidate 23/14 trail=5
+[WP2-N7-03] discovery 24.9s b=23/14
+[WP2-N7-04] stage S2 done
+[WP2-N7-05] stage S3 certification begin
+[WP2-SOL-05] certifying n=7 b=23/14
+[WP2-SOL-00] CSR build R=184041
+[WP2-SOL-00] CSR ready edges=2576574
+[WP2-SOL-06] n=7 sealed EXACT_BN_CYCLIC witnesses=1
+[WP2-N7-05] certify 23.4s EXACT_BN_CYCLIC
+[WP2-N7-06] stage S3 done

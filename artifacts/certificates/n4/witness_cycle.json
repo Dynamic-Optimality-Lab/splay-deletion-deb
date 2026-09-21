@@ -1,0 +1,33 @@
+{
+  "cycle": [
+    {
+      "key": 1,
+      "mode": "KEEP",
+      "source": 87,
+      "target": 167
+    },
+    {
+      "key": 3,
+      "mode": "KEEP",
+      "source": 167,
+      "target": 87
+    }
+  ],
+  "prefix": [
+    {
+      "key": 1,
+      "mode": "DELETE",
+      "source": 0,
+      "target": 140
+    },
+    {
+      "key": 3,
+      "mode": "KEEP",
+      "source": 140,
+      "target": 87
+    }
+  ],
+  "sum_a_cycle": 4,
+  "sum_scaled_slack_cycle": 0,
+  "sum_y_cycle": 6
+}

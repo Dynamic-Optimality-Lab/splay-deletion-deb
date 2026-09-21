@@ -1,0 +1,70 @@
+{
+  "authoritative": false,
+  "backend_notes": "parametric-exact(lp-skipped-size-policy)",
+  "discovery_float": null,
+  "lp_agreement": null,
+  "n": 7,
+  "sealed_candidate": {
+    "p": "23",
+    "q": "14",
+    "reduced": true
+  },
+  "trail": [
+    {
+      "b": {
+        "p": "1",
+        "q": "1"
+      },
+      "valid": false,
+      "witness": {
+        "kind": "cyclic",
+        "sum_a": 4,
+        "sum_y": 6
+      }
+    },
+    {
+      "b": {
+        "p": "3",
+        "q": "2"
+      },
+      "valid": false,
+      "witness": {
+        "kind": "cyclic",
+        "sum_a": 10,
+        "sum_y": 16
+      }
+    },
+    {
+      "b": {
+        "p": "8",
+        "q": "5"
+      },
+      "valid": false,
+      "witness": {
+        "kind": "cyclic",
+        "sum_a": 22,
+        "sum_y": 36
+      }
+    },
+    {
+      "b": {
+        "p": "18",
+        "q": "11"
+      },
+      "valid": false,
+      "witness": {
+        "kind": "cyclic",
+        "sum_a": 28,
+        "sum_y": 46
+      }
+    },
+    {
+      "b": {
+        "p": "23",
+        "q": "14"
+      },
+      "valid": true,
+      "witness": null
+    }
+  ]
+}

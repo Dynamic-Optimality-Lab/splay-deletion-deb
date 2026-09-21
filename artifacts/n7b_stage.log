@@ -1,0 +1,7 @@
+[WP2-N7-03] stage S2 discovery begin (LP skipped by size policy)
+[WP2-N7-03] load 0.3s
+[WP2-N7-03] discovery 24.9s b=23/14
+[WP2-N7-04] stage S2 done
+[WP2-N7-05] stage S3 certification begin
+[WP2-N7-05] certify 23.4s EXACT_BN_CYCLIC
+[WP2-N7-06] stage S3 done

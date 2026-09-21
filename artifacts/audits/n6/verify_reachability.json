@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "closure": true,
+    "diagonals": true,
+    "exact_set": true,
+    "parent_chains": true
+  },
+  "n": 6,
+  "reachable_pair_count": 17424,
+  "verdict": "PASS"
+}

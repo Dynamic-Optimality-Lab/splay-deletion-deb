@@ -1,0 +1,22 @@
+{
+  "authoritative": false,
+  "backend_notes": "parametric-exact",
+  "discovery_float": 1.0,
+  "lp_agreement": "AGREE",
+  "n": 3,
+  "sealed_candidate": {
+    "p": "1",
+    "q": "1",
+    "reduced": true
+  },
+  "trail": [
+    {
+      "b": {
+        "p": "1",
+        "q": "1"
+      },
+      "valid": true,
+      "witness": null
+    }
+  ]
+}

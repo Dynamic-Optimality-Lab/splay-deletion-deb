@@ -1,3 +1,3 @@
 [workspace]
-members = ["crates/splay_model"]
+members = ["crates/splay_model", "crates/pair_graph", "crates/exact_solver", "crates/cli"]
 resolver = "2"

@@ -1,0 +1,14 @@
+{
+  "cycle": [
+    {
+      "key": 2,
+      "mode": "KEEP",
+      "source": 0,
+      "target": 0
+    }
+  ],
+  "prefix": [],
+  "sum_a_cycle": 1,
+  "sum_scaled_slack_cycle": 0,
+  "sum_y_cycle": 1
+}

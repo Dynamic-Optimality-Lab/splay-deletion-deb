@@ -1,0 +1,46 @@
+{
+  "authoritative": false,
+  "backend_notes": "parametric-exact",
+  "discovery_float": 1.6,
+  "lp_agreement": "AGREE",
+  "n": 5,
+  "sealed_candidate": {
+    "p": "8",
+    "q": "5",
+    "reduced": true
+  },
+  "trail": [
+    {
+      "b": {
+        "p": "1",
+        "q": "1"
+      },
+      "valid": false,
+      "witness": {
+        "kind": "cyclic",
+        "sum_a": 4,
+        "sum_y": 6
+      }
+    },
+    {
+      "b": {
+        "p": "3",
+        "q": "2"
+      },
+      "valid": false,
+      "witness": {
+        "kind": "cyclic",
+        "sum_a": 10,
+        "sum_y": 16
+      }
+    },
+    {
+      "b": {
+        "p": "8",
+        "q": "5"
+      },
+      "valid": true,
+      "witness": null
+    }
+  ]
+}

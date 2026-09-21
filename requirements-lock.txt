@@ -5,5 +5,10 @@
 # zstandard is installed in this environment and used for .zst transport
 # files; it carries no scientific content (compression outside canonical
 # hashing: logical-stream SHA-256 recorded separately).
-# Discovery/analysis backends (HiGHS, numpy, pandas, sympy, jsonschema) are
-# pinned when WP-2/WP-4 introduce them; they are absent here by design.
+# Discovery/analysis backends introduced in WP-2 (pinned exact versions):
+# scipy==1.16.3 — HiGHS LP backend for DISCOVERY PROPOSALS ONLY
+#   (scipy.optimize.linprog, method='highs'). Float output is quarantined
+#   (authoritative=false) and can never seal an exact result (threat T6).
+# jsonschema==4.25.1 — validates sealed artifacts against schemas/*.schema.json.
+# zstandard — .zst transport (no scientific content).
+# WP-1 gates remain stdlib-only; the above are used only where stated.

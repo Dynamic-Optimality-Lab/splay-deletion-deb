@@ -1,0 +1,7 @@
+[package]
+name = "exact_solver"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pair_graph = { path = "../pair_graph" }

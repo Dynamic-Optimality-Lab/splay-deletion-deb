@@ -1,0 +1,14 @@
+{
+  "edges": [
+    {
+      "key": 3,
+      "mode": "KEEP",
+      "source": 24,
+      "target": 0
+    }
+  ],
+  "initial_tree_id": 4,
+  "sum_a": 3,
+  "sum_scaled_slack": 0,
+  "sum_y": 3
+}

@@ -1,0 +1,9 @@
+{
+  "cost_in_range": true,
+  "inverse_conservation": true,
+  "logical_forward_sha256": "b67ab4fb351e103a3c3499b57b5dddac060cbd3b39994e07c4f75fd9a646ce6e",
+  "logical_inverse_sha256": "b70eb469694976c3e36a0e8c177229c76ebc6a7d3a9d67e5db08739df6a6fdc2",
+  "n": 3,
+  "record_count": 15,
+  "tree_count": 5
+}
