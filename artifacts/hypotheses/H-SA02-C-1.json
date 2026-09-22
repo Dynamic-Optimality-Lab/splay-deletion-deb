@@ -1,0 +1,29 @@
+{
+  "coefficient_domain": "exact rationals (F-v0.1 linear)",
+  "coefficients": {
+    "f_ancestor_Aonly": "-9/5",
+    "f_ancestor_Bonly": "8/5",
+    "f_ancestor_both": "-8/5",
+    "f_depth_max_abs_diff": "1/5",
+    "f_parent_flip_count": "-1/5"
+  },
+  "definition": "canonical 5-support exact n45 solution (lexicographically first min-support member over Q)",
+  "development_sizes": [
+    6,
+    7
+  ],
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "heldout_sizes": [],
+  "hypothesis_id": "H-SA02-C-1",
+  "label": "POST-n7-DEVELOPMENT (n7 is falsification data, never untouched holdout)",
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "parent_hypothesis": "H-SA02-B-v1-final (superseded line)",
+  "sha256": "d3b76c9111c3685c93baaee3996157b8368a8d39e7c5a69c302e0481c242ec5e",
+  "state_only": true,
+  "status": "POST-n7-DEVELOPMENT (killed globally: 59/135 sat, max 139/35)",
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

@@ -1,0 +1,31 @@
+{
+  "coefficient_domain": "exact rationals (F-v0.1 linear)",
+  "coefficients": {
+    "f_ancestor_Aonly": "-9/5",
+    "f_ancestor_Bonly": "2/1",
+    "f_ancestor_both": "-8/5",
+    "f_depth_max_abs_diff": "-3/5",
+    "f_depth_sum_abs_diff": "-2/5",
+    "f_parent_diff_count": "-2/5",
+    "f_parent_flip_count": "-1/5"
+  },
+  "definition": "bounded-local-search n6-residual minimizer around dense particular (single-null-step neighborhood, deterministic; NOT globally optimal)",
+  "development_sizes": [
+    6,
+    7
+  ],
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "heldout_sizes": [],
+  "hypothesis_id": "H-SA02-C-2",
+  "label": "POST-n7-DEVELOPMENT (n7 is falsification data, never untouched holdout)",
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "parent_hypothesis": "H-SA02-B-v1-final (superseded line)",
+  "sha256": "5a810cdf8e2451397a98d9239e2d837aaa84905953099df06e2361d1dcb6e539",
+  "state_only": true,
+  "status": "POST-n7-DEVELOPMENT (killed globally: 53/135 sat, max 31/7)",
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

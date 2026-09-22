@@ -519,6 +519,65 @@ ledgered, no normative change).
 dense `H_B` FAILS validation/holdout and is NOT a universal candidate —
 needs new hypothesis/track, never re-call n=7 untouched).
 
+### WP-4 completion supplement (2026-09-22, post-`072b211` work) ✅ DONE
+
+**Rule:** `n7_status = PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE` for
+everything below. `H-SA02-B-v1` (`dc96cabf…`) + `H-SA02-B-v1-final`
+(`1aef5d42…`) byte-preserved (hashes recomputed, never edited); failures stand.
+
+1. **Affine exhaustion** (`python/mining/affine_exhaustion.py` →
+   `track_b_affine_space.json`): 9 primitive integer null directions (sorted,
+   sign-fixed); bend-only zero column; `crossing=Aonly+Bonly` certified on
+   selection. Minimum exact support over Q = **5** (all 1941 subsets ≤4
+   restricted-inconsistent → domain-independent lower bound;
+   `min_support_exhaustion_log.json`; canonical 5-support
+   `{-9/5 Aonly, +8/5 Bonly, -8/5 both, +1/5 depth_max, -1/5 parent_flip}`).
+   Per-domain: INT1/2/3 none ≤4 (exhaustive); Q2/3/4 + NONNEG none ≤5 (stated
+   bounds; Q-affine supports via bounded parametric probe, honestly labeled);
+   Q5/SIGNED min 5. 11 canonical alternatives evaluated on development n6/n7
+   (`track_b_alternatives.json`): n6 residuals split `5` vs `34/5` vs `17/5`,
+   n7 `139/35` vs `193/35` — family membership is behaviorally non-unique,
+   but §2 below decides the class without sampling doubt.
+2. **Global verdict:** n456 (104x16) rank 8 vs aug 9 INCONSISTENT; n4567
+   (114x16) same → NO single F-v0.1-linear potential fits all sizes.
+   **Minimum triple** (proven: system-wide Bareiss sweep finds no inconsistent
+   single/pair in 104 rows; triple ranks 2 vs 3; all pairs consistent):
+   `n4 src58 K k1 L0 ZIG` + `n6 src3863 K k1 L9 LL/RR` + `n6 src9683 K k5 L1
+   ZIG` (`mis_n456.json`, stratified; superseded 7-row witness preserved
+   inside). Localization: `{n4,n5}` consistent; `{n4,n6}` + `{n5,n6}` each
+   inconsistent → n6-vs-selection, no n7 needed, all-KEEP. Identical-`DeltaF`:
+   zero same-n + zero cross-n conflicts in 133 FCYCLE rows (dependency-with-
+   mismatch, not duplicate clash).
+3. **Atom ladder F-v0.1+A1** (`nonlinear_atoms.py`, 14 frozen `g_*` atoms,
+   F-v0.1 untouched): selection rank stays 7 (atoms redundant; min atoms 0);
+   n456 extended (104x30) rank 11 vs aug 12 INCONSISTENT; n4567 likewise; no
+   single atom rescues. Ladder-level witness: 12 n6-only rows, irreducible,
+   sizes 1-3 ruled out system-wide (exact minimum in [4,12], honestly
+   labeled; `mis_n456_extended.json`). Charge ansatz with these 14 local
+   forms is exactly dead.
+4. **Cycles compared** (`compare_cycles.py` → `comparison_n4567.json`): k=2
+   uniform; n4 all-`L_i=0` 2-cycles (all-ZIG) vs n5/n6 wide-`L` 4-cycles vs n7
+   10-cycle with `LL,ZIG`/`RR,ZIG` multis; 100% KEEP, no LR/RL anywhere.
+5. **POST-n7 candidates** (`global_tests.py`): `H-SA02-C-1` (`d3b76c91…`,
+   5-support, global 59/135 sat max `139/35`) + `H-SA02-C-2` (`5a810cdf…`,
+   local n6 minimizer 4 vs 5, global 53/135 max `31/7`) — both FAIL, killed,
+   preserved, POST-n7-labeled with `heldout_sizes: []`. No untouched claim.
+6. **Kernels completed** (`kernel_ablation.py`, `K-v0.1-complete`): FULL
+   transition checks (rep-based, all edges, n=2..5) + (V,U) value sweeps.
+   FULL_STATE PASS everywhere. Every family necessary: Track-B ablations fail
+   at n=4 by VALUE; Track-A ablations pass all at n=2, fail at n=3 by
+   TRANSITION (e.g. minus_depth states 0/24, DELETE k=2, successor
+   heavy-agreement differs — depth dynamically necessary). 8-family descriptor
+   MINIMAL. Schema-exact key `smallest_n_failing` added alongside legacy alias
+   (frozen schema untouched).
+7. **Gates:** `tests/test_wp4_gates.py` 26/26 (F01-D03, K01-K03, firewall,
+   schema incl. candidate_H for B+C ids + kernel projection, determinism via
+   hash reproduction, sealed preservation). Full matrix: FPATH 15/15, freeze
+   23/23, tracks 34/34, WP-4 gates 26/26.
+
+**Follows WorkPlan.md?** YES — §§6/9/11 + SA-02, append-only, exact-only, new
+IDs for all post-n7 work, no WP-5 started, no SA-02 rewrite, no n7 rerun.
+
 ---
 
 ## WP-5 — Candidate H synthesis + independent falsification + adversarial search (SPEC 12, 13, 14) ⭐ — status: `PENDING`
@@ -568,6 +627,8 @@ needs new hypothesis/track, never re-call n=7 untouched).
 | H-SA02-B-v1 | `H_B_v1 = (8/5)*depth_sum + (17/5)*depth_max + (8/5)*parent_diff + (-1/5)*parent_flip + (-9/5)*ancestor_Aonly + (-8/5)*ancestor_both` (dense rational, n=4,5 FCYCLE 20 rows, rank7/null9) | discovery n=4,5 exact-fit 20/20; validation n=6 84 FCYCLE rows | n6 exact max `5/1` FAIL | worst `n=6 src=3598→14770 K k=1 slack=9` (`artifacts/validation/n6_H-SA02-B-v1.json`) | FROZEN-INITIAL → superseded by final (no coeff change) |
 | H-SA02-B-v1-final | same coeffs as v1 (parent v1; n6 FAIL recorded, no refit so n6 stays validation) | holdout n=7 10 rows, unlocked once | n7 exact max `139/35` FAIL untouched | worst `n=7 src=17160→143185 K k=1 slack=-6` (`artifacts/holdout/n7_H-SA02-B-v1-final.json`) | FROZEN-FINAL (any post-n7 change → new track, never re-call n7 untouched) |
 | Track-A | original control (0 selection rows) | discovery n=2..5 starved | rank0/null16, no equations | starvation itself (`track_a_manifest.json` 0 rows) | RECORDED (never repaired) |
+| H-SA02-C-1 | canonical 5-support exact n45 solution (lex-first min-support member over Q) | POST-n7 development, global n=2..7 (135 forced rows) | global 59/135 sat, max `139/35` FAIL | first CE + strata in `candidate_global_tests.json` | KILLED (preserved) |
+| H-SA02-C-2 | bounded-local n6 minimizer around dense particular (single-null-step, deterministic) | POST-n7 development, global n=2..7 | global 53/135 sat, max `31/7` FAIL (n6 residual 4 vs v1 5, still FAIL) | strata in `candidate_global_tests.json` | KILLED (preserved) |
 
 ---
 
@@ -592,10 +653,12 @@ n | C_n | |R_n| | b_n* (p/q) | subtype (top-level) | #forced | #FORCED_DELTA | #
 ## Claim-level tracker (only WP-6 may advance this; fail-closed)
 
 - **Current truthful level:** `FINITE_EXACT_BN_RESULTS` (advanced 2026-09-21;
-  retained 2026-09-22 after SA-02 discovery: WP-4 mining evidence complete —
-  Track-A starved, Track-B dense fit FAILS untouched n=6 (`5/1`) and n=7
-  (`139/35`) — so no promotion to `FINITE_THEOREM_MINING_ONLY`/`CANDIDATE_H`
-  merely because code executes; mining success ≠ theorem. No theorem-level claim.)
+  retained 2026-09-22 after SA-02 discovery AND WP-4 completion: class-level
+  impossibility evidence (F-v0.1-linear dead on n456 via minimum triple;
+  14-atom ladder dead with n6-internal witness; all C-ids killed globally) is
+  mining, not theorem — no promotion to `FINITE_THEOREM_MINING_ONLY` (no
+  surviving mined structure to promote) and none to `CANDIDATE_H` (nothing
+  survives). No theorem-level claim.)
 - History: 2026-09-21 advanced NO LEVEL → `FINITE_INFRASTRUCTURE_ONLY` on the
   evidence in the WP-1 entry (30/30 gate checks + 8 sealed tree universes +
   stress `wp1_stress.json`); same day advanced → `FINITE_EXACT_BN_RESULTS`

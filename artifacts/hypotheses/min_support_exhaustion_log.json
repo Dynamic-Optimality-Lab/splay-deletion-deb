@@ -1,0 +1,46 @@
+{
+  "conclusion": "all 1941 subsets inconsistent -> minimum exact support over Q is >= 5; attained at 5 (see track_b_affine_space.json), hence exactly 5.",
+  "per_k": {
+    "0": {
+      "statuses": {
+        "affine": 0,
+        "inconsistent": 1,
+        "unique": 0
+      },
+      "total": 1
+    },
+    "1": {
+      "statuses": {
+        "affine": 0,
+        "inconsistent": 15,
+        "unique": 0
+      },
+      "total": 15
+    },
+    "2": {
+      "statuses": {
+        "affine": 0,
+        "inconsistent": 105,
+        "unique": 0
+      },
+      "total": 105
+    },
+    "3": {
+      "statuses": {
+        "affine": 0,
+        "inconsistent": 455,
+        "unique": 0
+      },
+      "total": 455
+    },
+    "4": {
+      "statuses": {
+        "affine": 0,
+        "inconsistent": 1365,
+        "unique": 0
+      },
+      "total": 1365
+    }
+  },
+  "scope": "column subsets of 15 non-zero columns, k=0..4"
+}

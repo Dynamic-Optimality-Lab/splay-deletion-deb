@@ -1,25 +1,641 @@
 [
   {
+    "failure_kind": null,
     "families": [
       "FULL_STATE"
     ],
     "n": 2,
-    "separating_witness": null,
     "track": "A",
-    "transition_sample_checked": 0,
-    "value_separation": "PASS"
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
   },
   {
+    "failure_kind": null,
+    "families": [
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "parent",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "crossing",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "heavy"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing"
+    ],
+    "n": 2,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": null,
     "families": [
       "FULL_STATE"
     ],
     "n": 3,
-    "separating_witness": null,
     "track": "A",
-    "transition_sample_checked": 0,
-    "value_separation": "PASS"
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
   },
   {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "parent",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "crossing",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "heavy"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    }
+  },
+  {
+    "failure_kind": "transition-preservation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing"
+    ],
+    "n": 3,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "KERNEL_TRANSITION_FAIL",
+    "witness": {
+      "key": 1,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        10,
+        14
+      ],
+      "succ_kernel_other": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "succ_kernel_rep": [
+        4,
+        2,
+        0,
+        3,
+        1,
+        3,
+        3,
+        0,
+        4,
+        0,
+        6,
+        4,
+        6,
+        6
+      ],
+      "succ_other": 24,
+      "succ_rep": 20
+    }
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "FULL_STATE"
+    ],
+    "n": 4,
+    "track": "A",
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": "value-separation",
     "families": [
       "parent",
       "ancestor",
@@ -30,7 +646,14 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        21,
+        18
+      ],
       "V": [
         1,
         5
@@ -39,12 +662,10 @@
         9,
         83
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 11,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "ancestor",
@@ -55,21 +676,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 15,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -80,7 +706,14 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        9,
+        12
+      ],
       "V": [
         0,
         1
@@ -89,12 +722,10 @@
         1,
         14
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 11,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -105,21 +736,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -130,21 +766,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -155,21 +796,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -180,21 +826,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "A",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -205,18 +856,273 @@
       "crossing"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
+    }
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "FULL_STATE"
+    ],
+    "n": 5,
     "track": "A",
-    "transition_sample_checked": 14,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        96,
+        77
+      ],
+      "V": [
+        2,
+        17
+      ],
+      "pair": [
+        28,
+        839
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        52,
+        56
+      ],
+      "V": [
+        12,
+        7
+      ],
+      "pair": [
+        111,
+        1136
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing"
+    ],
+    "n": 5,
+    "track": "A",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
   }
 ]

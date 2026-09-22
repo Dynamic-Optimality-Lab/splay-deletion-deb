@@ -1,22 +1,37 @@
 [
   {
     "coordinate": "FULL_STATE",
-    "failure_type": null,
+    "coordinate_removed": "NONE(full-state control)",
+    "exact_mismatch": null,
+    "failure_type": "NONE",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": null,
-    "verdict": "PASS",
-    "witness_pair": null
-  },
-  {
-    "coordinate": "FULL_STATE",
-    "failure_type": null,
-    "smallest_failing_n": null,
+    "smallest_n_failing": null,
     "verdict": "PASS",
     "witness_pair": null
   },
   {
     "coordinate": "minus_depth",
+    "coordinate_removed": "depth",
+    "exact_mismatch": {
+      "U": [
+        21,
+        18
+      ],
+      "V": [
+        1,
+        5
+      ],
+      "pair": [
+        9,
+        83
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
       9,
@@ -25,18 +40,54 @@
   },
   {
     "coordinate": "minus_parent",
+    "coordinate_removed": "parent",
+    "exact_mismatch": {
+      "U": [
+        7,
+        10
+      ],
+      "V": [
+        0,
+        0
+      ],
+      "pair": [
+        48,
+        87
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
-      1,
-      14
+      48,
+      87
     ]
   },
   {
     "coordinate": "minus_ancestor",
+    "coordinate_removed": "ancestor",
+    "exact_mismatch": {
+      "U": [
+        9,
+        12
+      ],
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
       1,
@@ -45,52 +96,142 @@
   },
   {
     "coordinate": "minus_subtree",
+    "coordinate_removed": "subtree",
+    "exact_mismatch": {
+      "U": [
+        7,
+        10
+      ],
+      "V": [
+        0,
+        0
+      ],
+      "pair": [
+        48,
+        87
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
-      1,
-      14
+      48,
+      87
     ]
   },
   {
     "coordinate": "minus_interval",
+    "coordinate_removed": "interval",
+    "exact_mismatch": {
+      "U": [
+        7,
+        10
+      ],
+      "V": [
+        0,
+        0
+      ],
+      "pair": [
+        48,
+        87
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
-      1,
-      14
+      48,
+      87
     ]
   },
   {
     "coordinate": "minus_access",
+    "coordinate_removed": "access",
+    "exact_mismatch": {
+      "U": [
+        7,
+        10
+      ],
+      "V": [
+        0,
+        0
+      ],
+      "pair": [
+        48,
+        87
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
-      1,
-      14
+      48,
+      87
     ]
   },
   {
     "coordinate": "minus_crossing",
+    "coordinate_removed": "crossing",
+    "exact_mismatch": {
+      "U": [
+        7,
+        10
+      ],
+      "V": [
+        0,
+        0
+      ],
+      "pair": [
+        48,
+        87
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
-      1,
-      14
+      48,
+      87
     ]
   },
   {
     "coordinate": "minus_heavy",
+    "coordinate_removed": "heavy",
+    "exact_mismatch": {
+      "U": [
+        7,
+        10
+      ],
+      "V": [
+        0,
+        0
+      ],
+      "pair": [
+        48,
+        87
+      ]
+    },
+    "failure_kind": "value-separation",
     "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": 4,
+    "smallest_n_failing": 4,
     "verdict": "KERNEL_VALUE_INSUFFICIENT",
     "witness_pair": [
-      1,
-      14
+      48,
+      87
     ]
   }
 ]

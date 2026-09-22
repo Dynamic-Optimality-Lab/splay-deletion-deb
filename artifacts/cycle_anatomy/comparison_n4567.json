@@ -1,0 +1,210 @@
+{
+  "4": {
+    "A_zig_family_histogram": {
+      "ZIG": 12
+    },
+    "L_i_multiset": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "L_i_range": [
+      0,
+      0
+    ],
+    "all_keep": true,
+    "canonical_cycle_count": 6,
+    "cost_regime_a_y_histogram": {
+      "2,3": 12
+    },
+    "cycle_lengths": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "edge_record_count": 12,
+    "k_multipliers": [
+      "2"
+    ]
+  },
+  "5": {
+    "A_zig_family_histogram": {
+      "LL/RR": 2,
+      "ZIG": 2
+    },
+    "L_i_multiset": [
+      -9,
+      -1,
+      1,
+      9
+    ],
+    "L_i_range": [
+      -9,
+      9
+    ],
+    "all_keep": true,
+    "canonical_cycle_count": 1,
+    "cost_regime_a_y_histogram": {
+      "2,3": 1,
+      "2,5": 1,
+      "3,3": 1,
+      "3,5": 1
+    },
+    "cycle_lengths": [
+      4
+    ],
+    "edge_record_count": 4,
+    "k_multipliers": [
+      "2"
+    ]
+  },
+  "6": {
+    "A_zig_family_histogram": {
+      "LL/RR": 22,
+      "ZIG": 22
+    },
+    "L_i_multiset": [
+      -9,
+      -9,
+      -9,
+      -9,
+      -9,
+      -9,
+      -9,
+      -9,
+      -9,
+      -9,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "L_i_range": [
+      -9,
+      9
+    ],
+    "all_keep": true,
+    "canonical_cycle_count": 11,
+    "cost_regime_a_y_histogram": {
+      "2,3": 12,
+      "2,5": 10,
+      "3,3": 10,
+      "3,5": 12
+    },
+    "cycle_lengths": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "edge_record_count": 44,
+    "k_multipliers": [
+      "2"
+    ]
+  },
+  "7": {
+    "A_zig_family_histogram": {
+      "MULTI:LL,ZIG": 2,
+      "MULTI:RR,ZIG": 2,
+      "ZIG": 6
+    },
+    "L_i_multiset": [
+      -24,
+      -24,
+      -6,
+      -6,
+      4,
+      4,
+      4,
+      4,
+      22,
+      22
+    ],
+    "L_i_range": [
+      -24,
+      22
+    ],
+    "all_keep": true,
+    "canonical_cycle_count": 1,
+    "cost_regime_a_y_histogram": {
+      "2,3": 4,
+      "2,5": 2,
+      "4,5": 2,
+      "4,7": 2
+    },
+    "cycle_lengths": [
+      10
+    ],
+    "edge_record_count": 10,
+    "k_multipliers": [
+      "2"
+    ]
+  },
+  "charge_ansatz_verdict": {
+    "ansatz": "H(A,B)=sum_v h(local_v) with 14 authorized local forms (cost min/max, comparison counts, depth counts, frozen-C piecewise, indicators)",
+    "interpretation": "no charge decomposition from these 14 local forms reproduces all cyclic forced derivatives simultaneously; the obstruction is exact, not statistical",
+    "result": "INCONSISTENT (rank=11 aug=12)",
+    "test": "exact global derivative system n456 over [F|A1] (104x30)"
+  },
+  "commonalities": [
+    "100% KEEP edges on canonical cycles at all n (DELETE never forced anywhere in WP-3 geometry)",
+    "every cycle has sum_L==0 exactly with sum_a=q*k, sum_y=p*k, k>=1",
+    "ZIG and LL/RR A-side rotations dominate; LR/RL zig-zag absent from canonical cycle edges at n=4..7"
+  ],
+  "contrasts": [
+    "n=4: six short 2-cycles (k=2 each); n=5: one 4-cycle (k=2)",
+    "n=6: eleven SCCs, mixed lengths (see canonical_cycles.json)",
+    "n=7: single 10-edge cycle with multi-step LL,ZIG / RR,ZIG motifs unseen at selection"
+  ],
+  "label": "descriptive comparison (no fitting)",
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE"
+}

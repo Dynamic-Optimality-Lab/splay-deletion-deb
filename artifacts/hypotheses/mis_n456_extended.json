@@ -1,0 +1,72 @@
+{
+  "indices": [
+    90,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103
+  ],
+  "label": "POST-n7-DEVELOPMENT diagnostic (NOT untouched)",
+  "minimality_status": "IRREDUCIBLE (greedy shrink, deterministic order) + system-wide exact sweep (Bareiss) rules out inconsistent singles, pairs, and triples among all 104 rows (see artifacts/hypotheses/sweep_X456.json). Exact global minimum lies in [4, 12]; not exhaustively pinned. No overstatement: this witness is sufficient to kill the ladder globally, and minimality beyond the proven lower bound is undetermined.",
+  "minimum_cardinality_verified": false,
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "rows": [
+    {
+      "label": "n=6 src=15035 KEEP k=3",
+      "target": "-9/5"
+    },
+    {
+      "label": "n=6 src=15046 KEEP k=6",
+      "target": "-1/5"
+    },
+    {
+      "label": "n=6 src=15158 KEEP k=6",
+      "target": "9/5"
+    },
+    {
+      "label": "n=6 src=15159 KEEP k=6",
+      "target": "9/5"
+    },
+    {
+      "label": "n=6 src=15167 KEEP k=3",
+      "target": "-9/5"
+    },
+    {
+      "label": "n=6 src=15168 KEEP k=3",
+      "target": "-9/5"
+    },
+    {
+      "label": "n=6 src=15177 KEEP k=6",
+      "target": "-1/5"
+    },
+    {
+      "label": "n=6 src=15178 KEEP k=6",
+      "target": "-1/5"
+    },
+    {
+      "label": "n=6 src=15292 KEEP k=5",
+      "target": "9/5"
+    },
+    {
+      "label": "n=6 src=15301 KEEP k=3",
+      "target": "-9/5"
+    },
+    {
+      "label": "n=6 src=15311 KEEP k=5",
+      "target": "-1/5"
+    },
+    {
+      "label": "n=6 src=15441 KEEP k=4",
+      "target": "-1/5"
+    }
+  ],
+  "size": 12,
+  "system": "n456 extended [F-v0.1|A1]"
+}

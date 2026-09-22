@@ -1,0 +1,29 @@
+{
+  "augmented_rank": 9,
+  "consistent_over_Q": false,
+  "contradiction_localization": "n6 FCYCLE equations are incompatible with the n4 selection system alone AND with the n5 selection system alone (each pair inconsistent over Q). The obstruction is n6-vs-selection, not n4-vs-n5 (consistent) and not n7-dependent.",
+  "label": "POST-n7-DEVELOPMENT diagnostic evidence (NOT an untouched test)",
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "nullity": 8,
+  "pairwise_size_subsystems": {
+    "n4+n5_FCYCLE": {
+      "consistent_over_Q": true,
+      "rows": 20
+    },
+    "n4+n6_FCYCLE": {
+      "consistent_over_Q": false,
+      "rows": 96
+    },
+    "n5+n6_FCYCLE": {
+      "consistent_over_Q": false,
+      "rows": 92
+    }
+  },
+  "rank_over_Q": 8,
+  "row_count": 104,
+  "sizes": [
+    4,
+    5,
+    6
+  ]
+}

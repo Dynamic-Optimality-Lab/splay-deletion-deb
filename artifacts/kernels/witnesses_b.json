@@ -1,25 +1,17 @@
 [
   {
+    "failure_kind": null,
     "families": [
       "FULL_STATE"
     ],
     "n": 4,
-    "separating_witness": null,
     "track": "B",
-    "transition_sample_checked": 0,
-    "value_separation": "PASS"
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
   },
   {
-    "families": [
-      "FULL_STATE"
-    ],
-    "n": 5,
-    "separating_witness": null,
-    "track": "B",
-    "transition_sample_checked": 0,
-    "value_separation": "PASS"
-  },
-  {
+    "failure_kind": "value-separation",
     "families": [
       "parent",
       "ancestor",
@@ -30,7 +22,14 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        21,
+        18
+      ],
       "V": [
         1,
         5
@@ -39,12 +38,10 @@
         9,
         83
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 11,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "ancestor",
@@ -55,21 +52,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 15,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -80,7 +82,14 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        9,
+        12
+      ],
       "V": [
         0,
         1
@@ -89,12 +98,10 @@
         1,
         14
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 11,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -105,21 +112,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -130,21 +142,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -155,21 +172,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -180,21 +202,26 @@
       "heavy"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
-    "track": "B",
-    "transition_sample_checked": 13,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    }
   },
   {
+    "failure_kind": "value-separation",
     "families": [
       "depth",
       "parent",
@@ -205,18 +232,273 @@
       "crossing"
     ],
     "n": 4,
-    "separating_witness": {
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        7,
+        10
+      ],
       "V": [
         0,
-        1
+        0
       ],
       "pair": [
-        1,
-        14
+        48,
+        87
       ]
-    },
+    }
+  },
+  {
+    "failure_kind": null,
+    "families": [
+      "FULL_STATE"
+    ],
+    "n": 5,
     "track": "B",
-    "transition_sample_checked": 14,
-    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+    "transition_scope": "full (representative-based, all edges)",
+    "verdict": "PASS",
+    "witness": null
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        96,
+        77
+      ],
+      "V": [
+        2,
+        17
+      ],
+      "pair": [
+        28,
+        839
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        52,
+        56
+      ],
+      "V": [
+        12,
+        7
+      ],
+      "pair": [
+        111,
+        1136
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "crossing",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "heavy"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
+  },
+  {
+    "failure_kind": "value-separation",
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing"
+    ],
+    "n": 5,
+    "track": "B",
+    "transition_scope": "not reached (value failed first)",
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness": {
+      "U": [
+        76,
+        56
+      ],
+      "V": [
+        8,
+        7
+      ],
+      "pair": [
+        74,
+        247
+      ]
+    }
   }
 ]

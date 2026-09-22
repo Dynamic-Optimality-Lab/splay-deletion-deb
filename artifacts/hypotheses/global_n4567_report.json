@@ -1,0 +1,15 @@
+{
+  "augmented_rank": 9,
+  "consistent_over_Q": false,
+  "label": "POST-n7-DEVELOPMENT diagnostic evidence (NOT an untouched test)",
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "nullity": 8,
+  "rank_over_Q": 8,
+  "row_count": 114,
+  "sizes": [
+    4,
+    5,
+    6,
+    7
+  ]
+}

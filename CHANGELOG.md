@@ -3,6 +3,28 @@
 All notable changes to this repository are recorded here. Sealed exact results
 are never edited in place; corrections create new versions.
 
+## [0.1.8] - 2026-09-22 - WP-4 completion (affine exhaustion, ladder, C-ids, kernels; mining evidence only)
+
+- `n7_status = PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE` ledgered;
+  `H-SA02-B-v1`/`-final` bytes preserved; firewall gains additive
+  `require_post_n7_label` gate (no existing behavior changed).
+- Affine space: 9 primitive null directions, min support exactly 5 over Q
+  (1941 subsets ≤4 all inconsistent; `min_support_exhaustion_log.json`);
+  per-domain sparse results; 11 alternatives differ on development n6/n7.
+- Global verdict: n456 + n4567 F-linear INCONSISTENT (rank 8 vs aug 9);
+  proven-minimum triple witness (`mis_n456.json`); n6-vs-selection localized;
+  zero identical-`DeltaF` conflicts.
+- Atom ladder F-v0.1+A1 (14 atoms): selection-redundant, globally dead
+  (104x30 rank 11 vs 12; no single-atom rescue; 12-row n6-internal witness).
+- Cycles compared (`comparison_n4567.json`); `H-SA02-C-1`/`-C-2`
+  POST-n7-frozen, globally tested (59/135 + 53/135 sat), both killed.
+- Kernels complete (`K-v0.1-complete`): full transition checks n=2..5,
+  (V,U) value sweeps; FULL_STATE PASS; every family necessary (transition
+  failure from n=3, value failure at n≥4); schema-exact
+  `smallest_n_failing` key added (legacy alias kept, schema untouched).
+- `tests/test_wp4_gates.py` 26/26 (F01-D03, K01-K03, firewall, schema,
+  determinism, sealed preservation). Claim stays `FINITE_EXACT_BN_RESULTS`.
+
 ## [0.1.6] - 2026-09-22 - SA-02 freeze (rules only; no fitting)
 
 - `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.2.md`: ratified amendment SA-02

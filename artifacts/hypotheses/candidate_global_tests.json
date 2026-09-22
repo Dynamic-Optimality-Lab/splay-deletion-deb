@@ -1,0 +1,579 @@
+{
+  "H-SA02-C-1": {
+    "exact_max_residual": "139/35",
+    "first_counterexample": "n=3 src=0 KEEP k=2 res=8/5",
+    "residual_distribution": {
+      "0/1": 59,
+      "1/5": 16,
+      "11/35": 2,
+      "127/35": 2,
+      "139/35": 2,
+      "16/5": 4,
+      "17/5": 2,
+      "2/1": 2,
+      "3/1": 2,
+      "3/35": 2,
+      "3/5": 4,
+      "4/35": 2,
+      "6/5": 2,
+      "8/5": 22,
+      "9/5": 12
+    },
+    "satisfaction_count": "59/135",
+    "strata": {
+      "cost=1,1": {
+        "n": 9,
+        "sat": 9,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "cost=2,2": {
+        "n": 8,
+        "sat": 4,
+        "worst": "8/5",
+        "worst_row": "src=0 KEEP k=2 L=0/1"
+      },
+      "cost=2,3": {
+        "n": 40,
+        "sat": 26,
+        "worst": "11/35",
+        "worst_row": "src=76494 KEEP k=1 L=2/7"
+      },
+      "cost=2,5": {
+        "n": 24,
+        "sat": 10,
+        "worst": "16/5",
+        "worst_row": "src=3854 KEEP k=3 L=-9/5"
+      },
+      "cost=3,3": {
+        "n": 26,
+        "sat": 4,
+        "worst": "17/5",
+        "worst_row": "src=3598 KEEP k=1 L=9/5"
+      },
+      "cost=3,5": {
+        "n": 24,
+        "sat": 6,
+        "worst": "9/5",
+        "worst_row": "src=3964 KEEP k=1 L=-1/5"
+      },
+      "cost=4,5": {
+        "n": 2,
+        "sat": 0,
+        "worst": "127/35",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "cost=4,7": {
+        "n": 2,
+        "sat": 0,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "mode=KEEP": {
+        "n": 135,
+        "sat": 59,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "n=2": {
+        "n": 4,
+        "sat": 4,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "n=3": {
+        "n": 17,
+        "sat": 11,
+        "worst": "8/5",
+        "worst_row": "src=0 KEEP k=2 L=0/1"
+      },
+      "n=4": {
+        "n": 12,
+        "sat": 12,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "n=5": {
+        "n": 8,
+        "sat": 8,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "n=6": {
+        "n": 84,
+        "sat": 24,
+        "worst": "17/5",
+        "worst_row": "src=3598 KEEP k=1 L=9/5"
+      },
+      "n=7": {
+        "n": 10,
+        "sat": 0,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "prov=FCYCLE": {
+        "n": 133,
+        "sat": 59,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "prov=FPATH": {
+        "n": 2,
+        "sat": 0,
+        "worst": "8/5",
+        "worst_row": "src=6 KEEP k=2 L=0/1"
+      },
+      "scc=10647": {
+        "n": 4,
+        "sat": 0,
+        "worst": "1/5",
+        "worst_row": "src=1190 KEEP k=3 L=-1/5"
+      },
+      "scc=12238": {
+        "n": 5,
+        "sat": 0,
+        "worst": "2/1",
+        "worst_row": "src=13571 KEEP k=6 L=9/5"
+      },
+      "scc=12339": {
+        "n": 5,
+        "sat": 3,
+        "worst": "8/5",
+        "worst_row": "src=3037 KEEP k=1 L=-1/5"
+      },
+      "scc=13577": {
+        "n": 5,
+        "sat": 0,
+        "worst": "8/5",
+        "worst_row": "src=14753 KEEP k=6 L=9/5"
+      },
+      "scc=14285": {
+        "n": 5,
+        "sat": 2,
+        "worst": "17/5",
+        "worst_row": "src=15026 KEEP k=6 L=9/5"
+      },
+      "scc=14849": {
+        "n": 5,
+        "sat": 3,
+        "worst": "8/5",
+        "worst_row": "src=3566 KEEP k=1 L=-1/5"
+      },
+      "scc=15536": {
+        "n": 5,
+        "sat": 3,
+        "worst": "9/5",
+        "worst_row": "src=3964 KEEP k=1 L=-1/5"
+      },
+      "scc=163": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=16701": {
+        "n": 5,
+        "sat": 1,
+        "worst": "16/5",
+        "worst_row": "src=15158 KEEP k=6 L=9/5"
+      },
+      "scc=168": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=1715": {
+        "n": 5,
+        "sat": 5,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=17173": {
+        "n": 5,
+        "sat": 3,
+        "worst": "9/5",
+        "worst_row": "src=4097 KEEP k=1 L=-1/5"
+      },
+      "scc=182544": {
+        "n": 10,
+        "sat": 0,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "scc=185": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=32": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=3530": {
+        "n": 5,
+        "sat": 0,
+        "worst": "8/5",
+        "worst_row": "src=3832 KEEP k=1 L=-1/5"
+      },
+      "scc=53": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=87": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=9277": {
+        "n": 5,
+        "sat": 3,
+        "worst": "9/5",
+        "worst_row": "src=1728 KEEP k=4 L=-9/5"
+      },
+      "scc=non-canonical": {
+        "n": 54,
+        "sat": 24,
+        "worst": "17/5",
+        "worst_row": "src=3598 KEEP k=1 L=9/5"
+      },
+      "zig=LL/RR": {
+        "n": 48,
+        "sat": 10,
+        "worst": "17/5",
+        "worst_row": "src=3598 KEEP k=1 L=9/5"
+      },
+      "zig=LR/RL": {
+        "n": 2,
+        "sat": 0,
+        "worst": "8/5",
+        "worst_row": "src=6 KEEP k=2 L=0/1"
+      },
+      "zig=MULTI:": {
+        "n": 9,
+        "sat": 9,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "zig=MULTI:LL,ZIG": {
+        "n": 2,
+        "sat": 0,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "zig=MULTI:RR,ZIG": {
+        "n": 2,
+        "sat": 0,
+        "worst": "139/35",
+        "worst_row": "src=163448 KEEP k=7 L=-3/7"
+      },
+      "zig=ZIG": {
+        "n": 72,
+        "sat": 40,
+        "worst": "16/5",
+        "worst_row": "src=3854 KEEP k=3 L=-9/5"
+      }
+    },
+    "verdict": "FAIL (preserved, killed)"
+  },
+  "H-SA02-C-2": {
+    "exact_max_residual": "31/7",
+    "first_counterexample": "n=3 src=0 KEEP k=2 res=8/5",
+    "residual_distribution": {
+      "0/1": 53,
+      "1/5": 4,
+      "11/5": 4,
+      "12/5": 2,
+      "139/35": 2,
+      "14/5": 2,
+      "16/5": 2,
+      "17/35": 2,
+      "19/5": 2,
+      "2/1": 6,
+      "3/1": 2,
+      "3/35": 2,
+      "3/5": 16,
+      "31/7": 2,
+      "4/1": 2,
+      "4/35": 2,
+      "4/5": 8,
+      "6/5": 2,
+      "7/5": 8,
+      "8/5": 12
+    },
+    "satisfaction_count": "53/135",
+    "strata": {
+      "cost=1,1": {
+        "n": 9,
+        "sat": 9,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "cost=2,2": {
+        "n": 8,
+        "sat": 4,
+        "worst": "8/5",
+        "worst_row": "src=0 KEEP k=2 L=0/1"
+      },
+      "cost=2,3": {
+        "n": 40,
+        "sat": 24,
+        "worst": "4/5",
+        "worst_row": "src=9150 KEEP k=6 L=1/5"
+      },
+      "cost=2,5": {
+        "n": 24,
+        "sat": 8,
+        "worst": "19/5",
+        "worst_row": "src=3986 KEEP k=3 L=-9/5"
+      },
+      "cost=3,3": {
+        "n": 26,
+        "sat": 4,
+        "worst": "4/1",
+        "worst_row": "src=3070 KEEP k=1 L=9/5"
+      },
+      "cost=3,5": {
+        "n": 24,
+        "sat": 4,
+        "worst": "12/5",
+        "worst_row": "src=3037 KEEP k=1 L=-1/5"
+      },
+      "cost=4,5": {
+        "n": 2,
+        "sat": 0,
+        "worst": "31/7",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "cost=4,7": {
+        "n": 2,
+        "sat": 0,
+        "worst": "139/35",
+        "worst_row": "src=17160 KEEP k=1 L=-3/7"
+      },
+      "mode=KEEP": {
+        "n": 135,
+        "sat": 53,
+        "worst": "31/7",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "n=2": {
+        "n": 4,
+        "sat": 4,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "n=3": {
+        "n": 17,
+        "sat": 11,
+        "worst": "8/5",
+        "worst_row": "src=0 KEEP k=2 L=0/1"
+      },
+      "n=4": {
+        "n": 12,
+        "sat": 12,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "n=5": {
+        "n": 8,
+        "sat": 8,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "n=6": {
+        "n": 84,
+        "sat": 18,
+        "worst": "4/1",
+        "worst_row": "src=3070 KEEP k=1 L=9/5"
+      },
+      "n=7": {
+        "n": 10,
+        "sat": 0,
+        "worst": "31/7",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "prov=FCYCLE": {
+        "n": 133,
+        "sat": 53,
+        "worst": "31/7",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "prov=FPATH": {
+        "n": 2,
+        "sat": 0,
+        "worst": "8/5",
+        "worst_row": "src=6 KEEP k=2 L=0/1"
+      },
+      "scc=10647": {
+        "n": 4,
+        "sat": 0,
+        "worst": "3/5",
+        "worst_row": "src=1190 KEEP k=3 L=-1/5"
+      },
+      "scc=12238": {
+        "n": 5,
+        "sat": 0,
+        "worst": "14/5",
+        "worst_row": "src=13571 KEEP k=6 L=9/5"
+      },
+      "scc=12339": {
+        "n": 5,
+        "sat": 2,
+        "worst": "12/5",
+        "worst_row": "src=3037 KEEP k=1 L=-1/5"
+      },
+      "scc=13577": {
+        "n": 5,
+        "sat": 0,
+        "worst": "2/1",
+        "worst_row": "src=14753 KEEP k=6 L=9/5"
+      },
+      "scc=14285": {
+        "n": 5,
+        "sat": 1,
+        "worst": "16/5",
+        "worst_row": "src=3854 KEEP k=3 L=-9/5"
+      },
+      "scc=14849": {
+        "n": 5,
+        "sat": 2,
+        "worst": "8/5",
+        "worst_row": "src=14759 KEEP k=6 L=9/5"
+      },
+      "scc=15536": {
+        "n": 5,
+        "sat": 3,
+        "worst": "11/5",
+        "worst_row": "src=3964 KEEP k=1 L=-1/5"
+      },
+      "scc=163": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=16701": {
+        "n": 5,
+        "sat": 0,
+        "worst": "4/1",
+        "worst_row": "src=15158 KEEP k=6 L=9/5"
+      },
+      "scc=168": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=1715": {
+        "n": 5,
+        "sat": 5,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=17173": {
+        "n": 5,
+        "sat": 3,
+        "worst": "7/5",
+        "worst_row": "src=4097 KEEP k=1 L=-1/5"
+      },
+      "scc=182544": {
+        "n": 10,
+        "sat": 0,
+        "worst": "31/7",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "scc=185": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=32": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=3530": {
+        "n": 5,
+        "sat": 0,
+        "worst": "2/1",
+        "worst_row": "src=3832 KEEP k=1 L=-1/5"
+      },
+      "scc=53": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=87": {
+        "n": 2,
+        "sat": 2,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "scc=9277": {
+        "n": 5,
+        "sat": 3,
+        "worst": "7/5",
+        "worst_row": "src=1728 KEEP k=4 L=-9/5"
+      },
+      "scc=non-canonical": {
+        "n": 54,
+        "sat": 22,
+        "worst": "4/1",
+        "worst_row": "src=3070 KEEP k=1 L=9/5"
+      },
+      "zig=LL/RR": {
+        "n": 48,
+        "sat": 8,
+        "worst": "4/1",
+        "worst_row": "src=3070 KEEP k=1 L=9/5"
+      },
+      "zig=LR/RL": {
+        "n": 2,
+        "sat": 0,
+        "worst": "8/5",
+        "worst_row": "src=6 KEEP k=2 L=0/1"
+      },
+      "zig=MULTI:": {
+        "n": 9,
+        "sat": 9,
+        "worst": "0/1",
+        "worst_row": null
+      },
+      "zig=MULTI:LL,ZIG": {
+        "n": 2,
+        "sat": 0,
+        "worst": "31/7",
+        "worst_row": "src=133386 KEEP k=3 L=11/7"
+      },
+      "zig=MULTI:RR,ZIG": {
+        "n": 2,
+        "sat": 0,
+        "worst": "31/7",
+        "worst_row": "src=86312 KEEP k=5 L=11/7"
+      },
+      "zig=ZIG": {
+        "n": 72,
+        "sat": 36,
+        "worst": "19/5",
+        "worst_row": "src=3986 KEEP k=3 L=-9/5"
+      }
+    },
+    "verdict": "FAIL (preserved, killed)"
+  },
+  "label": "POST-n7-DEVELOPMENT global tests (all sizes incl. revealed n7 are development data)",
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "single_atom_rescue": {
+    "rescued_by": [],
+    "verdict": "no single authorized atom restores n456 consistency"
+  }
+}

@@ -9,6 +9,8 @@
     "crossing",
     "heavy"
   ],
+  "kernel_version": "K-v0.1-complete",
+  "method": "value-separation on (V,U) + representative-based full transition check n<=5",
   "overcomplete": [
     "depth",
     "parent",

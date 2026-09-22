@@ -204,3 +204,26 @@ def unlock_n7_for_evaluation(candidate_id, write_file=True):
 
 def status():
     return dict(_firewall_state)
+
+
+# WP-4 completion marker (additive; changes no existing gate behavior).
+# The n=7 hard holdout was consumed exactly once by H-SA02-B-v1-final
+# (record artifacts/audits/n7_unlock.json). From commit 072b211 onward:
+N7_STATUS = "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE"
+
+
+def require_post_n7_label(candidate_id):
+    """Fail-closed label gate for every post-reveal candidate family.
+
+    Any hypothesis ID created after commit 072b211 MUST be recorded with
+    n7_status = PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE and MUST
+    NOT claim n=7 as an untouched holdout. Returns the mandatory label
+    string; raises HoldoutFirewallError for the consumed untouched IDs
+    (fresh claims under H-SA02-B-v1* are forbidden).
+    """
+    if candidate_id in ("H-SA02-B-v1", "H-SA02-B-v1-final"):
+        raise HoldoutFirewallError(
+            "untouched n=7 already consumed by %s; new work needs a new hypothesis ID "
+            "with POST-n7-DEVELOPMENT labeling" % candidate_id
+        )
+    return N7_STATUS

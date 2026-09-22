@@ -1,0 +1,6 @@
+{
+  "cross_n_identical_input_conflicts": [],
+  "note_cross_n": "cross-n conflicts use per-n b* targets; valid global-linear obstructions (one alpha must fit all b* simultaneously)",
+  "note_same_n": "same-n conflict with different ell is the strongest F-v0.1-linear insufficiency witness",
+  "same_n_identical_input_conflicts": []
+}

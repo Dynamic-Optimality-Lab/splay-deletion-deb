@@ -1,0 +1,270 @@
+{
+  "analysis_class": "POST-n7-DEVELOPMENT (selection-system analysis; n6/n7 used only as labeled development data)",
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "float_note": "exact rational arithmetic only (sympy Rational + Fraction); floats never authoritative",
+  "min_support_certificate": {
+    "canonical_5support_example": {
+      "f_ancestor_Aonly": "-9/5",
+      "f_ancestor_Bonly": "8/5",
+      "f_ancestor_both": "-8/5",
+      "f_depth_max_abs_diff": "1/5",
+      "f_parent_flip_count": "-1/5"
+    },
+    "minimum_support_over_Q": 5,
+    "proof": "restricted-system inconsistency for every column subset of size<=4 (15-col search space after dropping the all-zero bend column; singletons/pairs/triples/quads all inconsistent; counting check in verify_bound.py output)"
+  },
+  "n7_status": "PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE",
+  "selection": {
+    "crossing_is_Aonly_plus_Bonly_on_selection": true,
+    "degrees_of_freedom": "9-dim affine space over Q (particular + 9 null directions)",
+    "nullity": 9,
+    "nullspace_basis_primitive_int": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ]
+    ],
+    "particular_solution": {
+      "f_access_sum_abs_diff": "0",
+      "f_access_symdiff_sum": "0",
+      "f_ancestor_Aonly": "-9/5",
+      "f_ancestor_Bonly": "0",
+      "f_ancestor_both": "-8/5",
+      "f_bend_placeholder": "0",
+      "f_crossing_reversal": "0",
+      "f_depth_max_abs_diff": "17/5",
+      "f_depth_sum_abs_diff": "8/5",
+      "f_heavy_agree_count": "0",
+      "f_interval_identical_count": "0",
+      "f_interval_symdiff_sum": "0",
+      "f_parent_diff_count": "8/5",
+      "f_parent_flip_count": "-1/5",
+      "f_root_same": "0",
+      "f_subtree_sum_abs_diff": "0"
+    },
+    "rank_over_Q": 7,
+    "row_count": 20,
+    "zero_columns": [
+      "f_root_same",
+      "f_interval_identical_count",
+      "f_bend_placeholder"
+    ]
+  },
+  "sparse_per_domain": {
+    "INT1": {
+      "example": null,
+      "min_support": null,
+      "scope": "exhaustive through k=4: no INT1 solution"
+    },
+    "INT2": {
+      "example": null,
+      "min_support": null,
+      "scope": "exhaustive through k=4: no INT2 solution"
+    },
+    "INT3": {
+      "example": null,
+      "min_support": null,
+      "scope": "exhaustive through k=4: no INT3 solution"
+    },
+    "NONNEG": {
+      "example": null,
+      "min_support": null,
+      "scope": "exhaustive through k=5: no NONNEG solution"
+    },
+    "Q2": {
+      "example": null,
+      "min_support": null,
+      "scope": "through k=5: no Q2 solution found; unique-solve screening exhaustive, affine supports covered by bounded parametric probe only (non-exhaustive over infinite families)"
+    },
+    "Q3": {
+      "example": null,
+      "min_support": null,
+      "scope": "through k=5: no Q3 solution found; unique-solve screening exhaustive, affine supports covered by bounded parametric probe only (non-exhaustive over infinite families)"
+    },
+    "Q4": {
+      "example": null,
+      "min_support": null,
+      "scope": "through k=5: no Q4 solution found; unique-solve screening exhaustive, affine supports covered by bounded parametric probe only (non-exhaustive over infinite families)"
+    },
+    "Q5": {
+      "example": {
+        "f_ancestor_Aonly": "-9/5",
+        "f_ancestor_Bonly": "8/5",
+        "f_ancestor_both": "-8/5",
+        "f_depth_max_abs_diff": "1/5",
+        "f_parent_flip_count": "-1/5"
+      },
+      "min_support": 5,
+      "scope": "exhaustive through k=5"
+    },
+    "SIGNED": {
+      "example": {
+        "f_ancestor_Aonly": "-9/5",
+        "f_ancestor_Bonly": "8/5",
+        "f_ancestor_both": "-8/5",
+        "f_depth_max_abs_diff": "1/5",
+        "f_parent_flip_count": "-1/5"
+      },
+      "min_support": 5,
+      "scope": "exhaustive through k=5"
+    }
+  }
+}

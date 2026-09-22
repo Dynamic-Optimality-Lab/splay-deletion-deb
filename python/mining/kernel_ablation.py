@@ -1,9 +1,18 @@
-"""Kernel ablation (SA-02 track-separated, WorkPlan program unchanged).
+"""Kernel ablation, complete program (WP-4 completion).
 
-FULL_STATE positive control must pass. Compressed kernels tested for
-value-separation (same K, different V) and primitive transition-preservation.
+FULL_STATE positive control must pass. Every compressed kernel is tested for:
+  (a) value-separation: same K, different (V,U) canonical values, and
+  (b) transition-preservation: same K(s1)==K(s2) with agreeing observables
+      (c_A cost, KEEP-observable c_B) but K(succ(s1))!=K(succ(s2)).
+Representative-based exact check (transitivity of equality makes rep-vs-each
+sufficient): per kernel group, rep = min pair_id, every other member compared
+against rep on every (mode,key) in frozen edge order. Full check for n=2..5;
+value-separation additionally swept on n=6,7 (transition scope labeled).
 Ablation removes one family at a time; sharpness table records smallest
-failing n + witness pair.
+failing n + witness pair + failure kind + exact mismatches.
+
+State inputs only (feature tables); V/U joined post-hoc as the VALUE oracle
+(per WorkPlan kernels may read V/U/G joins; extractor discipline unaffected).
 """
 import json
 import os
@@ -12,6 +21,12 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, REPO)
 
 FAMILIES = ["depth", "parent", "ancestor", "subtree", "interval", "access", "crossing", "heavy"]
+KERNEL_VERSION = "K-v0.1-complete"
+
+
+def console_log(step_id, msg):
+    print("[%s] %s" % (step_id, msg), flush=True)
+
 
 def family_keys(fam):
     mapping = {
@@ -26,18 +41,25 @@ def family_keys(fam):
     }
     return mapping[fam]
 
+
 def load_table(target_n):
     import zstandard as zstd
     p = os.path.join(REPO, "artifacts", "features", "n%d" % target_n, "feature_table.json.zst")
     with open(p, "rb") as f:
         return json.loads(zstd.ZstdDecompressor().decompress(f.read()).decode("utf-8"))
 
-def load_V(target_n):
+
+def load_VU(target_n):
     import zstandard as zstd
-    p = os.path.join(REPO, "artifacts", "potentials", "n%d" % target_n, "V.json.zst")
-    with open(p, "rb") as f:
-        rows = json.loads(zstd.ZstdDecompressor().decompress(f.read()).decode("utf-8"))
-    return {r["pair_id"]: int(r["V_scaled"]) for r in rows}
+    out = {}
+    for name in ("V", "U"):
+        p = os.path.join(REPO, "artifacts", "potentials", "n%d" % target_n, "%s.json.zst" % name)
+        with open(p, "rb") as f:
+            rows = json.loads(zstd.ZstdDecompressor().decompress(f.read()).decode("utf-8"))
+        for r in rows:
+            out.setdefault(r["pair_id"], {})[name] = int(r["%s_scaled" % name])
+    return out
+
 
 def kernel_value(scalars, families):
     if families == ["FULL_STATE"]:
@@ -48,102 +70,133 @@ def kernel_value(scalars, families):
             vals.append(scalars[k])
     return tuple(vals)
 
-def test_kernel(target_n, families, track):
-    rows = load_table(target_n)
-    # Attach pair_id for FULL_STATE.
-    for r in rows:
-        r["scalar"]["_pair_id"] = r["pair_id"]
-    table_V = load_V(target_n)
-    # Value separation.
+
+def test_value_separation(rows, vu, families):
     groups = {}
     for r in rows:
-        kv = kernel_value(r["scalar"], families)
-        groups.setdefault(kv, []).append(r["pair_id"])
-    sep_fail = None
-    for kv, pids in sorted(groups.items(), key=lambda kv: str(kv[0])):
-        vals = set(table_V[pid] for pid in pids)
+        groups.setdefault(kernel_value(r["scalar"], families), []).append(r["pair_id"])
+    for kv in sorted(groups, key=str):
+        pids = sorted(groups[kv])
+        vals = set((vu[p]["V"], vu[p]["U"]) for p in pids)
         if len(vals) > 1:
-            # Smallest separating pair (lexicographically smallest pair_ids with different V).
-            pids_sorted = sorted(pids)
-            first = pids_sorted[0]
-            second = next(p for p in pids_sorted[1:] if table_V[p] != table_V[first])
-            sep_fail = {"pair": [first, second], "V": [table_V[first], table_V[second]]}
-            break
-    # Transition preservation (primitive, sampled for speed on large n):
-    # For each kernel group with >=2 states, check first two states' successors under key=1 KEEP.
-    # Full check for n<=5, sampled for n>=6 (still exact for sampled pairs; witnesses preserved).
+            first = pids[0]
+            second = next(p for p in pids[1:]
+                          if (vu[p]["V"], vu[p]["U"]) != (vu[first]["V"], vu[first]["U"]))
+            return {"pair": [first, second],
+                    "V": [vu[first]["V"], vu[second]["V"]],
+                    "U": [vu[first]["U"], vu[second]["U"]]}
+    return None
+
+
+def test_transition_preservation(rows, families, target_n, tables):
+    """Representative-based full check. Returns witness dict or None."""
     from python.audit import graph as audit_graph
-    tables = audit_graph.build_tables(target_n)
-    trans_fail = None
-    checked = 0
-    for kv, pids in groups.items():
+    sc = {r["pair_id"]: r["scalar"] for r in rows}
+    groups = {}
+    for r in rows:
+        groups.setdefault(kernel_value(r["scalar"], families), []).append(r["pair_id"])
+    nkeys = target_n
+    for kv in sorted(groups, key=str):
+        pids = sorted(groups[kv])
         if len(pids) < 2:
             continue
-        # Only check first pair per group to bound cost.
-        s1, s2 = sorted(pids)[:2]
-        # Need c_A equality? Compare cost of A-tree under key=1 (via tables).
-        # Use successor to get a and successor kernel.
-        for mode, key in ((0, 1),):
-            t1, a1, _ = audit_graph.successor(tables, s1, mode, key)
-            t2, a2, _ = audit_graph.successor(tables, s2, mode, key)
-            if a1 != a2:
-                continue
-            # Successor kernel values.
-            # Lookup scalars for successors.
-            # Build map for quick lookup (only for this n, already have rows).
-            # For speed, build dict once outside? Simplified: linear search for small n, dict for large.
-            checked += 1
-            # Find successor rows.
-            # (Rows list is large for n=6/7; build dict once per call.)
-            break
-        if checked >= 50 and target_n >= 6:
-            break
-    # For this minimal program, transition test is reported via value test + FULL_STATE control;
-    # full primitive sweep is covered by K02 gate (preservation-or-counterexample) using value witnesses.
-    result = {
-        "track": track,
-        "n": target_n,
-        "families": families,
-        "value_separation": "PASS" if sep_fail is None else "KERNEL_VALUE_INSUFFICIENT",
-        "separating_witness": sep_fail,
-        "transition_sample_checked": checked,
-    }
-    return result
+        rep = pids[0]
+        for s in pids[1:]:
+            for mode in (audit_graph.KEEP, audit_graph.DELETE):
+                mname = "KEEP" if mode == audit_graph.KEEP else "DELETE"
+                for key in range(1, nkeys + 1):
+                    tr, ar, yr = audit_graph.successor(tables, rep, mode, key)
+                    ts, a_s, ys = audit_graph.successor(tables, s, mode, key)
+                    if (ar, yr) != (a_s, ys):
+                        continue  # observables differ: preservation vacuous here
+                    if kernel_value(sc[tr], families) != kernel_value(sc[ts], families):
+                        return {"pair": [rep, s], "mode": mname, "key": key,
+                                "observable_c_A": ar, "observable_c_B": yr,
+                                "succ_rep": tr, "succ_other": ts,
+                                "succ_kernel_rep": list(kernel_value(sc[tr], families)),
+                                "succ_kernel_other": list(kernel_value(sc[ts], families))}
+    return None
 
-def main():
+
+def test_kernel_full(target_n, families, track, tables, vu, rows):
+    sep = test_value_separation(rows, vu, families)
+    if sep is not None:
+        return {"track": track, "n": target_n, "families": families,
+                "verdict": "KERNEL_VALUE_INSUFFICIENT",
+                "failure_kind": "value-separation",
+                "witness": sep, "transition_scope": "not reached (value failed first)"}
+    trans = test_transition_preservation(rows, families, target_n, tables)
+    if trans is not None:
+        return {"track": track, "n": target_n, "families": families,
+                "verdict": "KERNEL_TRANSITION_FAIL",
+                "failure_kind": "transition-preservation",
+                "witness": trans, "transition_scope": "full (representative-based, all edges)"}
+    return {"track": track, "n": target_n, "families": families,
+            "verdict": "PASS", "failure_kind": None, "witness": None,
+            "transition_scope": "full (representative-based, all edges)"}
+
+
+def main(argv=None):
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument("--track", choices=["A", "B"], required=True)
-    ap.add_argument("--sizes", default="4 5")
-    args = ap.parse_args()
-    sizes = [int(s) for s in args.sizes.split()]
+    ap.add_argument("--sizes", default=None)
+    args = ap.parse_args(argv)
+    # Kernel scope follows the track's state domain (state-based, not row-based):
+    # Track A spans n=2..5, Track B spans n=4,5. Explicit --sizes overrides.
+    sizes = ([2, 3, 4, 5] if args.track == "A" else [4, 5]) if args.sizes is None \
+        else [int(s) for s in args.sizes.split()]
     outdir = os.path.join(REPO, "artifacts", "kernels")
     os.makedirs(outdir, exist_ok=True)
-    # Overcomplete = all families.
     over = list(FAMILIES)
+    kernels = [["FULL_STATE"]] + [[f for f in over if f != fam] for fam in FAMILIES]
+    from python.audit import graph as audit_graph
     results = []
-    # FULL_STATE control per size.
-    for n in sizes:
-        results.append(test_kernel(n, ["FULL_STATE"], args.track))
-    # Ablation: remove one family at a time (test on smallest selection size for speed).
-    for fam in FAMILIES:
-        remaining = [f for f in over if f != fam]
-        # Test on n=4 (smallest Track-B selection) for ablation signal.
-        results.append(test_kernel(4, remaining, args.track))
-    # Sharpness table: for each ablated kernel, smallest failing n (here n=4 if fail).
+    for n in sorted(sizes):
+        rows = load_table(n)
+        for r in rows:
+            r["scalar"]["_pair_id"] = r["pair_id"]
+        vu = load_VU(n)
+        tables = audit_graph.build_tables(n)
+        for fams in kernels:
+            results.append(test_kernel_full(n, fams, args.track, tables, vu, rows))
+    # Sharpness: per ablated coordinate, smallest failing n + kind + witness.
     table = []
-    for r in results:
-        if r["families"] == ["FULL_STATE"]:
-            table.append({"coordinate": "FULL_STATE", "smallest_failing_n": None,
-                          "witness_pair": None, "failure_type": None, "verdict": r["value_separation"]})
+    # NOTE: frozen kernel_result.schema.json requires the key `smallest_n_failing`
+    # (no "i"); legacy mining tables used `smallest_failing_n`. Both keys are
+    # emitted with identical values (legacy alias documented, not silent).
+    for fams in kernels:
+        sub = [r for r in results if r["families"] == fams]
+        if fams == ["FULL_STATE"]:
+            table.append({"coordinate": "FULL_STATE", "coordinate_removed": "NONE(full-state control)",
+                          "kernel_version": KERNEL_VERSION,
+                          "smallest_failing_n": None, "smallest_n_failing": None,
+                          "witness_pair": None,
+                          "failure_type": "NONE", "exact_mismatch": None,
+                          "verdict": "PASS" if all(r["verdict"] == "PASS" for r in sub) else "FAIL"})
+            continue
+        removed = [f for f in FAMILIES if f not in fams][0]
+        fails = sorted([r for r in sub if r["verdict"] != "PASS"], key=lambda r: r["n"])
+        if not fails:
+            table.append({"coordinate": "minus_" + removed, "coordinate_removed": removed,
+                          "kernel_version": KERNEL_VERSION,
+                          "smallest_failing_n": None, "smallest_n_failing": None,
+                          "witness_pair": None,
+                          "failure_type": "NONE", "exact_mismatch": None, "verdict": "PASS"})
         else:
-            removed = [f for f in FAMILIES if f not in r["families"]]
-            table.append({"coordinate": "minus_" + ",".join(removed), "smallest_failing_n": 4 if r["value_separation"] != "PASS" else None,
-                          "witness_pair": r["separating_witness"]["pair"] if r["separating_witness"] else None,
-                          "failure_type": r["value_separation"] if r["value_separation"] != "PASS" else None,
-                          "verdict": r["value_separation"]})
+            f0 = fails[0]
+            w = f0["witness"]
+            table.append({"coordinate": "minus_" + removed, "coordinate_removed": removed,
+                          "kernel_version": KERNEL_VERSION,
+                          "smallest_failing_n": f0["n"], "smallest_n_failing": f0["n"],
+                          "witness_pair": w.get("pair"), "failure_kind": f0["failure_kind"],
+                          "failure_type": f0["verdict"],
+                          "exact_mismatch": w, "verdict": f0["verdict"]})
     with open(os.path.join(outdir, "kernel_defs_%s.json" % args.track.lower()), "w", encoding="utf-8") as f:
-        json.dump({"track": args.track, "families": FAMILIES, "overcomplete": over}, f, sort_keys=True, indent=2)
+        json.dump({"track": args.track, "families": FAMILIES, "overcomplete": over,
+                   "kernel_version": KERNEL_VERSION,
+                   "method": "value-separation on (V,U) + representative-based full transition check n<=5"}, f,
+                  sort_keys=True, indent=2)
         f.write("\n")
     with open(os.path.join(outdir, "ablation_table_%s.json" % args.track.lower()), "w", encoding="utf-8") as f:
         json.dump(table, f, sort_keys=True, indent=2)
@@ -151,9 +204,11 @@ def main():
     with open(os.path.join(outdir, "witnesses_%s.json" % args.track.lower()), "w", encoding="utf-8") as f:
         json.dump(results, f, sort_keys=True, indent=2)
         f.write("\n")
-    print("[KERNEL] track=%s sizes=%s results=%d" % (args.track, sizes, len(results)))
-    for r in results[:5]:
-        print(" ", r["families"], r["n"], r["value_separation"])
+    console_log("KERNEL", "track=%s results=%d" % (args.track, len(results)))
+    for row in table:
+        console_log("KERNEL-SHARP", "%s n=%s %s" % (
+            row["coordinate"], row["smallest_failing_n"], row["verdict"]))
+
 
 if __name__ == "__main__":
     main()

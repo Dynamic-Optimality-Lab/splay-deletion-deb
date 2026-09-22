@@ -1,95 +1,462 @@
 [
   {
     "coordinate": "FULL_STATE",
-    "failure_type": null,
+    "coordinate_removed": "NONE(full-state control)",
+    "exact_mismatch": null,
+    "failure_type": "NONE",
+    "kernel_version": "K-v0.1-complete",
     "smallest_failing_n": null,
-    "verdict": "PASS",
-    "witness_pair": null
-  },
-  {
-    "coordinate": "FULL_STATE",
-    "failure_type": null,
-    "smallest_failing_n": null,
+    "smallest_n_failing": null,
     "verdict": "PASS",
     "witness_pair": null
   },
   {
     "coordinate": "minus_depth",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "depth",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      9,
-      83
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_parent",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "parent",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
-      14
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_ancestor",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "ancestor",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        3,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
-      14
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_subtree",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "subtree",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
-      14
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_interval",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "interval",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
-      14
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_access",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "access",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
-      14
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_crossing",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "crossing",
+    "exact_mismatch": {
+      "key": 2,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        0,
+        24
+      ],
+      "succ_kernel_other": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        1
+      ],
+      "succ_kernel_rep": [
+        3,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3,
+        3,
+        2
+      ],
+      "succ_other": 14,
+      "succ_rep": 10
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
-      14
+      0,
+      24
     ]
   },
   {
     "coordinate": "minus_heavy",
-    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
-    "smallest_failing_n": 4,
-    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "coordinate_removed": "heavy",
+    "exact_mismatch": {
+      "key": 1,
+      "mode": "DELETE",
+      "observable_c_A": 2,
+      "observable_c_B": 0,
+      "pair": [
+        10,
+        14
+      ],
+      "succ_kernel_other": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "succ_kernel_rep": [
+        4,
+        2,
+        0,
+        3,
+        1,
+        3,
+        3,
+        0,
+        4,
+        0,
+        6,
+        4,
+        6,
+        6
+      ],
+      "succ_other": 24,
+      "succ_rep": 20
+    },
+    "failure_kind": "transition-preservation",
+    "failure_type": "KERNEL_TRANSITION_FAIL",
+    "kernel_version": "K-v0.1-complete",
+    "smallest_failing_n": 3,
+    "smallest_n_failing": 3,
+    "verdict": "KERNEL_TRANSITION_FAIL",
     "witness_pair": [
-      1,
+      10,
       14
     ]
   }

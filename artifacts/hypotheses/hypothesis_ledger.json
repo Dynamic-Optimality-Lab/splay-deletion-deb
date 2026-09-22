@@ -11,6 +11,18 @@
       "hypothesis_id": "H-SA02-B-v1-final",
       "sha256": "04bfacadfd28f69d7cb985adbe5e3ef2034c056782b665723067245c08e38d14",
       "status": "FROZEN-FINAL (before n7 reveal; n6 validation FAIL max_res=5, no coefficient change so n6 remains validation)"
+    },
+    {
+      "definition": "canonical 5-support exact n45 solution (lexicographically first min-support member over Q)",
+      "hypothesis_id": "H-SA02-C-1",
+      "sha256": "d3b76c9111c3685c93baaee3996157b8368a8d39e7c5a69c302e0481c242ec5e",
+      "status": "POST-n7-DEVELOPMENT"
+    },
+    {
+      "definition": "bounded-local-search n6-residual minimizer around dense particular (single-null-step neighborhood, deterministic; NOT globally optimal)",
+      "hypothesis_id": "H-SA02-C-2",
+      "sha256": "5a810cdf8e2451397a98d9239e2d837aaa84905953099df06e2361d1dcb6e539",
+      "status": "POST-n7-DEVELOPMENT"
     }
   ]
 }

@@ -131,4 +131,169 @@ WP-5/6 pending. All statements below are labeled
   alongside); adversaries; independent falsifier. WP-6 proof or unbounded
   family; seal with spec set base+SA01+SA02; §36 answers.
 
-*End — mining evidence only; fail-closed to claims.*
+---
+
+# WP-4 COMPLETION SUPPLEMENT (2026-09-22, commit `072b211` onward work)
+
+**Scope rule:** `n7_status = PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE`
+for everything below. All new IDs are POST-n7-DEVELOPMENT; n=6/n=7 are
+development/falsification data, never untouched holdout. `H-SA02-B-v1` and
+`H-SA02-B-v1-final` are byte-preserved (hashes `dc96cabf…`, `1aef5d42…`).
+
+## N. Affine-space exhaustion (FINITE OBSERVATION + CERTIFIED FACT)
+
+- FINITE OBSERVATION (`artifacts/hypotheses/track_b_affine_space.json`):
+  selection system 20x16, rank 7, nullity 9. Zero columns: `f_bend_placeholder`
+  only. CERTIFIED FACT (recomputed): `f_crossing_reversal = f_ancestor_Aonly
+  + f_ancestor_Bonly` on all 20 selection rows (exact column dependency).
+- CERTIFIED FACT (nullspace): 9 primitive integer basis directions (sorted,
+  sign-fixed; see artifact). Degrees of freedom: full 9-dim affine space over Q.
+- CERTIFIED FACT (minimum support): exactly 5 over Q. Proof: all 1941 column
+  subsets of size ≤4 (bend excluded) have inconsistent restricted systems
+  (`artifacts/hypotheses/min_support_exhaustion_log.json`: 1+15+105+455+1365
+  all inconsistent) → support ≤4 impossible in ANY domain; support 5 attained
+  (canonical example below). No sparse INT1/INT2/INT3 solution ≤4 (exhaustive);
+  no Q2/Q3/Q4 or NONNEG solution ≤5 within stated bounds; Q5/SIGNED min 5.
+- FINITE OBSERVATION (canonical 5-support, lexicographically first):
+  `{-9/5 ancestor_Aonly, +8/5 ancestor_Bonly, -8/5 ancestor_both,
+  +1/5 depth_max, -1/5 parent_flip}` — note the dense 6-support particular from
+  discovery is NOT canonical; it was one arbitrary member.
+- FINITE OBSERVATION (family non-uniqueness is behavioral): 11 canonical
+  alternatives (particular, +9 null directions, 5-support) evaluated on
+  development n6/n7 (`artifacts/hypotheses/track_b_alternatives.json`):
+  n6 max-residuals split `5` vs `34/5` vs `17/5`; n7 `139/35` vs `193/35`.
+  The linear family does not speak with one voice off-selection — but §O
+  decides the class question without sampling doubt.
+
+## O. Global linear verdict (INCONSISTENCY WITNESS + CERTIFIED FACT)
+
+- Central question: does any single linear state-only F-v0.1 potential explain
+  all currently known cyclic forced derivatives simultaneously?
+- CERTIFIED FACT: NO. Combined n456 FCYCLE system (104x16): rank 8, augmented
+  rank 9 → INCONSISTENT over Q. Combined n4567 (114x16): rank 8, aug 9 →
+  INCONSISTENT. (`artifacts/hypotheses/global_n456_report.json`,
+  `global_n4567_report.json`.)
+- INCONSISTENCY WITNESS (minimum, proven): 3 rows —
+  `n=4 src=58 KEEP k=1 (a=2,y=3,L=0,ZIG,scc185)`,
+  `n=6 src=3863 KEEP k=1 (a=3,y=3,L=9,LL/RR,non-canonical)`,
+  `n=6 src=9683 KEEP k=5 (a=2,y=3,L=1,ZIG,scc17173)`.
+  Proof of minimum: system-wide exact sweep (Bareiss) finds no inconsistent
+  single or pair among all 104 rows (`sweep_F456.json`); this triple is
+  inconsistent (sympy ranks 2 vs 3); all 3 pairs consistent.
+  (`artifacts/hypotheses/mis_n456.json` with stratified rows; a superseded
+  7-row irreducible witness is preserved inside for trail.)
+- FINITE OBSERVATION (localization): `{n4,n5}` consistent; `{n4,n6}` and
+  `{n5,n6}` each INCONSISTENT. The obstruction is n6-vs-selection (either
+  selection size alone), needs no n7, all-KEEP (DELETE never forced), ZIG +
+  LL/RR mix, cost regimes `(2,3),(3,3),(2,5),(3,5)`.
+- FINITE OBSERVATION (identical inputs): zero same-n identical-`DeltaF`
+  conflicts and zero cross-n conflicts among all 133 FCYCLE rows n=2..7
+  (`identical_deltaF.json`) — the obstruction is a dependency-with-mismatch
+  (row in span, target off the implied value), not a duplicate-input clash.
+
+## P. Nonlinear atom ladder F-v0.1+A1 (FINITE OBSERVATION + COUNTEREXAMPLE)
+
+- 14 frozen atoms, `g_*` namespace (`python/mining/nonlinear_atoms.py`):
+  cost min/max sums, cost-comparison counts, depth-disagreement counts,
+  frozen-C=2 caps/excesses, scalar sign indicators — each with an
+  answer-independent tree-theoretic definition; mirror-invariant declared.
+  F-v0.1 untouched (new version ID, never silently extended).
+- FINITE OBSERVATION (`atom_ladder_A1_report.json`): extended selection system
+  20x30 still rank 7 (atoms add no direction on selection; min atoms needed 0).
+- CERTIFIED FACT: extended n456 system (104x30) rank 11, aug 12 →
+  INCONSISTENT. Extended n4567 likewise. No single authorized atom restores
+  consistency (`single_atom_rescue`: NONE of 14).
+- INCONSISTENCY WITNESS (ladder-level): 12 n6-only rows, irreducible, with
+  system-wide sweep ruling out sizes 1-3 (`sweep_X456.json`, exact minimum in
+  [4,12] undetermined — honestly labeled, not overstated)
+  (`mis_n456_extended.json`). Note: the 7-row F-witness becomes consistent
+  under atoms (absorbed by new directions); the ladder dies on strictly-n6
+  internal conflict instead.
+- Charge-ansatz verdict: `H(A,B)=sum_v h(local_v)` with these 14 local forms
+  cannot reproduce all cyclic forced derivatives simultaneously. Exact, not
+  statistical. HEURISTIC (labeled as such): trying further rungs (more
+  breakpoints, products) is permitted future mining with new atom versions,
+  but the ladder's two-level failure (selection-redundant yet globally
+  insufficient, self-contradictory on n6 alone) suggests the missing
+  structure is not a local per-key charge of these forms.
+
+## Q. Cycle comparison, aggressive (FINITE OBSERVATION)
+
+- (`artifacts/cycle_anatomy/comparison_n4567.json`): k=2 uniformly at all n;
+  n=4 six 2-cycles, all-ZIG, every edge individually `L_i=0`; n=5 one 4-cycle
+  (ZIG+LL/RR, `L` in [-9,9]); n=6 eleven 4-cycles (22 ZIG + 22 LL/RR);
+  n=7 one 10-cycle with multi-step `LL,ZIG`/`RR,ZIG` motifs (`L` in [-24,22]).
+- Common: 100% KEEP on canonical cycles; `sum_L=0`, `sum_a=q*k`, `k>=1` exact;
+  no LR/RL zig-zag on any canonical cycle edge n=4..7.
+- The n4 `L_i=0`-everywhere vs n5/n6/n7 wide-`L` contrast is the structural
+  fingerprint of why selection-only fits cannot project forward: selection
+  cycles never exhibit the nonzero-slack edge patterns the larger sizes force.
+
+## R. POST-n7 candidates (COUNTEREXAMPLE × 2, preserved + killed)
+
+- `H-SA02-C-1` (canonical 5-support; `d3b76c91…`): global 59/135 sat,
+  max `139/35`. `H-SA02-C-2` (bounded-local n6 minimizer, residual 4 vs v1's
+  5 — still FAIL; `5a810cdf…`): global 53/135 sat, max `31/7`.
+  Full stratified tables (n / FPATH-FCYCLE-FGAP / KEEP-DELETE / zig / cost /
+  SCC, exact counts + maxima + first/worst + residual distributions) in
+  `candidate_global_tests.json`. Both FAIL → killed, preserved.
+- Strongest surviving structural formula: NONE. Every tested exact candidate
+  (dense v1, 11 affine alternatives, 5-support canonical, local minimizer,
+  14-atom ladder class) fails on development sizes. The honest WP-4 output is
+  the impossibility evidence, not a formula.
+
+## S. Kernels, complete program (FINITE OBSERVATION)
+
+- Method upgraded from sampled to representative-based FULL transition checks
+  (equality transitivity makes rep-vs-each sufficient), n=2..5 all edges,
+  value-separation on (V,U) pairs (`python/mining/kernel_ablation.py`,
+  `K-v0.1-complete`).
+- K01: FULL_STATE PASS every size, both tracks. K02/K03: every family
+  necessary — Track B ablations fail at n=4 by VALUE (e.g. minus_depth [9,83]);
+  Track A ablations pass everything at n=2, then fail at n=3 by TRANSITION
+  (e.g. minus_depth states 0 vs 24, DELETE k=2, same observables, successor
+  kernels differ in heavy-agreement: depth predicts successor heavy structure
+  — mechanistic necessity witness).
+- Structural sufficiency (§9): the full 8-family descriptor is MINIMAL —
+  minus-anything breaks by n≤3 (transition) or n=4 (value). Same-K pairs with
+  different successor-K (n=3) and different (V,U) (n≥4) are preserved as
+  theorem-mining obstructions guiding future refinement (new features = new
+  versions, not silent edits).
+
+## T. Gates (all green; WP-4 GATED_PASS stands completed)
+
+- F01/F02/F03, D01/D02/D03, K01/K02/K03: 26/26 in `tests/test_wp4_gates.py`;
+  plus FPATH 15/15, SA-02-freeze 23/23, SA-02-tracks 34/34. Schemas validate
+  (dataset, anatomy sample, candidate_H incl. C-ids, kernel projection with
+  the `smallest_n_failing` schema-exact key + legacy alias check);
+  determinism (hashes reproduce, sorted-keys canonical, no bare set-iteration);
+  sealed WP-1/2/3 hashes unchanged; v1/v1-final bytes preserved.
+
+## U. Claim discipline (unchanged)
+
+- `FINITE_EXACT_BN_RESULTS`. No promotion: nothing survives; impossibility
+  evidence is mining, not theorem. WP-5 UH gates + WP-6 proof still required
+  for any future universal claim. n=8 exact seal unavailable (resources) —
+  stated limitation, NOT a replacement holdout; no fake holdout created.
+
+## V. Scientific conclusion of WP-4 (exact)
+
+- Track A starved by design (recorded, never repaired).
+- Track B selection is a 9-dim exact affine space (min support 5); its dense
+  representative failed forward — and the class question is settled
+  negatively: F-v0.1-linear cannot fit n456 simultaneously (minimum 3-row
+  witness), nor can F-v0.1+14-authorized-atoms (n6-internal 12-row witness).
+- The obstruction localizes to n6-vs-selection (either n4 or n5 alone),
+  needs no n7, lives in KEEP/FCYCLE/ZIG-LLRR structure with wide-L edges
+  unseen at selection.
+- Kernel descriptor minimal at 8 families (transition-necessary by n=3).
+
+## W. Recommended WP-5 inputs (NOT started)
+
+- Carry forward ONLY: MIS triple + ladder 12-row witness + kernel transition
+  witnesses + comparison table as falsification/oracle material for future
+  universal candidates; C-ids as killed baselines. Any new fitting needs a
+  fresh certified size (e.g. n=8, resources permitting) for a genuine
+  untouched holdout. Awaiting review before WP-5.
+
+*End of WP-4 completion supplement — mining evidence only; fail-closed to claims.*
