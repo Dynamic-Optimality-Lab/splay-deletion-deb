@@ -297,3 +297,29 @@ development/falsification data, never untouched holdout. `H-SA02-B-v1` and
   untouched holdout. Awaiting review before WP-5.
 
 *End of WP-4 completion supplement — mining evidence only; fail-closed to claims.*
+
+
+---
+
+## X. CORRECTION ENTRY (SA-04, append-only; original text above untouched)
+
+- OLD CLAIM: n8 was the fresh untouched SA-03 Pair-Access holdout.
+- CORRECTED CLAIM: n8 was partially revealed by an infrastructure canary
+  (H=0 test vector, KEEP max 89 / DELETE max -23 with argmaxes, 3,944,504 + 0
+  positives, first counterexamples (7,KEEP,8,+5) and (14,KEEP,8,+5)) before
+  WP-5 synthesis, and is therefore classified
+  N8_STATUS = PARTIALLY_REVEALED_CANARY_CONTAMINATED. n8 keeps mandatory
+  EV-8 (N8_CONTAMINATED_EXHAUSTIVE_VALIDATION) duty: any exact failure still
+  REJECTS, but n8 never again counts as fresh/untouched or as the sole UH-6.
+- REPLACEMENT: HOLDOUT-H1-v0.1 is the new fresh UH-6 holdout (120,000 hidden
+  reachable states in {9,10,12,16,24,32}; 4,120,000 edge evaluations;
+  commitment C9D9BE26-0613BFF; synthesis-blocked; independently replayed).
+- Crucially, no POST_N7 scientific candidate had yet been synthesized when the
+  canary ran (candidate set EMPTY), so candidate development remained
+  uncontaminated by candidate-specific n8 testing. The previously reported
+  maxima 89/-23 and associated argmax/counterexample information are
+  permanently treated as revealed development metadata (contamination ledger
+  entry N8_CANARY_RECLASSIFIED_SA04).
+- Claim unchanged: FINITE_EXACT_BN_RESULTS. No theorem; mining only.
+
+*End of correction - fail-closed to claims.*

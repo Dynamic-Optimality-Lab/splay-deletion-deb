@@ -1,0 +1,72 @@
+# prereg/wp5_sa04.yaml — SA-04 replacement-holdout preregistration (frozen BEFORE any WP-5 candidate synthesis)
+# Experiment: SPLAY-AM-PD-v0.1 | Amendment: SA-04 (v0.1.4) | Plan: WorkPlan v0.1.8
+# Freeze rule: this file's SHA-256 is recorded EXTERNALLY in
+#   prereg/wp5_sa04.sha256, WorkPlan.md (v0.1.8 header), and Path.md (SA-04 entry).
+# It is NOT self-embedded (precedent: SA-01/SA-02/SA-03 amendments, wp4_sa02, wp5_sa03).
+# Commitment procedure (SA-04 §SA-04.3, documented, no synthesis at any point):
+#   strata below frozen in draft -> bank generated per draft -> bank_commitment_sha256
+#   embedded -> bytes frozen pre-synthesis in the SA-04 commit.
+# Any post-freeze edit without a new audit finding is FORBIDDEN.
+experiment_id: SPLAY-AM-PD-v0.1
+amendment_id: SA-04
+spec_set: [v0.1, v0.1.1-SA01, v0.1.2-SA02, v0.1.3-SA03, v0.1.4-SA04]
+frozen_utc: "2026-09-22"
+trigger: SA-03 H=0 canary partially revealed n8 before WP-5 synthesis (commit ba58a18)
+n8_reclassification: PARTIALLY_REVEALED_CANARY_CONTAMINATED
+n8_role_now: N8_CONTAMINATED_EXHAUSTIVE_VALIDATION
+holdout_bank:
+  bank_id: HOLDOUT-H1-v0.1
+  sizes: [9, 10, 12, 16, 24, 32]
+  states_per_size: 20000
+  total_states: 120000
+  future_edge_evaluations_exact: 4120000
+  diagonal_starts_only: true
+  history_length_range: [1, 2*n]
+  strata_per_size_counts:
+    randomized_legal_histories: 6000
+    spine_initials: 2000
+    opposite_spine_drives: 2000
+    zigzag_initials: 1600
+    balanced_initials: 1400
+    comb_initials: 1000
+    delete_heavy_histories: 1600
+    keep_heavy_histories: 1600
+    alternating_modes: 1000
+    inflated_critical_motifs: 800
+    mis_structural_motifs: 600
+    mirror_pairs: 400
+  mode_bias:
+    default: {KEEP: 0.5, DELETE: 0.5}
+    delete_heavy: {KEEP: 0.2, DELETE: 0.8}
+    keep_heavy: {KEEP: 0.8, DELETE: 0.2}
+  key_sampling:
+    default: uniform_1_to_n
+    motif_strata: cycle_through_keys_1_2_3
+  generation_rules: [no_candidate_H, no_residual_guidance, no_adversarial_optimization,
+    candidate_independent, dedupe_by_shapes, fallback_to_randomized_on_collision]
+  serialization: {fields: [init_A_shape, init_B_shape, actions, end_A_shape, end_B_shape,
+    stratum, history_length], canonical: sorted_keys_newline_json_zst,
+    secret: bank_secret.json synthesis_blocked_never_printed_never_preregistered}
+  bank_commitment_sha256: C9D9BE2652412F6100C667BA1598D982E241868A0751AC5357499D55C0613BFF
+firewall:
+  module: python/holdout_bank/h1_firewall.py
+  blocked_pre_unlock: [state_encodings, history_sequences, initial_trees, keys, modes,
+    generator_choices, hidden_seed_material, per_size_state_ids, bank_residuals]
+  published_pre_unlock_only: [bank_id, sizes, state_count, future_edge_count,
+    generator_proportions, bank_commitment_sha256, schema_version]
+candidate_set_rules: {freeze_complete_set_before_unlock: true, no_post_unlock_additions: true,
+  report_all_evaluated: true, prefer_small_preregistered_set: true}
+unlock_rules: [verify_bank_hash_vs_commitment, evaluate_all_candidates,
+  independent_parse_verify_bank, confirm_histories_legal, confirm_diagonal_reachability,
+  confirm_count_identities, preserve_all_failures]
+uh6_corrected: candidate_frozen_before_H1_reveal_plus_all_120000_states_plus_all_4120000_transitions_plus_independent_verification
+uh6_pass_label: UH-6_PASS_FRESH_H1
+ev8_mandatory_n8_validation: true
+descendant_rule: {new_hypothesis_id: true, n8: development, H1: development,
+  untouched_sizes: [], no_fresh_holdout_claim: true}
+multiplicity_same_frozen_set_for_n8_and_H1: true
+independent_package: python/holdout_bank/independent.py
+independent_implements: [tree_parsing, splay, costs, H, KEEP_residual, DELETE_residual, history_replay]
+independent_imports_allowed: [stdlib_json, zstandard, stdlib_os_sys_only]
+negative_branch: failures_are_not_DOC_disproof_without_parameterized_infinite_family
+claim_ceiling: FINITE_EXACT_BN_RESULTS

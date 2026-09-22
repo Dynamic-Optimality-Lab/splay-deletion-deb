@@ -1,0 +1,8 @@
+{
+  "bank_commitment_sha256": "c9d9be2652412f6100c667ba1598d982e241868a0751ac5357499d55c0613bff",
+  "bank_id": "HOLDOUT-H1-v0.1",
+  "candidate_set": null,
+  "note": "initial SA-04 state: hidden bank blocked pre-unlock; aggregate manifest readable; synthesis namespaces swept clean",
+  "state": "EMPTY",
+  "unlock": null
+}

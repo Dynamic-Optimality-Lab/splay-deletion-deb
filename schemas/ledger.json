@@ -1,5 +1,5 @@
 {
-  "count": 20,
+  "count": 22,
   "schemas": [
     {
       "file": "bh_feasibility.schema.json",
@@ -76,6 +76,14 @@
     {
       "file": "wp4_dataset_manifest_v0.1.schema.json",
       "sha256": "372E0E032A2B8AD3BD22E960E99B685082D01FEFBE4553772C4F25DDBEE992C6"
+    },
+    {
+      "file": "wp5_holdout_bank_v0.1.schema.json",
+      "sha256": "639B95CAD8482A69AE3193D45B5E813004171086A25A5C13CBE96722339F00FB"
+    },
+    {
+      "file": "wp5_holdout_result_v0.1.schema.json",
+      "sha256": "92FA548B5F253BF76FDCF1E048FC3C7ADA49E62396B2C877FE63D6DA640F8D41"
     },
     {
       "file": "wp5_post_n7_candidate_v0.1.schema.json",

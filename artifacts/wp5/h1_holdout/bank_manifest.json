@@ -1,0 +1,134 @@
+{
+  "bank_commitment_sha256": "c9d9be2652412f6100c667ba1598d982e241868a0751ac5357499d55c0613bff",
+  "bank_id": "HOLDOUT-H1-v0.1",
+  "future_edge_evaluations_exact": 4120000,
+  "per_size": {
+    "10": {
+      "fallbacks": 1815,
+      "logical_sha256": "e7e193d5d53915eb2f7e612c3f852c6db6cf3a661930f7a76823a9007d3ac905",
+      "states": 20000,
+      "strata": {
+        "alternating": 1000,
+        "balanced": 1400,
+        "comb": 1000,
+        "del_heavy": 1600,
+        "inflated": 800,
+        "keep_heavy": 1600,
+        "mirror": 400,
+        "mis": 600,
+        "opp_spine": 2000,
+        "randomized": 6000,
+        "spine": 2000,
+        "zigzag": 1600
+      }
+    },
+    "12": {
+      "fallbacks": 489,
+      "logical_sha256": "023a3c966fe33bd584999697c59193154ce877b905c0be4cb1cb9615d5e2bef6",
+      "states": 20000,
+      "strata": {
+        "alternating": 1000,
+        "balanced": 1400,
+        "comb": 1000,
+        "del_heavy": 1600,
+        "inflated": 800,
+        "keep_heavy": 1600,
+        "mirror": 400,
+        "mis": 600,
+        "opp_spine": 2000,
+        "randomized": 6000,
+        "spine": 2000,
+        "zigzag": 1600
+      }
+    },
+    "16": {
+      "fallbacks": 195,
+      "logical_sha256": "1f854ac6dbfd11bee42ccce962e718e4f015d2899aceb7f7828154222f1235ec",
+      "states": 20000,
+      "strata": {
+        "alternating": 1000,
+        "balanced": 1400,
+        "comb": 1000,
+        "del_heavy": 1600,
+        "inflated": 800,
+        "keep_heavy": 1600,
+        "mirror": 400,
+        "mis": 600,
+        "opp_spine": 2000,
+        "randomized": 6000,
+        "spine": 2000,
+        "zigzag": 1600
+      }
+    },
+    "24": {
+      "fallbacks": 69,
+      "logical_sha256": "13dc0f7e845ba96c03d1bbd86f799886d01b5883579d77ce977b86c7a783d189",
+      "states": 20000,
+      "strata": {
+        "alternating": 1000,
+        "balanced": 1400,
+        "comb": 1000,
+        "del_heavy": 1600,
+        "inflated": 800,
+        "keep_heavy": 1600,
+        "mirror": 400,
+        "mis": 600,
+        "opp_spine": 2000,
+        "randomized": 6000,
+        "spine": 2000,
+        "zigzag": 1600
+      }
+    },
+    "32": {
+      "fallbacks": 30,
+      "logical_sha256": "508335f12c11d05c7864240c4295ebcf54f5eff64e909a780a5bb93f9f3f0976",
+      "states": 20000,
+      "strata": {
+        "alternating": 1000,
+        "balanced": 1400,
+        "comb": 1000,
+        "del_heavy": 1600,
+        "inflated": 800,
+        "keep_heavy": 1600,
+        "mirror": 400,
+        "mis": 600,
+        "opp_spine": 2000,
+        "randomized": 6000,
+        "spine": 2000,
+        "zigzag": 1600
+      }
+    },
+    "9": {
+      "fallbacks": 4835,
+      "logical_sha256": "cbac4ca577243696dc6e6d58c0b6ea0faa3e77557124ccb5b585d094ffe231a1",
+      "states": 20000,
+      "strata": {
+        "alternating": 1000,
+        "balanced": 1400,
+        "comb": 1000,
+        "del_heavy": 1600,
+        "inflated": 800,
+        "keep_heavy": 1600,
+        "mirror": 400,
+        "mis": 600,
+        "opp_spine": 2000,
+        "randomized": 6000,
+        "spine": 2000,
+        "zigzag": 1600
+      }
+    }
+  },
+  "secret_ref": "bank_secret.json (quarantined, never printed, never preregistered)",
+  "serialization": "sorted-keys newline JSON (.zst transport)",
+  "sizes": [
+    9,
+    10,
+    12,
+    16,
+    24,
+    32
+  ],
+  "states_per_size": 20000,
+  "strata_proportions": "prereg/wp5_sa04.yaml holdout_bank.strata_per_size_counts",
+  "total_states": 120000
+}

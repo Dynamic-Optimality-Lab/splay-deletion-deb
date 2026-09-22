@@ -3,6 +3,38 @@
 All notable changes to this repository are recorded here. Sealed exact results
 are never edited in place; corrections create new versions.
 
+## [0.1.10] - 2026-09-22 - SA-04 freeze (n8 canary correction + H1 replacement holdout; rules only, no candidates)
+
+- `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.4.md`: ratified amendment SA-04
+  (n8 Canary Contamination Correction and Replacement Holdout Protocol;
+  SHA-256 `23046D37799860CCFD69BED21D6474F35ACA4E6FB91474FAAE2002617503E5FB`),
+  triggered by the SA-03 H=0 canary partially revealing n8 pre-synthesis.
+- n8 reclassified `PARTIALLY_REVEALED_CANARY_CONTAMINATED` (canary maxima
+  89/−23 + argmaxes/counts/counterexamples ledgered as revealed development
+  metadata); n8 keeps mandatory EV-8 duty, never fresh UH-6 again.
+- HOLDOUT-H1-v0.1 frozen: 120,000 hidden reachable states in
+  {9,10,12,16,24,32} (12 frozen strata, legal diagonal-rooted histories,
+  dual-replay verified 120,000/120,000) → 4,120,000 fresh edges; commitment
+  `C9D9BE26…0613BFF` in prereg; secret quarantined, never printed.
+- `python/holdout_bank/` package (one-shot generator + H1 firewall with
+  synthesis-namespace static audit + post-unlock evaluator + clean-room twin
+  + verdict/claim-rule helpers); SA-03 `python/n8_holdout/*` byte-identical.
+- UH-6 corrected to the H1 holdout (`UH-6_PASS_FRESH_H1` only, with EV-8 +
+  independence); multiplicity spans n8+H1; descendants take new IDs.
+- `prereg/wp5_sa04.yaml` (+ `.sha256`
+  `CC6F65F3C820FCDB2C5BBCC6E2F544D3B3085B7A90DC0E237CFCB8FB62CC6409`).
+- `schemas/`: 22 schemas (+ `wp5_holdout_bank_v0.1` +
+  `wp5_holdout_result_v0.1`).
+- `WorkPlan.md` v0.1.8 FROZEN: stack + WP-5 semantics + UH-6→H1 + bank
+  firewall + 22 schemas + five-spec seal set.
+- `tests/test_sa04_freeze.py` (27/27: SA04-01..23 + SEPH1 + SCHEMA + PREREG).
+  Fail-closed verified live: clean-room twin bugs (inorder capture,
+  subtree-walk) caught by differential tests; smoke-fixture typos caught by
+  self-validating fixture; a transcription slip impossible by construction.
+- `Path.md`: SA-04 freeze entry; report correction appended (OLD/CORRECTED/
+  REPLACEMENT); claim stays `FINITE_EXACT_BN_RESULTS`; NO WP-5 candidate
+  synthesized (candidate set EMPTY, firewall EMPTY).
+
 ## [0.1.9] - 2026-09-22 - SA-03 freeze (post-n7 WP-5 protocol; rules only, no candidates)
 
 - `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.3.md`: ratified amendment SA-03
