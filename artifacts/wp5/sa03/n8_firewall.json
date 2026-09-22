@@ -1,0 +1,7 @@
+{
+  "candidate_set": "artifacts/wp5/sa03/n8_candidate_set.json",
+  "note": "initial SA-03 state: detailed n8 blocked; test-vector self-test only",
+  "set_sha256": "a77e1eaf92b4c5fa69d80c5ffadac8cf28f5d0724d83bbf86ec1fa7793aa4638",
+  "state": "EMPTY",
+  "unlock": null
+}

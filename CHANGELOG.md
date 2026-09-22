@@ -3,6 +3,37 @@
 All notable changes to this repository are recorded here. Sealed exact results
 are never edited in place; corrections create new versions.
 
+## [0.1.9] - 2026-09-22 - SA-03 freeze (post-n7 WP-5 protocol; rules only, no candidates)
+
+- `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.3.md`: ratified amendment SA-03
+  (Post-n7 Universal-Candidate Validation Protocol; SHA-256
+  `BB407FAC46DB30FA58F8833E513152FC10182AC931AFD84DDB0C29B0217E25E1`),
+  triggered after WP-4 completion with n7 legitimately revealed.
+- Eras frozen: ERA-A pre-n7 labels immutable; all future IDs ERA-B POST_N7
+  with n7 as revealed development data, never untouched.
+- Fresh n=8 direct Pair-Access holdout: 32,718,400 exact checks on
+  authoritative `R_8` without sealed `b_8*`; pass = finite n8 fact only
+  (+ finite `b_8* <= b_H` upper certificate, never exact `b_8*`).
+- `python/n8_holdout/` package (sweep + clean-room independent + n8 firewall
+  `EMPTY`→`SET_FROZEN`→`UNLOCKED_ONCE` + freeze helpers); SA-02 n6/n7
+  firewall left byte-identical. Machinery self-tested once with degenerate
+  `H=0` vector (`b_H=23/14`) on EMPTY set: edge count exact, maxima 89/−23,
+  primary↔independent agreement; H=0 REJECTED as required, never a hypothesis.
+- UH-6 refined for ERA B only (`UH-6_PASS_FINITE_N8` at most); freeze
+  contract, reveal protocol, multiplicity, adversarial separation,
+  negative-branch discipline frozen.
+- `prereg/wp5_sa03.yaml` (+ `.sha256`
+  `FCE7F8C0A32F3590B3EFA7A6487330B7F11867DDF0D377D654E305ECA365BD73`).
+- `schemas/`: 20 schemas (+ `wp5_post_n7_candidate_v0.1` with
+  untouched-7 schema ban + `n8_pair_access_holdout_v0.1`).
+- `WorkPlan.md` v0.1.7 FROZEN: spec stack + WP-5 semantics + UH-6 + n8
+  holdout + charter + 20 schemas + four-spec seal set.
+- `tests/test_sa03_freeze.py` (31/31: SA03-01..20 + SEP + UH3 + AGREE4).
+  Fail-closed verified live: a hand-transcription slip in the recorded
+  prereg hash was caught by SA03-20 and corrected from computed bytes.
+- `Path.md`: SA-03 freeze entry; claim stays `FINITE_EXACT_BN_RESULTS`;
+  NO WP-5 candidate synthesized (candidate set EMPTY).
+
 ## [0.1.8] - 2026-09-22 - WP-4 completion (affine exhaustion, ladder, C-ids, kernels; mining evidence only)
 
 - `n7_status = PREVIOUSLY_REVEALED_AFTER_H-SA02-B-v1-final_FREEZE` ledgered;

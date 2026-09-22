@@ -1,0 +1,28 @@
+{
+  "amendment": "SA-03",
+  "era_a_pre_n7": [
+    {
+      "hypothesis_id": "H-SA02-B-v1",
+      "note": "frozen before SA-02 n7 reveal; historical labels immutable",
+      "sha256": "7b4079a65ddb698d3eefcd6ded72558932546107bb0357372a4ba1e1ec561b2f"
+    },
+    {
+      "hypothesis_id": "H-SA02-B-v1-final",
+      "note": "its own n7 evaluation WAS the reveal event (unlock_count 1); immutable",
+      "sha256": "04bfacadfd28f69d7cb985adbe5e3ef2034c056782b665723067245c08e38d14"
+    }
+  ],
+  "era_b_post_n7": [
+    {
+      "hypothesis_id": "H-SA02-C-1",
+      "note": "POST_N7 from birth; heldout_sizes []",
+      "sha256": "d3b76c9111c3685c93baaee3996157b8368a8d39e7c5a69c302e0481c242ec5e"
+    },
+    {
+      "hypothesis_id": "H-SA02-C-2",
+      "note": "POST_N7 from birth; heldout_sizes []",
+      "sha256": "5a810cdf8e2451397a98d9239e2d837aaa84905953099df06e2361d1dcb6e539"
+    }
+  ],
+  "rule": "every hypothesis created after WP-4 completion is ERA B (POST_N7)."
+}

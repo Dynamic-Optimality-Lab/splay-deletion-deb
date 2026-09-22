@@ -1,0 +1,16 @@
+{
+  "R_8_size": 2044900,
+  "all_pairs_reachable_observed": true,
+  "b_8_star": "UNSEALED (RESOURCE_LIMIT_NO_CLAIM)",
+  "catalan_C_8": 1430,
+  "category": "PREVIOUSLY_KNOWN_AGGREGATE_METADATA",
+  "edge_checks_exact": 32718400,
+  "forward_sha256": "7c2d8c5d9309da09f6a5f01f8ca0883337825288092e9b6b849a3a84da7cfa5d",
+  "inverse_sha256": "3f686c289467510569a83adad472c5d82bf1f0421945e51ad2bc0a2c002a3d20",
+  "n": 8,
+  "note": "aggregates only; not candidate-selection inputs",
+  "reachability_audit": "PASS",
+  "reachable_sha256": "d6f5e920180cc9ba335a47b7f8a58358af58d8aa49efa233d7caecec88757647",
+  "transition_audit": "PASS",
+  "transition_records": 11440
+}

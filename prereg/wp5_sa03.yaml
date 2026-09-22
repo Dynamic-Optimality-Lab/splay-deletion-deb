@@ -1,0 +1,61 @@
+# prereg/wp5_sa03.yaml — SA-03 post-n7 WP-5 protocol preregistration (frozen BEFORE any WP-5 candidate synthesis)
+# Experiment: SPLAY-AM-PD-v0.1 | Amendment: SA-03 (v0.1.3) | Plan: WorkPlan v0.1.7
+# Freeze rule: this file's SHA-256 is recorded EXTERNALLY in
+#   prereg/wp5_sa03.sha256, WorkPlan.md (v0.1.7 header), and Path.md (SA-03 entry).
+# It is NOT self-embedded (same precedent as SA-01/SA-02/SA-03 amendments and wp4_sa02).
+# Any edit creates a new prereg version with a new hash; post-freeze edits
+# without a new audit finding are FORBIDDEN.
+experiment_id: SPLAY-AM-PD-v0.1
+amendment_id: SA-03
+spec_set: [v0.1, v0.1.1-SA01, v0.1.2-SA02, v0.1.3-SA03]
+frozen_utc: "2026-09-22"
+trigger: WP-4 GATED_PASS at commit 4c5eaf7 with n7 legitimately revealed under SA-02
+candidate_eras:
+  era_a_pre_n7:
+    rule: frozen before SA-02 n7 reveal; labels/results immutable, never relabeled
+  era_b_post_n7:
+    candidate_era: POST_N7
+    n7_status: REVEALED_DEVELOPMENT_DATA
+    untouched_sizes_must_not_contain: [7]
+    n7_permitted_uses: [synthesis, diagnosis, motif_extraction, feature_invention,
+      coefficient_choice, b_H_choice, candidate_revision]
+    n7_use_mode: DEVELOPMENT_ONLY_WITH_HONEST_LEDGERING
+fresh_holdout_n8:
+  role: FRESH_POST_N7_PAIR_ACCESS_HOLDOUT
+  b_8_star_sealed: false
+  not_an_exact_geometry_holdout: true
+  domain_R_8: 2044900
+  catalan_C_8: 1430
+  edge_checks_exact: 32718400
+  tests: [normalization, nonnegativity, KEEP_at_b_H, DELETE_at_b_H]
+  arithmetic: exact_integer_scaled_no_tolerances
+  pass_means: finite_n8_Pair_Access_fact_only_never_universality
+  finite_certificate_note: full_pass_supplies_b_8_star_LE_b_H_upper_certificate_not_exact_b_8_star
+n8_firewall:
+  module: python/n8_holdout/n8_firewall.py
+  states: [EMPTY, SET_FROZEN, UNLOCKED_ONCE]
+  initial_state_at_SA03_freeze: EMPTY
+  candidate_set_at_freeze: []
+  blocked_pre_freeze: [transition_records, reachable_state_list, tree_pair_structures,
+    per_edge_costs, residuals, candidate_evaluations, maximizers, counterexamples,
+    structural_feature_tables]
+  known_aggregates_only: [n8_exists, catalan_1430, R_8_2044900, transition_audit_PASS,
+    reachability_audit_PASS, b_8_star_unavailable_resource_boundary]
+development_data_n_le_7: STRUCTURAL_DISCOVERY_AND_FALSIFICATION
+uh6_era_b: candidate_frozen_before_n8_reveal_plus_complete_exact_n8_sweep_plus_independent_verification
+uh6_pass_label: UH-6_PASS_FINITE_N8_ONLY
+freeze_contract_fields: [hypothesis_id, formula_H, tie_rules, normalization, definitions,
+  b_H_reduced, source_hashes, schema_version, provenance, development_evidence,
+  OG_diagnostics, UH-0_to_UH-5_status, timestamp_meta, git_commit, manifest_sha256]
+reveal_protocol: [verify_freeze_hash, unlock_once, all_H_over_R_8, diagonals, nonnegativity,
+  all_32718400_residuals, max_KEEP, max_DELETE, first_maximizers, counterexample_policy,
+  independent_recompute, hash_compare, seal_UH6_UH7]
+post_n8: {fail: REJECTED_plus_smallest_counterexample_plus_ledger, pass_max: CANDIDATE_H_SURVIVES_FINITE_TESTS}
+multiplicity: {freeze_complete_set_before_unlock: true, no_post_unlock_additions: true, report_all: true}
+independent_package: python/n8_holdout/independent.py
+independent_imports_allowed: [stdlib_json, zstandard, stdlib_os_sys_only]
+adversarial_track: separate_per_WorkPlan_generators_and_engines
+negative_branch: failures_are_not_DOC_disproof_without_parameterized_infinite_family
+selftest_at_freeze: {test_vector: H identically 0 with b_H 23/14, candidate_set: EMPTY,
+  outputs_to: in_memory_and_test_temp_only_never_holdout_dir, purpose: machinery_validation_only}
+claim_ceiling: FINITE_EXACT_BN_RESULTS
