@@ -1,0 +1,96 @@
+[
+  {
+    "coordinate": "FULL_STATE",
+    "failure_type": null,
+    "smallest_failing_n": null,
+    "verdict": "PASS",
+    "witness_pair": null
+  },
+  {
+    "coordinate": "FULL_STATE",
+    "failure_type": null,
+    "smallest_failing_n": null,
+    "verdict": "PASS",
+    "witness_pair": null
+  },
+  {
+    "coordinate": "minus_depth",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      9,
+      83
+    ]
+  },
+  {
+    "coordinate": "minus_parent",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  },
+  {
+    "coordinate": "minus_ancestor",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  },
+  {
+    "coordinate": "minus_subtree",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  },
+  {
+    "coordinate": "minus_interval",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  },
+  {
+    "coordinate": "minus_access",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  },
+  {
+    "coordinate": "minus_crossing",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  },
+  {
+    "coordinate": "minus_heavy",
+    "failure_type": "KERNEL_VALUE_INSUFFICIENT",
+    "smallest_failing_n": 4,
+    "verdict": "KERNEL_VALUE_INSUFFICIENT",
+    "witness_pair": [
+      1,
+      14
+    ]
+  }
+]

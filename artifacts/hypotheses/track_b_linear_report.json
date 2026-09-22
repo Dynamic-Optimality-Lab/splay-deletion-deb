@@ -1,0 +1,66 @@
+{
+  "basis_row_indices": [
+    0,
+    1,
+    2,
+    4,
+    12,
+    13,
+    14
+  ],
+  "consistent_over_Q": true,
+  "dataset_id": "WP4-TRACK-B-v1",
+  "dataset_sha256": "62e24ae82dc187eb42ec2b9611dbd1f0b8eb355018b1468e5e939850262e4cfb",
+  "exact_max_residual_best_sparse": "4/5",
+  "feature_order": [
+    "f_depth_sum_abs_diff",
+    "f_depth_max_abs_diff",
+    "f_root_same",
+    "f_parent_diff_count",
+    "f_parent_flip_count",
+    "f_ancestor_Aonly",
+    "f_ancestor_Bonly",
+    "f_ancestor_both",
+    "f_subtree_sum_abs_diff",
+    "f_interval_identical_count",
+    "f_interval_symdiff_sum",
+    "f_access_sum_abs_diff",
+    "f_access_symdiff_sum",
+    "f_crossing_reversal",
+    "f_heavy_agree_count",
+    "f_bend_placeholder"
+  ],
+  "float_note": "floats not used; all exact rationals (non-authoritative floats: none)",
+  "minimal_inconsistent_subsystem": null,
+  "nullity": 9,
+  "rank_over_Q": 7,
+  "row_count": 20,
+  "solution_family": [
+    "8/5",
+    "17/5",
+    "0",
+    "8/5",
+    "-1/5",
+    "-9/5",
+    "0",
+    "-8/5",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "sparsest_coeffs": {
+    "f_depth_max_abs_diff": 1
+  },
+  "sparsest_support": [
+    1
+  ],
+  "stratification": {
+    "('KEEP', ('FCYCLE', 'UBELLMAN', 'VBELLMAN'))": 20
+  },
+  "track": "B"
+}

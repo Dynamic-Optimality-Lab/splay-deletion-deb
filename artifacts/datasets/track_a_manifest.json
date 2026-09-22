@@ -1,0 +1,18 @@
+{
+  "amendment_id": "SA-02",
+  "dataset_id": "WP4-TRACK-A-v1",
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "holdout_size": 7,
+  "rows": [],
+  "selection_rule": "forced edges with reserved_family_holdout==false (FCYCLE/DELETE/zig-zag excluded)",
+  "selection_sizes": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "sha256": "6b2d3250ce565e33ff07f255fc3e4de158b40075d6ae033718268e300aab9b80",
+  "track": "A",
+  "validation_rows_separate": true,
+  "validation_size": 6
+}

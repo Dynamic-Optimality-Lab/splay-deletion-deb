@@ -1,0 +1,29 @@
+{
+  "coefficient_domain": "rationals-particular-dense (linear exact over Q; sparse integer [-2,2] support<=2 fails with residual 4/5)",
+  "coefficients": {
+    "f_ancestor_Aonly": "-9/5",
+    "f_ancestor_both": "-8/5",
+    "f_depth_max_abs_diff": "17/5",
+    "f_depth_sum_abs_diff": "8/5",
+    "f_parent_diff_count": "8/5",
+    "f_parent_flip_count": "-1/5"
+  },
+  "dataset_sha256": "62e24ae82dc187eb42ec2b9611dbd1f0b8eb355018b1468e5e939850262e4cfb",
+  "definition": "H_B_v1 = (8/5)*f_depth_sum_abs_diff + (17/5)*f_depth_max_abs_diff + (8/5)*f_parent_diff_count + (-1/5)*f_parent_flip_count + (-9/5)*f_ancestor_Aonly + (-8/5)*f_ancestor_both",
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "heldout_sizes": [
+    6,
+    7
+  ],
+  "hypothesis_id": "H-SA02-B-v1",
+  "linear_report": "track_b_linear_report.json",
+  "parent_hypothesis": null,
+  "sha256": "7b4079a65ddb698d3eefcd6ded72558932546107bb0357372a4ba1e1ec561b2f",
+  "state_only": true,
+  "status": "FROZEN-INITIAL (before n6 reveal)",
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

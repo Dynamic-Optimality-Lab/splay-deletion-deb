@@ -25,6 +25,30 @@ are never edited in place; corrections create new versions.
   aggregates ledgered; detailed n7/n6 unread attested.
 - `Path.md`: SA-02 freeze entry with trigger/starvation/Track-A/B/n7-known-vs-unread/hashes.
 
+## [0.1.7] - 2026-09-22 - SA-02 discovery (Tracks A/B + validation + holdout; mining evidence only)
+
+- `artifacts/cycle_anatomy/n{4,5,6,7}/`: canonical cycles with `sum_L==0`,
+  `p*sum_a==q*sum_y`, `sum_a==q*k` exact (`n=4` 6/12, `n=5` 1/4, `n=6` 11/44
+  after initial freeze, `n=7` 1/10 after final unlock-once); motifs compared.
+- `python/mining/scalar_features.py` (F-v0.1, 16 state-only ints + vectors,
+  mirror invariant) + `artifacts/features/n{2..7}/` staged (n=6 after initial,
+  n=7 after final); `build_datasets.py` Track-A 0 rows / Track-B 20 FCYCLE rows.
+- `python/mining/exact_linear.py`: Track-A rank0/null16 starved; Track-B rank7/
+  null9 consistent dense `H_B_v1` (6-support rational), sparse `[-2,2]`≤2 best
+  `4/5`; no floats; no nonlinear ladder (linear not exhausted).
+- `H-SA02-B-v1` (`7B4079A6…`) → n=6 validation 84 rows max `5/1` FAIL →
+  `H-SA02-B-v1-final` (`04BFACAD…`, same coeffs) → n=7 holdout once 10 rows max
+  `139/35` FAIL untouched (`n7_unlock.json` once-only).
+- `python/mining/kernel_ablation.py` track-separated: `FULL_STATE` PASS;
+  ablations `KERNEL_VALUE_INSUFFICIENT` with smallest pairs.
+- `THEOREM_MINING_REPORT.md` (A–M, mining only, ceiling
+  `FINITE_EXACT_BN_RESULTS`); `tests/test_sa02_tracks.py` (34/34);
+  `artifacts/audits/{holdout_firewall_audit,n7_unlock}.json` + ledger N6/N7
+  reveals in order; firewall test-isolation fix ledgered (no normative change).
+- `Path.md`: WP-4 `GATED_PASS` (mining evidence, no theorem) + hypothesis
+  ledger (v1/v1-final FAILs preserved) + claim retained
+  `FINITE_EXACT_BN_RESULTS`.
+
 ## [0.1.5] - 2026-09-20 - Plan frozen (v0.1.5)
 
 - `WorkPlan.md` v0.1.1-v0.1.5: external-audit remediations (T0 gates,

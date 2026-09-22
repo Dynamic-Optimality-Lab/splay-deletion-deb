@@ -1,0 +1,15 @@
+{
+  "candidate_id": "H-SA02-B-v1",
+  "evaluated_rows": 84,
+  "exact_max_residual": "5/1",
+  "n": 6,
+  "verdict": "FAIL",
+  "worst_row": {
+    "key": 1,
+    "mode": "KEEP",
+    "n": 6,
+    "scaled_slack": "9",
+    "source_state_id": 3598,
+    "target_state_id": 14770
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "hypotheses": [
+    {
+      "definition": "H_B_v1 = (8/5)*f_depth_sum_abs_diff + (17/5)*f_depth_max_abs_diff + (8/5)*f_parent_diff_count + (-1/5)*f_parent_flip_count + (-9/5)*f_ancestor_Aonly + (-8/5)*f_ancestor_both",
+      "hypothesis_id": "H-SA02-B-v1",
+      "sha256": "7b4079a65ddb698d3eefcd6ded72558932546107bb0357372a4ba1e1ec561b2f",
+      "status": "FROZEN-INITIAL (before n6 reveal)"
+    },
+    {
+      "definition": "H_B_v1 = (8/5)*f_depth_sum_abs_diff + (17/5)*f_depth_max_abs_diff + (8/5)*f_parent_diff_count + (-1/5)*f_parent_flip_count + (-9/5)*f_ancestor_Aonly + (-8/5)*f_ancestor_both",
+      "hypothesis_id": "H-SA02-B-v1-final",
+      "sha256": "04bfacadfd28f69d7cb985adbe5e3ef2034c056782b665723067245c08e38d14",
+      "status": "FROZEN-FINAL (before n7 reveal; n6 validation FAIL max_res=5, no coefficient change so n6 remains validation)"
+    }
+  ]
+}

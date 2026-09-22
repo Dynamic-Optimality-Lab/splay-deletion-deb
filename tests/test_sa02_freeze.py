@@ -151,17 +151,17 @@ def test_firewall():
     fw.freeze_final_candidate("H-SA02-B-v1-final")
     check("FW-FINAL-FREEZE", True, "final frozen")
     try:
-        fw.unlock_n7_for_evaluation("H-SA02-B-v1-final")
+        fw.unlock_n7_for_evaluation("H-SA02-B-v1-final", write_file=False)
         check("FW-UNLOCK-ONCE", True, "first unlock ok")
     except Exception:
         check("FW-UNLOCK-ONCE", False, "first unlock should pass")
     try:
-        fw.unlock_n7_for_evaluation("H-SA02-B-v1-final")
+        fw.unlock_n7_for_evaluation("H-SA02-B-v1-final", write_file=False)
         check("FW-UNLOCK-TWICE", False, "second unlock must fail")
     except Exception as e:
         check("FW-UNLOCK-TWICE", "already unlocked" in str(e), "second blocked")
     try:
-        fw.unlock_n7_for_evaluation("H-SA02-B-v2-other")
+        fw.unlock_n7_for_evaluation("H-SA02-B-v2-other", write_file=False)
         check("FW-UNLOCK-MISMATCH", False, "mismatch must fail")
     except Exception:
         check("FW-UNLOCK-MISMATCH", True, "mismatch blocked")

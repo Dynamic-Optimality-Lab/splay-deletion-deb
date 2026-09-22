@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "file": "allowed_claims.md",
+      "sha256": "A0463489D21FD9F14F6785AD931895E510CEB592D58B783ABC0AE9D076B87802"
+    },
+    {
+      "file": "exact_contract.yaml",
+      "sha256": "53B9720396906B828B2ECFECD475F4D620D9EF11F46A4107874B86A0726F5C0C"
+    },
+    {
+      "file": "experiment.yaml",
+      "sha256": "B890EFFDA809ECF3BAF94309A1A65D8EC3F6B4344FB5E78D4D78B8E95337C263"
+    },
+    {
+      "file": "forbidden_claims.md",
+      "sha256": "8C4C20263BD4083A7B5035F37098B9390050FA6A25A97F599BE34C8F62AE9FFB"
+    },
+    {
+      "file": "prereg_sha256.txt",
+      "sha256": "1D41B6B80D91C18BA1EAF4B0E9895CBA34D5655F12DE6F02BFD804B9E88C3E04"
+    },
+    {
+      "file": "sizes.yaml",
+      "sha256": "CF52FDDF889D615FAAC643FC9A9BD5F9806123A93E26E51C79238DAEE878E399"
+    },
+    {
+      "file": "wp4_sa02.sha256",
+      "sha256": "DF8BBE22C574AE3214F75755AB832F5D2FD810D575E15149271BE5F932AAE292"
+    },
+    {
+      "file": "wp4_sa02.yaml",
+      "sha256": "BDE98934623B8EDCE00369F0C426E0DFE1358F158A688BA1EA2D885628B3B826"
+    }
+  ]
+}

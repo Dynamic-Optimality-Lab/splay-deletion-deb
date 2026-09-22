@@ -1,0 +1,44 @@
+{
+  "coefficient_domain": "rationals-particular-dense (linear exact over Q; sparse integer [-2,2] support<=2 fails with residual 4/5)",
+  "coefficients": {
+    "f_ancestor_Aonly": "-9/5",
+    "f_ancestor_both": "-8/5",
+    "f_depth_max_abs_diff": "17/5",
+    "f_depth_sum_abs_diff": "8/5",
+    "f_parent_diff_count": "8/5",
+    "f_parent_flip_count": "-1/5"
+  },
+  "dataset_sha256": "62e24ae82dc187eb42ec2b9611dbd1f0b8eb355018b1468e5e939850262e4cfb",
+  "definition": "H_B_v1 = (8/5)*f_depth_sum_abs_diff + (17/5)*f_depth_max_abs_diff + (8/5)*f_parent_diff_count + (-1/5)*f_parent_flip_count + (-9/5)*f_ancestor_Aonly + (-8/5)*f_ancestor_both",
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "heldout_sizes": [
+    6,
+    7
+  ],
+  "hypothesis_id": "H-SA02-B-v1-final",
+  "linear_report": "track_b_linear_report.json",
+  "n6_validation": {
+    "candidate_id": "H-SA02-B-v1",
+    "evaluated_rows": 84,
+    "exact_max_residual": "5/1",
+    "n": 6,
+    "verdict": "FAIL",
+    "worst_row": {
+      "key": 1,
+      "mode": "KEEP",
+      "n": 6,
+      "scaled_slack": "9",
+      "source_state_id": 3598,
+      "target_state_id": 14770
+    }
+  },
+  "parent_hypothesis": "H-SA02-B-v1",
+  "sha256": "04bfacadfd28f69d7cb985adbe5e3ef2034c056782b665723067245c08e38d14",
+  "state_only": true,
+  "status": "FROZEN-FINAL (before n7 reveal; n6 validation FAIL max_res=5, no coefficient change so n6 remains validation)",
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

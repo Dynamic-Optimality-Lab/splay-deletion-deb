@@ -1,0 +1,12 @@
+{
+  "all_k_positive": true,
+  "all_sum_L_zero": true,
+  "b": {
+    "p": "8",
+    "q": "5"
+  },
+  "canonical_cycle_count": 1,
+  "edge_record_count": 4,
+  "logical_sha256": "0872e0cbaf1ac0c0a6ffad4fa72d492b0428db05757e41fba7b6579318b16b9f",
+  "n": 5
+}

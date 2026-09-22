@@ -79,6 +79,61 @@ def freeze_final_candidate(candidate_id):
     _firewall_state["final_candidate_id"] = candidate_id
 
 
+def _initial_frozen_on_disk():
+    import json as json_mod
+    cand = os.path.join(REPO, "artifacts", "hypotheses", "H-SA02-B-v1.json")
+    if os.path.exists(cand):
+        try:
+            with open(cand, encoding="utf-8") as f:
+                json_mod.load(f)
+            return True
+        except Exception:
+            return False
+    return False
+
+
+def _final_frozen_on_disk():
+    import glob as glob_mod
+    pats = [
+        os.path.join(REPO, "artifacts", "hypotheses", "H-SA02-B-*-final.json"),
+        os.path.join(REPO, "artifacts", "hypotheses", "H-SA02-B-v1-final.json"),
+    ]
+    for pat in pats:
+        if glob_mod.glob(pat):
+            return True
+    return False
+
+
+def hydrate_from_files():
+    """Load persistent freeze state from sealed hypothesis files (production).
+
+    Tests use reset_for_tests + explicit in-memory freezes and must NOT call
+    this (keeps unit tests isolated from on-disk production freezes).
+    """
+    import glob as glob_mod
+    import json as json_mod
+    if _initial_frozen_on_disk() and not _firewall_state["initial_candidate_frozen"]:
+        _firewall_state["initial_candidate_frozen"] = True
+        _firewall_state["initial_candidate_id"] = "H-SA02-B-v1"
+    finals = glob_mod.glob(os.path.join(REPO, "artifacts", "hypotheses", "H-SA02-B-*-final.json"))
+    if finals and not _firewall_state["final_candidate_frozen"]:
+        try:
+            with open(finals[0], encoding="utf-8") as f:
+                doc = json_mod.load(f)
+            _firewall_state["final_candidate_frozen"] = True
+            _firewall_state["final_candidate_id"] = doc.get("hypothesis_id", finals[0])
+        except Exception:
+            pass
+    unlock_path = os.path.join(REPO, "artifacts", "audits", "n7_unlock.json")
+    if os.path.exists(unlock_path):
+        try:
+            with open(unlock_path, encoding="utf-8") as f:
+                doc = json_mod.load(f)
+            _firewall_state["n7_unlock_count"] = int(doc.get("unlock_count", 1))
+        except Exception:
+            _firewall_state["n7_unlock_count"] = 1
+
+
 def _is_detailed_n7_path(path_text):
     text = str(path_text)
     has_n7 = ("n7" in text or "n_7" in text or "/7/" in text or "holdout" in text)
@@ -97,6 +152,9 @@ def guard_load(path_text, purpose="hypothesis generation"):
     """Fail-closed gate called before any artifact read for fitting.
 
     Raises HoldoutFirewallError on prohibited reads.
+    Production processes must call hydrate_from_files() at startup to load
+    persistent freeze state; unit tests use reset_for_tests + explicit
+    in-memory freezes and never hydrate (isolation).
     """
     if _is_detailed_n7_path(path_text) and not _firewall_state["final_candidate_frozen"]:
         raise HoldoutFirewallError(
@@ -117,15 +175,30 @@ def guard_initial_fit_load(path_text):
     return True
 
 
-def unlock_n7_for_evaluation(candidate_id):
-    """Unlock n=7 exactly once for hard-holdout evaluation."""
+def unlock_n7_for_evaluation(candidate_id, write_file=True):
+    """Unlock n=7 exactly once for hard-holdout evaluation.
+
+    write_file=False is for unit tests only (in-memory once-only without
+    touching the production unlock record).
+    """
+    import json as json_mod
     if not _firewall_state["final_candidate_frozen"]:
         raise HoldoutFirewallError("n7 unlock requires final candidate freeze")
     if _firewall_state["final_candidate_id"] != candidate_id:
         raise HoldoutFirewallError("n7 unlock candidate mismatch")
     if _firewall_state["n7_unlock_count"] >= 1:
         raise HoldoutFirewallError("n7 already unlocked once; further reads need new hypothesis ID")
+    if write_file:
+        unlock_path = os.path.join(REPO, "artifacts", "audits", "n7_unlock.json")
+        if os.path.exists(unlock_path):
+            raise HoldoutFirewallError("n7 already unlocked once; further reads need new hypothesis ID")
     _firewall_state["n7_unlock_count"] += 1
+    if not write_file:
+        return True
+    os.makedirs(os.path.dirname(unlock_path), exist_ok=True)
+    with open(unlock_path, "w", encoding="utf-8") as f:
+        json_mod.dump({"candidate_id": candidate_id, "unlock_count": 1}, f, sort_keys=True)
+        f.write("\n")
     return True
 
 

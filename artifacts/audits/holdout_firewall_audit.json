@@ -1,0 +1,34 @@
+{
+  "candidate_id": "H-SA02-B-v1-final",
+  "events": [
+    {
+      "event": "BLOCK_N6_DURING_FIT",
+      "status": "PASS (blocked as required)"
+    },
+    {
+      "event": "BLOCK_N7_BEFORE_FINAL",
+      "status": "PASS (blocked as required)"
+    },
+    {
+      "event": "ALLOW_N6_AFTER_INITIAL",
+      "status": "PASS (allowed after H-SA02-B-v1)"
+    },
+    {
+      "event": "UNLOCK_N7_ONCE",
+      "status": "PASS (first unlock ok)"
+    },
+    {
+      "event": "BLOCK_SECOND_UNLOCK",
+      "status": "PASS (second blocked)"
+    },
+    {
+      "event": "BLOCK_MISMATCH_UNLOCK",
+      "status": "PASS (mismatch blocked)"
+    }
+  ],
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "firewall_sha256": "CBFDB3A06056B50A4841F893BBD46380075D31A4786E3AA1C1AF5EED4B68C39B",
+  "test": "tests/test_sa02_freeze.py FW-* (23/23) + production hydrate/unlock flow",
+  "unlock_count": 1,
+  "unlock_record": "artifacts/audits/n7_unlock.json"
+}

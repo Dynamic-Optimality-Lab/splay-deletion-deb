@@ -446,23 +446,78 @@ will follow.
 **Why Track B is scientifically justified:** it learns only from the exact cyclic forcing WP-3 discovered (`n=4,5` FCYCLE, 20 equations), with DELETE/KEEP and zig families as reporting strata (never masks), strict `n=6`-after-initial-freeze / `n=7`-once-after-final-freeze order, firewall + contamination ledger, exact-linear-first discipline, and per-track manifests — discovery without contaminating later sizes.
 **What n=7 information was already known before SA-02:** aggregates from sealed summaries — `b_7*=23/14`, forced 429 / `FORCED_DELTA` 10 / SCC 1 / `CYCLIC` / corridors 0 / all-KEEP (ledgered as PREVIOUSLY KNOWN AGGREGATE METADATA).
 **What detailed n=7 information remained unread:** every per-edge/cycle/trajectory/delta/residual/provenance detail at `n=7` (firewall default-deny; deliberately failed-read test confirms).
-**Exact commit/hash at which SA-02 became frozen:** freeze commit hash recorded post-commit (see follow-up discovery entry for the hash); file hashes: SA-02 `79C58ED0…41CDF`, prereg `BDE98934…3B826`, WorkPlan v0.1.6 (header), schemas manifest `372E0E03…DBEE99`, anatomy `3B9919EC…7699DD`, firewall `0514AEFF…012C1A`, FPATH note `3E19C875…371AE8`, FPATH test `775D7893…F97EB9`. WP-3 required NO resealing (orientation verdict above).
+**Exact commit/hash at which SA-02 became frozen:** freeze commit `645c074`
+(`SA-02 freeze: Adaptive Cycle-Discovery Mining Track rules + prereg before
+coefficient search`); file hashes: SA-02 `79C58ED0…41CDF`, prereg `BDE98934…3B826`, WorkPlan v0.1.6 `0DC4728C…2EACE0F`, schemas manifest `372E0E03…DBEE99`, anatomy `3B9919EC…7699DD`, firewall at freeze `0514AEFF…012C1A` (post-freeze test-isolation fix `CBFDB3A0…68C39B`, no normative change; ledgered), FPATH note `3E19C875…371AE8`, FPATH test `775D7893…F97EB9`. WP-3 required NO resealing (orientation verdict above).
 
 **Follows WorkPlan.md?** YES — this amendment IS WorkPlan v0.1.6 (`§6` SA-02 tracks, `§9` charter, `§10` 18 schemas, `§8` spec set) executed append-only with evidence above. No deviation.
 
 ---
 
-## WP-4 — State-only features + forced-derivative mining + kernel ablation (SPEC 09, 10, 11) ⭐ — status: `PENDING`
+## WP-4 — State-only features + forced-derivative mining + kernel ablation (SPEC 09, 10, 11) ⭐ — status: `GATED_PASS` (2026-09-22, SA-02 discovery; mining evidence only, no theorem)
 
-**Scope per WorkPlan.md §6:** versioned `F-v0.1` state-only features (depth/parent/ancestor/subtree/rank/interval/access-path/crossing/heavy/bend + vectors + mirror declarations + hand tests); exact `ΔF` vs `ΔH=L/q` datasets; sparse exact combination + structured-atom searches with versioned coefficient domains + basis/inconsistency analysis + stratification; PC-style kernels (value-separation + transition-preservation + ablation + sharpness table + full-state control). Quarantine: mining never writes certificates.
-**Files:** NOT YET CREATED — pending: `crates/feature_core/src/*` (10 modules), `python/mining/*` (9 scripts), `artifacts/{features,kernels,hypotheses}/…`, mining-report skeleton, `scripts/run_phase09-11.sh`.
-**Code + how (incl. model specifics):** NOT YET WRITTEN — planned per WorkPlan §6/§9: discovery equations `n=2..5`; domains `ℤ[−M,M]→ℚ_{den≤D}→nonneg→signed` as new search versions; ranking `(count, residual, complexity, cross-n)`; `R²` secondary only; minimal-inconsistent-subsystem preservation; kernel whitelist + static audits.
-**Resultant benchmarks:** NONE YET — planned: satisfaction counts, max residuals, rank/nullity, separation/preservation verdicts, stratified tables.
-**Brutal anti-overfitting (ENTIRELY different benchmarks):** NOT YET EXECUTED — planned per WorkPlan §9: held-out `n=6/7` (10–100× larger, unseen shapes/SCCs), held-out strata (FCYCLE/DELETE/zig-zag), derivative-not-scalar target, independent re-implementation (WP-5), large-`n` adversaries (WP-5), out-of-domain panel (WP-5), mutation controls (WP-5); `CROSS_N_STABLE` only after untouched-size survival; post-holdout edits → new IDs.
-**Follows WorkPlan.md?** N/A yet (WP-4 not started). Entry Dependency: UNBLOCKED
-2026-09-21 — WP-3 delivered `FORCED_DELTA` + `U/V/G` for n=2..7 with audits.
-No deviation.
-**Next action:** freeze `F-v0.1` definitions note before any code; then features → deltas → searches → kernels, each with Path sub-entries (schema hash, static-audit result, discovery tables).
+**Scope per WorkPlan.md §6 (plan v0.1.6, SA-02 tracks):** all items executed
+under SA-02 firewall + validation order. F-v0.1 state-only extractor
+(`python/mining/scalar_features.py`, 16 integer scalars + vectors + mirror
+invariant decls; F01 static no-answer PASS, F02 identical-zero/spine-diff
+PASS, F03 mirror PASS); state tables for every reachable state
+(`n=2:4, n=3:19, n=4:196, n=5:1764, n=6:17424, n=7:184041` with hashes
+`d3c86ed2…,3a55f02c…,6deeae3e…,bd4d68f7…,dbaa4490…,93d9f2e9…`); edge deltas
+staged (`n=2:4,n=3:17,n=4:12,n=5:8` before freeze; `n=6:84` after initial
+freeze; `n=7:10` after final unlock-once); Track-A manifest 0 rows
+(`6B2D3250…`, starved result preserved) + Track-B manifest 20 FCYCLE rows
+(`62E24AE8…`, 12+8); cycle anatomy `n=4` 6 cycles/12 edges (`5028a291…`),
+`n=5` 1 cycle/4 edges (`0872e0cb…`), `n=6` 11/44 (`2554dd35…`, after initial
+freeze), `n=7` 1/10 (`c97175de…`, after final unlock-once) with all
+`sum_L==0`, `p*sum_a==q*sum_y`, `sum_a==q*k`, `k>0` exact; exact linear-first
+search over Q (Track-A rank0/null16 vacuous; Track-B rank7/null9 consistent
+dense `H_B_v1` 6-support rational, sparse `[-2,2]`≤2 best residual `4/5`);
+nonlinear ladder deferred (linear not exhausted; no unrestricted regression);
+kernels track-separated (`FULL_STATE` PASS all sizes; ablations
+`KERNEL_VALUE_INSUFFICIENT` with smallest pairs, e.g. Track-B minus_depth
+`[9,83]`); validation `H-SA02-B-v1` on n=6 84 rows max `5/1` FAIL → freeze
+final `H-SA02-B-v1-final` (`04BFACAD…`, same coeffs, n6 as validation) →
+holdout n=7 once 10 rows max `139/35` FAIL untouched; motifs compared
+(n4 2-cycles zig-only; n5 4-cycle zig/zigzig; n6 11 SCCs 42/42 split; n7
+single 10-edge with `LL,ZIG`/`RR,ZIG` unseen multis); firewall audit
+(blocks + unlock-once PASS) + contamination ledger (N6/N7 reveals in order).
+**Out-discipline held:** mining hypotheses only; no universal claim; every
+FAIL preserved (never repaired); mining never wrote certificates.
+**Files (WorkPlan §6 list — created, hashed):**
+`python/mining/{holdout_firewall,scalar_features,build_features,build_datasets,exact_linear,cycle_anatomy,freeze_initial,validate_n6,freeze_final,evaluate_n7,kernel_ablation}.py`,
+`artifacts/features/n{2..7}/`, `artifacts/datasets/track_{a,b}_manifest.json`,
+`artifacts/cycle_anatomy/n{4,5,6,7}/`, `artifacts/hypotheses/{track_*_linear_report,H-SA02-B-v1,H-SA02-B-v1-final,hypothesis_ledger}.json`,
+`artifacts/{validation/holdout}/`, `artifacts/kernels/*_{a,b}.json`,
+`artifacts/audits/{contamination_ledger,holdout_firewall_audit,n7_unlock}.json`,
+`THEOREM_MINING_REPORT.md` (A–M), `tests/test_sa02_freeze.py` (23/23) +
+`tests/test_sa02_tracks.py` (34/34) + `tests/test_fpath_orientation.py` (15/15).
+**Code + how (incl. model specifics):** per WorkPlan §6/§9 + SA-02 §SA-02.6:
+discovery equations Track-A 0 / Track-B n=4,5 FCYCLE 20; domains
+`ℤ[-2,2]` support≤2 sparse → full-Q dense as new search version (never
+silent); ranking `(count,residual,complexity,cross-n)`; `R²` none;
+basis + minimal-subsystem (null here since consistent); stratification
+`KEEP/DELETE×FPATH/FCYCLE/FGAP×zig` always reported.
+**Resultant benchmarks (exact, on discovery):** Track-A satisfaction vacuous
+(0 rows), max-res 0, rank0/null16; Track-B satisfaction 20/20 (dense),
+sparse-best max `4/5`, rank7/null9, basis `[0,1,2,4,12,13,14]`; kernels
+FULL_STATE PASS, ablations FAIL with witnesses (see tables).
+**Brutal anti-overfitting (ENTIRELY different benchmarks):** EXECUTED per
+WorkPlan §9 + SA-02: different sizes (n=6 validation FAIL `5/1`, n=7 holdout
+FAIL `139/35` untouched-once, 10–100× larger, unseen SCCs/motifs); different
+families (FCYCLE-only discovery vs zig/KEEP strata reported); different
+target (derivatives, not `V`); different code (firewall + independent audit
+verifiers); different regime (multi-step `LL,ZIG` holdout motifs); mutation
+controls via firewall second-unlock/mismatch blocks. `CROSS_N_STABLE` NOT
+claimed (both FAIL). Post-holdout edits → new IDs (none made; old runs
+preserved).
+**Follows WorkPlan.md?** YES — every §6/§9/SA-02 scope/file/code/benchmark
+element executed with evidence above, in validation order
+fit-n45 → freeze-initial (`7B4079A6…`) → reveal-n6 → freeze-final
+(`04BFACAD…`) → reveal-n7-once. No deviation (firewall test-isolation fix
+ledgered, no normative change).
+**Next action:** WP-5 (UH gates for any future universal `(H,b_H)`; current
+dense `H_B` FAILS validation/holdout and is NOT a universal candidate —
+needs new hypothesis/track, never re-call n=7 untouched).
 
 ---
 
@@ -510,7 +565,9 @@ No deviation.
 
 | ID | Definition (frozen) | Discovery / holdout | Gate verdicts | Killer counterexample / witness | Status |
 |---|---|---|---|---|---|
-| — | NONE YET. No hypotheses formed before WP-4. | — | — | — | — |
+| H-SA02-B-v1 | `H_B_v1 = (8/5)*depth_sum + (17/5)*depth_max + (8/5)*parent_diff + (-1/5)*parent_flip + (-9/5)*ancestor_Aonly + (-8/5)*ancestor_both` (dense rational, n=4,5 FCYCLE 20 rows, rank7/null9) | discovery n=4,5 exact-fit 20/20; validation n=6 84 FCYCLE rows | n6 exact max `5/1` FAIL | worst `n=6 src=3598→14770 K k=1 slack=9` (`artifacts/validation/n6_H-SA02-B-v1.json`) | FROZEN-INITIAL → superseded by final (no coeff change) |
+| H-SA02-B-v1-final | same coeffs as v1 (parent v1; n6 FAIL recorded, no refit so n6 stays validation) | holdout n=7 10 rows, unlocked once | n7 exact max `139/35` FAIL untouched | worst `n=7 src=17160→143185 K k=1 slack=-6` (`artifacts/holdout/n7_H-SA02-B-v1-final.json`) | FROZEN-FINAL (any post-n7 change → new track, never re-call n7 untouched) |
+| Track-A | original control (0 selection rows) | discovery n=2..5 starved | rank0/null16, no equations | starvation itself (`track_a_manifest.json` 0 rows) | RECORDED (never repaired) |
 
 ---
 
@@ -534,10 +591,11 @@ n | C_n | |R_n| | b_n* (p/q) | subtype (top-level) | #forced | #FORCED_DELTA | #
 
 ## Claim-level tracker (only WP-6 may advance this; fail-closed)
 
-- **Current truthful level:** `FINITE_EXACT_BN_RESULTS` (advanced 2026-09-21:
-exact finite-`n` subsequence overheads with two-sided certificates +
-canonical `U/V/G` potentials, all independently verified for n=2..7 —
-exactly what this level words. No theorem-level claim.)
+- **Current truthful level:** `FINITE_EXACT_BN_RESULTS` (advanced 2026-09-21;
+  retained 2026-09-22 after SA-02 discovery: WP-4 mining evidence complete —
+  Track-A starved, Track-B dense fit FAILS untouched n=6 (`5/1`) and n=7
+  (`139/35`) — so no promotion to `FINITE_THEOREM_MINING_ONLY`/`CANDIDATE_H`
+  merely because code executes; mining success ≠ theorem. No theorem-level claim.)
 - History: 2026-09-21 advanced NO LEVEL → `FINITE_INFRASTRUCTURE_ONLY` on the
   evidence in the WP-1 entry (30/30 gate checks + 8 sealed tree universes +
   stress `wp1_stress.json`); same day advanced → `FINITE_EXACT_BN_RESULTS`
@@ -548,14 +606,12 @@ exactly what this level words. No theorem-level claim.)
 
 ## Next 3 actions (always concrete)
 
-1. WP-4 Step 1: freeze `F-v0.1` feature definitions + state-only extractor
-   (F01 static audit, F02 sanity, F03 mirrors) over every `s ∈ R_n` →
-   Path sub-entry.
-2. WP-4 Step 2: forced-derivative datasets (`ΔF` vs `ΔH`) + exact
-   sparse-combination/atom searches with discovery/holdout split + equation
-   basis witnesses (D01–D03) → Path sub-entry.
-3. WP-4 Step 3: kernel identification/ablation with transition-preservation
-   tests (K01–K03) + mining report skeleton → Path sub-entry; no theorem
-   claimed (mining success ≠ theorem).
+1. WP-5: gate any future universal `(H,b_H)` UH-0..UH-8 (OG diagnostics
+   alongside); current `H_B` FAILS and is NOT a universal candidate — new
+   hypothesis/track required, never re-call n=7 untouched.
+2. WP-5 adversaries + independent falsifier for future candidates (exact
+   residuals, history-realizable, motif generalization).
+3. WP-6 seal when proof/family exists (or retain finite level); §36 answers;
+   Tables A–E; archive + clean reproduction.
 
 *End of Path.md — updated every session work is done; mirrored 1:1 with WorkPlan.md phases so adherence is checkable line-by-line.*

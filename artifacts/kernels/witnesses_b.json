@@ -1,0 +1,222 @@
+[
+  {
+    "families": [
+      "FULL_STATE"
+    ],
+    "n": 4,
+    "separating_witness": null,
+    "track": "B",
+    "transition_sample_checked": 0,
+    "value_separation": "PASS"
+  },
+  {
+    "families": [
+      "FULL_STATE"
+    ],
+    "n": 5,
+    "separating_witness": null,
+    "track": "B",
+    "transition_sample_checked": 0,
+    "value_separation": "PASS"
+  },
+  {
+    "families": [
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        1,
+        5
+      ],
+      "pair": [
+        9,
+        83
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 11,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 15,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "parent",
+      "subtree",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 11,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "interval",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 13,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "access",
+      "crossing",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 13,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "crossing",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 13,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "heavy"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 13,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  },
+  {
+    "families": [
+      "depth",
+      "parent",
+      "ancestor",
+      "subtree",
+      "interval",
+      "access",
+      "crossing"
+    ],
+    "n": 4,
+    "separating_witness": {
+      "V": [
+        0,
+        1
+      ],
+      "pair": [
+        1,
+        14
+      ]
+    },
+    "track": "B",
+    "transition_sample_checked": 14,
+    "value_separation": "KERNEL_VALUE_INSUFFICIENT"
+  }
+]

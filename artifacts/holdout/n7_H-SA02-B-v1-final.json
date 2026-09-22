@@ -1,0 +1,17 @@
+{
+  "candidate_id": "H-SA02-B-v1-final",
+  "evaluated_rows": 10,
+  "exact_max_residual": "139/35",
+  "n": 7,
+  "note": "hard holdout revealed exactly once after final freeze; any revision loses untouched claim",
+  "untouched": true,
+  "verdict": "FAIL",
+  "worst_row": {
+    "key": 1,
+    "mode": "KEEP",
+    "n": 7,
+    "scaled_slack": "-6",
+    "source_state_id": 17160,
+    "target_state_id": 143185
+  }
+}

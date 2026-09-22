@@ -1,0 +1,77 @@
+{
+  "count": 18,
+  "schemas": [
+    {
+      "file": "bh_feasibility.schema.json",
+      "sha256": "EDB4B58779E5FC05B99C17E34DF9688D3D766E7FFA54898E4BA5AEB4195FD56D"
+    },
+    {
+      "file": "bn_candidate.schema.json",
+      "sha256": "E8A7385A5B03D001F3B93E0EA257C76C6D4A11FEC9B6660A395EE0E38309C741"
+    },
+    {
+      "file": "bn_certificate.schema.json",
+      "sha256": "C86A325AAFF97B784EB0E8F1360DC35CF3F6D57A46CDF17D0B29D60F3EEA0542"
+    },
+    {
+      "file": "candidate_H.schema.json",
+      "sha256": "400B57BA4610DC0ECCA610B18D5FB5958E6FF7590BC565CC3F2EB29CC6EEB781"
+    },
+    {
+      "file": "critical_edge.schema.json",
+      "sha256": "95FC28DA440388AFE298683D6E336AF332C9D8E89E54ED8C5B331A7B8FAD5A66"
+    },
+    {
+      "file": "critical_state.schema.json",
+      "sha256": "D07308B7C498A832354F11A1146979E0C2B193EA6933AAD360D12F5E697B5790"
+    },
+    {
+      "file": "cycle_anatomy_v0.1.schema.json",
+      "sha256": "3B9919EC1CA367BA89C8D8ECEC4AE3D0BF07B0EF1FE52D5EC58B312BF7699DD8"
+    },
+    {
+      "file": "cycle_witness.schema.json",
+      "sha256": "7318FC70AAFE476E216CD53000DC4B90BC633C625A8452BC03B372676CE89228"
+    },
+    {
+      "file": "eval_contract_v0.1.schema.json",
+      "sha256": "CBEAE7CDE3D3927684F702C3ABFE024D5A6334D940E80ECE134BDE175A687013"
+    },
+    {
+      "file": "feature_row.schema.json",
+      "sha256": "3DE11F1E256EC9966A731B103CAF71E9C9B8703A17D733A01406E56A1E216739"
+    },
+    {
+      "file": "final_result.schema.json",
+      "sha256": "8C029A4334B7452B0ED0EC180DF954F77FDF313081A03898247883AC7E29CBC5"
+    },
+    {
+      "file": "kernel_result.schema.json",
+      "sha256": "B64EEFB3BD7B15577926D2B7242EEAB4DDF218FF29E46417D20EE8AC02FF688D"
+    },
+    {
+      "file": "path_witness.schema.json",
+      "sha256": "74B7BC917664AFC88152EB159DC582FB4C71BDEA9CB81AFB1CD61FDEAA50F4EE"
+    },
+    {
+      "file": "potential_table.schema.json",
+      "sha256": "0BF37115D16F187897AC605F152F28BF1998ED1A180F1FDDD114877FC641D1E7"
+    },
+    {
+      "file": "reachability.schema.json",
+      "sha256": "060A3103FE76E0A49829D405A9DA128E3A2E631F3991D4E3F9A9795E1683279A"
+    },
+    {
+      "file": "transition.schema.json",
+      "sha256": "444631C36FAA962942780453D659969D2C944DE8E9F27AF9133DDD2E8AC5BF15"
+    },
+    {
+      "file": "tree.schema.json",
+      "sha256": "242856F78B7C543716A73EB54ED1CB3F29489BD0529706F5791DA5CFFD1BBE21"
+    },
+    {
+      "file": "wp4_dataset_manifest_v0.1.schema.json",
+      "sha256": "372E0E032A2B8AD3BD22E960E99B685082D01FEFBE4553772C4F25DDBEE992C6"
+    }
+  ]
+}

@@ -1,0 +1,637 @@
+{
+  "amendment_id": "SA-02",
+  "dataset_id": "WP4-TRACK-B-v1",
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "holdout_size": 7,
+  "rows": [
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": -1,
+        "f_access_symdiff_sum": -1,
+        "f_ancestor_Aonly": 0,
+        "f_ancestor_Bonly": -1,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": -1,
+        "f_heavy_agree_count": -1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -1,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -1
+      },
+      "key": 2,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 28,
+      "target_state_id": 106
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 1,
+        "f_access_symdiff_sum": 1,
+        "f_ancestor_Aonly": 1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 1,
+        "f_heavy_agree_count": 1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 1,
+        "f_parent_diff_count": -1,
+        "f_parent_flip_count": -1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 1
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 57,
+      "target_state_id": 137
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 1,
+        "f_access_symdiff_sum": -1,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 1,
+        "f_heavy_agree_count": 1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -1,
+        "f_parent_diff_count": -1,
+        "f_parent_flip_count": 1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -1
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 58,
+      "target_state_id": 138
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": -1,
+        "f_access_symdiff_sum": 1,
+        "f_ancestor_Aonly": 1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": -1,
+        "f_heavy_agree_count": -1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 1,
+        "f_parent_diff_count": 1,
+        "f_parent_flip_count": -1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 1
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 71,
+      "target_state_id": 151
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": -1,
+        "f_access_symdiff_sum": -1,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": -1,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -1,
+        "f_parent_diff_count": 1,
+        "f_parent_flip_count": 1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -1
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 72,
+      "target_state_id": 152
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 1,
+        "f_access_symdiff_sum": 1,
+        "f_ancestor_Aonly": 0,
+        "f_ancestor_Bonly": 1,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 1,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 1,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 1
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 87,
+      "target_state_id": 167
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 1,
+        "f_access_symdiff_sum": 1,
+        "f_ancestor_Aonly": 0,
+        "f_ancestor_Bonly": 1,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 1,
+        "f_heavy_agree_count": 1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 1,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 1
+      },
+      "key": 4,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 106,
+      "target_state_id": 28
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": -1,
+        "f_access_symdiff_sum": -1,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": -1,
+        "f_heavy_agree_count": -1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -1,
+        "f_parent_diff_count": 1,
+        "f_parent_flip_count": 1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -1
+      },
+      "key": 4,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 137,
+      "target_state_id": 57
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": -1,
+        "f_access_symdiff_sum": 1,
+        "f_ancestor_Aonly": 1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": -1,
+        "f_heavy_agree_count": -1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 1,
+        "f_parent_diff_count": 1,
+        "f_parent_flip_count": -1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 1
+      },
+      "key": 4,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 138,
+      "target_state_id": 58
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 1,
+        "f_access_symdiff_sum": -1,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 1,
+        "f_heavy_agree_count": 1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -1,
+        "f_parent_diff_count": -1,
+        "f_parent_flip_count": 1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -1
+      },
+      "key": 4,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 151,
+      "target_state_id": 71
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 1,
+        "f_access_symdiff_sum": 1,
+        "f_ancestor_Aonly": 1,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 1,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 1,
+        "f_parent_diff_count": -1,
+        "f_parent_flip_count": -1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 1
+      },
+      "key": 4,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 152,
+      "target_state_id": 72
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": -1,
+        "f_access_symdiff_sum": -1,
+        "f_ancestor_Aonly": 0,
+        "f_ancestor_Bonly": -1,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -1,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": -1,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -1,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -1
+      },
+      "key": 3,
+      "mode": "KEEP",
+      "n": 4,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "0",
+      "source_state_id": 167,
+      "target_state_id": 87
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": 2,
+        "f_ancestor_Aonly": 2,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": -2,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 2,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 2,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": -1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 2
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "-1",
+      "source_state_id": 294,
+      "target_state_id": 1504
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": -4,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": -3,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -4,
+        "f_depth_max_abs_diff": -2,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": -1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -4,
+        "f_parent_diff_count": 1,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -4
+      },
+      "key": 3,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "-9",
+      "source_state_id": 300,
+      "target_state_id": 895
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": 0,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": 1,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 0,
+        "f_depth_max_abs_diff": 1,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": 1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 0,
+        "f_parent_diff_count": -1,
+        "f_parent_flip_count": 1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 0
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "9",
+      "source_state_id": 303,
+      "target_state_id": 1507
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": 2,
+        "f_ancestor_Aonly": 0,
+        "f_ancestor_Bonly": 2,
+        "f_ancestor_both": 2,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 2,
+        "f_depth_max_abs_diff": 1,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 2,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 2
+      },
+      "key": 1,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "1",
+      "source_state_id": 895,
+      "target_state_id": 1511
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": 2,
+        "f_ancestor_Aonly": 0,
+        "f_ancestor_Bonly": 2,
+        "f_ancestor_both": 2,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 2,
+        "f_depth_max_abs_diff": 1,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 2,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 2
+      },
+      "key": 5,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "1",
+      "source_state_id": 895,
+      "target_state_id": 294
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": 0,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": 1,
+        "f_ancestor_both": 1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 0,
+        "f_depth_max_abs_diff": 1,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": 1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 0,
+        "f_parent_diff_count": -1,
+        "f_parent_flip_count": 1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 0
+      },
+      "key": 5,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "9",
+      "source_state_id": 1504,
+      "target_state_id": 300
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": -4,
+        "f_ancestor_Aonly": -1,
+        "f_ancestor_Bonly": -3,
+        "f_ancestor_both": -1,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": -4,
+        "f_depth_max_abs_diff": -2,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": -1,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": -4,
+        "f_parent_diff_count": 1,
+        "f_parent_flip_count": 0,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": -4
+      },
+      "key": 3,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "-9",
+      "source_state_id": 1507,
+      "target_state_id": 895
+    },
+    {
+      "delta_F": {
+        "f_access_sum_abs_diff": 0,
+        "f_access_symdiff_sum": 2,
+        "f_ancestor_Aonly": 2,
+        "f_ancestor_Bonly": 0,
+        "f_ancestor_both": -2,
+        "f_bend_placeholder": 0,
+        "f_crossing_reversal": 2,
+        "f_depth_max_abs_diff": 0,
+        "f_depth_sum_abs_diff": 0,
+        "f_heavy_agree_count": 0,
+        "f_interval_identical_count": 0,
+        "f_interval_symdiff_sum": 2,
+        "f_parent_diff_count": 0,
+        "f_parent_flip_count": -1,
+        "f_root_same": 0,
+        "f_subtree_sum_abs_diff": 2
+      },
+      "key": 5,
+      "mode": "KEEP",
+      "n": 5,
+      "provenance": [
+        "FCYCLE",
+        "VBELLMAN",
+        "UBELLMAN"
+      ],
+      "scaled_slack": "-1",
+      "source_state_id": 1511,
+      "target_state_id": 303
+    }
+  ],
+  "selection_rule": "all FCYCLE FORCED_DELTA rows at n=4,5",
+  "selection_sizes": [
+    4,
+    5
+  ],
+  "sha256": "62e24ae82dc187eb42ec2b9611dbd1f0b8eb355018b1468e5e939850262e4cfb",
+  "track": "B",
+  "validation_rows_separate": true,
+  "validation_size": 6
+}
