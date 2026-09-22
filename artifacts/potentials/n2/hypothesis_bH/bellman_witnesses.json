@@ -1,0 +1,1 @@
+{"U": {"0": {"kind": "diagonal-init"}, "1": {"key": 2, "kind": "tight-predecessor", "mode": 1, "predecessor": 3}, "2": {"key": 1, "kind": "tight-predecessor", "mode": 1, "predecessor": 0}, "3": {"kind": "diagonal-init"}}, "V": {}}

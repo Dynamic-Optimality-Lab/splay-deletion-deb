@@ -1,0 +1,99 @@
+{
+  "b_H": {
+    "p": "2",
+    "q": "1"
+  },
+  "geometry": "artifacts/potentials/n{n}/hypothesis_bH (b=2 canonical; NOT b_n*)",
+  "hypothesis_id": "H-0001",
+  "per_n": [
+    {
+      "first_violation": null,
+      "lower_violations": 0,
+      "max_lower_margin": 0,
+      "max_upper_margin": 0,
+      "n": 2,
+      "states_checked": 4,
+      "status": "PASS",
+      "upper_violations": 0
+    },
+    {
+      "first_violation": null,
+      "lower_violations": 0,
+      "max_lower_margin": 0,
+      "max_upper_margin": 0,
+      "n": 3,
+      "states_checked": 19,
+      "status": "PASS",
+      "upper_violations": 0
+    },
+    {
+      "first_violation": null,
+      "lower_violations": 0,
+      "max_lower_margin": 0,
+      "max_upper_margin": 0,
+      "n": 4,
+      "states_checked": 196,
+      "status": "PASS",
+      "upper_violations": 0
+    },
+    {
+      "first_violation": {
+        "A_shape": "(((((..).).).).)",
+        "B_shape": "((((..).).)(..))",
+        "H": 5,
+        "U_2": 4,
+        "V_2": 0,
+        "kind": "UPPER",
+        "pair_id": 4,
+        "signed_diff": 1
+      },
+      "lower_violations": 0,
+      "max_lower_margin": 0,
+      "max_upper_margin": 2,
+      "n": 5,
+      "states_checked": 1764,
+      "status": "FAIL",
+      "upper_violations": 52
+    },
+    {
+      "first_violation": {
+        "A_shape": "((((((..).).).).).)",
+        "B_shape": "(((((..).).).)(..))",
+        "H": 6,
+        "U_2": 4,
+        "V_2": 0,
+        "kind": "UPPER",
+        "pair_id": 5,
+        "signed_diff": 2
+      },
+      "lower_violations": 0,
+      "max_lower_margin": 0,
+      "max_upper_margin": 4,
+      "n": 6,
+      "states_checked": 17424,
+      "status": "FAIL",
+      "upper_violations": 352
+    },
+    {
+      "first_violation": {
+        "A_shape": "(((((((..).).).).).).)",
+        "B_shape": "((((((..).).).).)(..))",
+        "H": 7,
+        "U_2": 4,
+        "V_2": 0,
+        "kind": "UPPER",
+        "pair_id": 6,
+        "signed_diff": 3
+      },
+      "lower_violations": 0,
+      "max_lower_margin": 0,
+      "max_upper_margin": 9,
+      "n": 7,
+      "states_checked": 184041,
+      "status": "FAIL",
+      "upper_violations": 3300
+    }
+  ],
+  "schema": "UH4-v0.1",
+  "verdict": "FAIL"
+}

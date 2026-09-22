@@ -1,0 +1,49 @@
+{
+  "arithmetic": "exact integers (Python int); no floating point",
+  "b_H": {
+    "p": "2",
+    "q": "1"
+  },
+  "b_role": "universal hypothesis b_H (SA-01 greater-than branch); NOT WP-3 b_n* discovery geometry",
+  "construction_method": "sealed transitions+reachability -> solve_small.build_csr -> canonical.compute_U/compute_V at b=2/1 -> canonical.build_potentials",
+  "files": {
+    "G": {
+      "logical_sha256": "d16c5bec42d0e88b29b3ca4be64646cb4bfe19f2e4e074da5db42f02c99b15a5",
+      "path": "G.json.zst"
+    },
+    "U": {
+      "logical_sha256": "cd5f37031e869a28767aa9fc606f77994cac56ff028bfed5ea55108311e7d9db",
+      "path": "U.json.zst"
+    },
+    "V": {
+      "logical_sha256": "69b9b1bfef74f74dff1ded23a811267df823115d1b0cd70673f1cbde99fcbf0c",
+      "path": "V.json.zst"
+    }
+  },
+  "n": 2,
+  "primary_summary": {
+    "G_nonnegative": true,
+    "b": {
+      "p": "2",
+      "q": "1"
+    },
+    "forced_count": 2,
+    "forced_fraction": 0.5,
+    "logical_G_sha256": "d16c5bec42d0e88b29b3ca4be64646cb4bfe19f2e4e074da5db42f02c99b15a5",
+    "logical_U_sha256": "cd5f37031e869a28767aa9fc606f77994cac56ff028bfed5ea55108311e7d9db",
+    "logical_V_sha256": "69b9b1bfef74f74dff1ded23a811267df823115d1b0cd70673f1cbde99fcbf0c",
+    "max_G": "4",
+    "max_U": "4",
+    "max_V": "0",
+    "n": 2,
+    "reachable_pair_count": 4
+  },
+  "reachable_pair_count": 4,
+  "schema": "BHG-v0.1",
+  "spec_refs": [
+    "WorkPlan.md#7 WP-5 UH-3/UH-4",
+    "SA-01 greater-than branch"
+  ],
+  "state_ordering": "ascending pair_id; pair_id = a_id*tree_count + b_id",
+  "tree_count": 2
+}

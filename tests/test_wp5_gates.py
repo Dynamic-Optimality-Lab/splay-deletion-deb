@@ -67,7 +67,7 @@ def test_h03_h04():
         sizes = dev(hyp_id)["sizes"]
         keep_fail = any(int(sizes[n]["keep_max"]) > 0 for n in sizes)
         del_fail = any(int(sizes[n]["delete_max"]) > 0 for n in sizes)
-        check("H03-%s" % hyp_id, (gates["UH-5"] == "REJECTED") == (keep_fail or del_fail),
+        check("H03-%s" % hyp_id, (gates["UH-5"].startswith("REJECTED")) == (keep_fail or del_fail),
               "KEEP verdict matches maxima")
         check("H04-%s" % hyp_id, True, "DELETE maxima reported exactly")
 

@@ -1,0 +1,54 @@
+{
+  "b_H": {
+    "p": "2",
+    "q": "1"
+  },
+  "corrective": "WP-5 UH-4 b_H=2 canonical sandwich compliance repair",
+  "geometry": {
+    "2": {
+      "G_sha256": "d16c5bec42d0e88b29b3ca4be64646cb4bfe19f2e4e074da5db42f02c99b15a5",
+      "U_sha256": "cd5f37031e869a28767aa9fc606f77994cac56ff028bfed5ea55108311e7d9db",
+      "V_sha256": "69b9b1bfef74f74dff1ded23a811267df823115d1b0cd70673f1cbde99fcbf0c",
+      "reachable_pair_count": 4
+    },
+    "3": {
+      "G_sha256": "8716ad26989a3453eaa96fe0e6d4b494562cf7461a858d0cf516930e61ae7313",
+      "U_sha256": "8cd2f7ebcd75a61ccbd6b290e83d20450bba219f515b87ee26a08445b190fd23",
+      "V_sha256": "f909855d3f74a2330e846cbc101e3b8fa3822259fee4f737e5fd7f174e53a0e0",
+      "reachable_pair_count": 19
+    },
+    "4": {
+      "G_sha256": "28288bf4587eeb748281a3d5510aca378916ede798f81fcbef59a335e98a2ebf",
+      "U_sha256": "a19f899232b202cc56ca060fb43360de3137c5c7246b418a557716b8e1c0785c",
+      "V_sha256": "3432e33650411ce20feaea92e81fa78f772e2a0234d2844ee6051bd958c1faa3",
+      "reachable_pair_count": 196
+    },
+    "5": {
+      "G_sha256": "81cb50e71328a542ed982abc4ad6e9ec3bb917f403334f3d64c35b5db9c0c243",
+      "U_sha256": "21763690031b67c6fceb9f0e5da67f4e9d6740fd5ca44e07f2d09cfb74276017",
+      "V_sha256": "0fad3acc1056779cb52714365664ff1b13b366c021e6c860356248d0dde296cb",
+      "reachable_pair_count": 1764
+    },
+    "6": {
+      "G_sha256": "7c572424612d700328bc138773bef520e91cd51c1c4152d4f200540676ffb1be",
+      "U_sha256": "cd4dc86705134aba0bbbb6c8f013a705a260d8930c49b6cf4122264012160ba2",
+      "V_sha256": "c24a8da769b518ba07de5222ffe38d96a7b6f0ddf8bcd000d9ef02f8be3db300",
+      "reachable_pair_count": 17424
+    },
+    "7": {
+      "G_sha256": "3b8a45670efbcd6429a7ecf46b8b354231a1799d452f99b3663a818909da579f",
+      "U_sha256": "c4f1cc4812362341053051d407110f785ee0f20611ea5c635ffc98c31b2a5576",
+      "V_sha256": "da5dba93a96374cc666232690135dea05390ff23b89ab7d980ad0c5a34b99028",
+      "reachable_pair_count": 184041
+    }
+  },
+  "normative_sha256": {
+    "IMPLEMENTATION_SPEC.md": "276529e5a2d4a4156158f41c73b55f776eed0d42583e03760ba6db3b802b3627",
+    "Path.md": "a58777781535bc11571dde1fba593702b27714ae1ea28a2b0523c72542bf2fba",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.1.md": "8b77278ff98f6ab5a3aa4d929a5787735f269647d5e3088cf4288f8acf8c7726",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.2.md": "79c58ed0278a6f81fe42685955c2d50eef9a6744ccd0a701b6fe8df96ee41cdf",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.3.md": "bb407fac46db30fa58f8833e513152fc10182ac931afd84ddb0c29b0217e25e1",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.4.md": "23046d37799860ccfd69bed21d6474f35aca4e6fb91474faae2002617503e5fb",
+    "WorkPlan.md": "bddc493f4a13b7a8ee565673041217e6116a7b6783970ba533bb9fe898f758b8"
+  }
+}

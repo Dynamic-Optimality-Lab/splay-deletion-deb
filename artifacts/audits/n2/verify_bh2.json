@@ -1,0 +1,21 @@
+{
+  "b_H": {
+    "p": "2",
+    "q": "1"
+  },
+  "checks": {
+    "bellman_U": true,
+    "bellman_V": true,
+    "companion": true,
+    "counts": true,
+    "forced": true,
+    "hashes": true,
+    "inequalities": true,
+    "lengths": true,
+    "recompute_U": true,
+    "recompute_V": true,
+    "values": true
+  },
+  "n": 2,
+  "verdict": "PASS"
+}
