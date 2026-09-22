@@ -1,0 +1,33 @@
+{
+  "bridge": "BRIDGE_NOT_INVOKED",
+  "gate": "P02",
+  "points": [
+    {
+      "evidence": "This project studies bottom-up Splay exactly as the frozen Splay semantics (SPEC 04); no line-by-line variant match against the Levy-Tarjan paper text was performed, so the bridge cannot be invoked.",
+      "point": "variant",
+      "status": "GAP"
+    },
+    {
+      "evidence": "Project costs are exact access depths c=depth+1 per access (INV-004); Levy-Tarjan cost conventions were not mechanically matched.",
+      "point": "cost",
+      "status": "GAP"
+    },
+    {
+      "evidence": "No subsequence-encoding correspondence proof was written; KEEP/DELETE pair dynamics is project-internal (SPEC 07).",
+      "point": "subsequence",
+      "status": "GAP"
+    },
+    {
+      "evidence": "Pairs start at diagonals (T,T); the bridge's initial-tree requirements were not discharged.",
+      "point": "initial-tree",
+      "status": "GAP"
+    },
+    {
+      "evidence": "No universal (H,b_H) certificate exists (6/6 REJECTED), so there is no constant whose independence could be checked.",
+      "point": "constant-independence",
+      "status": "GAP"
+    }
+  ],
+  "reason": "No proved Pair Access Lemma exists; convention gaps above are recorded, never waived.",
+  "verdict": "PASS"
+}

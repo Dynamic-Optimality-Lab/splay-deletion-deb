@@ -1,0 +1,86 @@
+{
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fresh_checkout_head": "4e181150f7591ec2714413223404f097a5be0f61",
+  "n7_cert_verify": true,
+  "phase": "S01",
+  "rebuild": [
+    {
+      "kind": "trees",
+      "method": "byte-identical",
+      "n": 2
+    },
+    {
+      "kind": "transitions",
+      "method": "byte-identical",
+      "n": 2
+    },
+    {
+      "kind": "reachability",
+      "method": "byte-identical",
+      "n": 2
+    },
+    {
+      "kind": "trees",
+      "method": "byte-identical",
+      "n": 3
+    },
+    {
+      "kind": "transitions",
+      "method": "byte-identical",
+      "n": 3
+    },
+    {
+      "kind": "reachability",
+      "method": "byte-identical",
+      "n": 3
+    },
+    {
+      "kind": "trees",
+      "method": "byte-identical",
+      "n": 4
+    },
+    {
+      "kind": "transitions",
+      "method": "byte-identical",
+      "n": 4
+    },
+    {
+      "kind": "reachability",
+      "method": "byte-identical",
+      "n": 4
+    },
+    {
+      "kind": "trees",
+      "method": "byte-identical",
+      "n": 5
+    },
+    {
+      "kind": "transitions",
+      "method": "byte-identical",
+      "n": 5
+    },
+    {
+      "kind": "reachability",
+      "method": "byte-identical",
+      "n": 5
+    },
+    {
+      "kind": "trees",
+      "method": "byte-identical",
+      "n": 6
+    },
+    {
+      "kind": "transitions",
+      "method": "byte-identical",
+      "n": 6
+    },
+    {
+      "kind": "reachability",
+      "method": "byte-identical",
+      "n": 6
+    }
+  ],
+  "result_recompute_identical": true,
+  "verdict": "PASS",
+  "wall_seconds": 4.5
+}

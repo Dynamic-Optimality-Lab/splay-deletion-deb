@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "bracket": true,
+    "count": true,
+    "criticality": true,
+    "lower": true,
+    "reduced": true,
+    "upper": true
+  },
+  "n": 6,
+  "p": "8",
+  "q": "5",
+  "verdict": "PASS"
+}

@@ -1,0 +1,247 @@
+{
+  "families": [
+    {
+      "criteria": [
+        {
+          "criterion": "C1 closed-form parameterized family",
+          "finding": "SATISFIED-FORM ONLY: left-chain embedding is a closed-form tree construction, but no closed-form (T_k,X_k,Y_k) access triple with symbolic Splay/OPT costs exists",
+          "pass": false
+        },
+        {
+          "criterion": "C2 symbolic Splay-vs-OPT bounds with g/f->infinity",
+          "finding": "FAIL: samples record H-residual maxima (keep [6, 5, 6]), not Splay-vs-OPT gaps; no OPT oracle exists in this project; three finite points cannot witness a limit",
+          "pass": false
+        },
+        {
+          "criterion": "C3 repeatable motif beyond finite samples (T19)",
+          "finding": "FAIL: k=0,1,2 only; non-monotone; finite growth alone never equals disproof",
+          "pass": false
+        }
+      ],
+      "family_activated": false,
+      "growth": {
+        "delete_maxima": [
+          -2,
+          3,
+          6
+        ],
+        "exact_linear_growth": false,
+        "keep_differences": [
+          -1,
+          1
+        ],
+        "keep_maxima": [
+          6,
+          5,
+          6
+        ],
+        "monotone_growth": false
+      },
+      "hypothesis_id": "H-0001",
+      "reproduced_identical": true
+    },
+    {
+      "criteria": [
+        {
+          "criterion": "C1 closed-form parameterized family",
+          "finding": "SATISFIED-FORM ONLY: left-chain embedding is a closed-form tree construction, but no closed-form (T_k,X_k,Y_k) access triple with symbolic Splay/OPT costs exists",
+          "pass": false
+        },
+        {
+          "criterion": "C2 symbolic Splay-vs-OPT bounds with g/f->infinity",
+          "finding": "FAIL: samples record H-residual maxima (keep [13, 19, 26]), not Splay-vs-OPT gaps; no OPT oracle exists in this project; three finite points cannot witness a limit",
+          "pass": false
+        },
+        {
+          "criterion": "C3 repeatable motif beyond finite samples (T19)",
+          "finding": "FAIL: k=0,1,2 only; monotone; finite growth alone never equals disproof",
+          "pass": false
+        }
+      ],
+      "family_activated": false,
+      "growth": {
+        "delete_maxima": [
+          12,
+          16,
+          22
+        ],
+        "exact_linear_growth": false,
+        "keep_differences": [
+          6,
+          7
+        ],
+        "keep_maxima": [
+          13,
+          19,
+          26
+        ],
+        "monotone_growth": true
+      },
+      "hypothesis_id": "H-0002",
+      "reproduced_identical": true
+    },
+    {
+      "criteria": [
+        {
+          "criterion": "C1 closed-form parameterized family",
+          "finding": "SATISFIED-FORM ONLY: left-chain embedding is a closed-form tree construction, but no closed-form (T_k,X_k,Y_k) access triple with symbolic Splay/OPT costs exists",
+          "pass": false
+        },
+        {
+          "criterion": "C2 symbolic Splay-vs-OPT bounds with g/f->infinity",
+          "finding": "FAIL: samples record H-residual maxima (keep [13, 19, 26]), not Splay-vs-OPT gaps; no OPT oracle exists in this project; three finite points cannot witness a limit",
+          "pass": false
+        },
+        {
+          "criterion": "C3 repeatable motif beyond finite samples (T19)",
+          "finding": "FAIL: k=0,1,2 only; monotone; finite growth alone never equals disproof",
+          "pass": false
+        }
+      ],
+      "family_activated": false,
+      "growth": {
+        "delete_maxima": [
+          12,
+          16,
+          22
+        ],
+        "exact_linear_growth": false,
+        "keep_differences": [
+          6,
+          7
+        ],
+        "keep_maxima": [
+          13,
+          19,
+          26
+        ],
+        "monotone_growth": true
+      },
+      "hypothesis_id": "H-0003",
+      "reproduced_identical": true
+    },
+    {
+      "criteria": [
+        {
+          "criterion": "C1 closed-form parameterized family",
+          "finding": "SATISFIED-FORM ONLY: left-chain embedding is a closed-form tree construction, but no closed-form (T_k,X_k,Y_k) access triple with symbolic Splay/OPT costs exists",
+          "pass": false
+        },
+        {
+          "criterion": "C2 symbolic Splay-vs-OPT bounds with g/f->infinity",
+          "finding": "FAIL: samples record H-residual maxima (keep [10, 8, 7]), not Splay-vs-OPT gaps; no OPT oracle exists in this project; three finite points cannot witness a limit",
+          "pass": false
+        },
+        {
+          "criterion": "C3 repeatable motif beyond finite samples (T19)",
+          "finding": "FAIL: k=0,1,2 only; non-monotone; finite growth alone never equals disproof",
+          "pass": false
+        }
+      ],
+      "family_activated": false,
+      "growth": {
+        "delete_maxima": [
+          -2,
+          -2,
+          -2
+        ],
+        "exact_linear_growth": false,
+        "keep_differences": [
+          -2,
+          -1
+        ],
+        "keep_maxima": [
+          10,
+          8,
+          7
+        ],
+        "monotone_growth": false
+      },
+      "hypothesis_id": "H-0004",
+      "reproduced_identical": true
+    },
+    {
+      "criteria": [
+        {
+          "criterion": "C1 closed-form parameterized family",
+          "finding": "SATISFIED-FORM ONLY: left-chain embedding is a closed-form tree construction, but no closed-form (T_k,X_k,Y_k) access triple with symbolic Splay/OPT costs exists",
+          "pass": false
+        },
+        {
+          "criterion": "C2 symbolic Splay-vs-OPT bounds with g/f->infinity",
+          "finding": "FAIL: samples record H-residual maxima (keep [9, 8, 7]), not Splay-vs-OPT gaps; no OPT oracle exists in this project; three finite points cannot witness a limit",
+          "pass": false
+        },
+        {
+          "criterion": "C3 repeatable motif beyond finite samples (T19)",
+          "finding": "FAIL: k=0,1,2 only; non-monotone; finite growth alone never equals disproof",
+          "pass": false
+        }
+      ],
+      "family_activated": false,
+      "growth": {
+        "delete_maxima": [
+          -2,
+          -2,
+          -2
+        ],
+        "exact_linear_growth": false,
+        "keep_differences": [
+          -1,
+          -1
+        ],
+        "keep_maxima": [
+          9,
+          8,
+          7
+        ],
+        "monotone_growth": false
+      },
+      "hypothesis_id": "H-0005",
+      "reproduced_identical": true
+    },
+    {
+      "criteria": [
+        {
+          "criterion": "C1 closed-form parameterized family",
+          "finding": "SATISFIED-FORM ONLY: left-chain embedding is a closed-form tree construction, but no closed-form (T_k,X_k,Y_k) access triple with symbolic Splay/OPT costs exists",
+          "pass": false
+        },
+        {
+          "criterion": "C2 symbolic Splay-vs-OPT bounds with g/f->infinity",
+          "finding": "FAIL: samples record H-residual maxima (keep [7, 5, 8]), not Splay-vs-OPT gaps; no OPT oracle exists in this project; three finite points cannot witness a limit",
+          "pass": false
+        },
+        {
+          "criterion": "C3 repeatable motif beyond finite samples (T19)",
+          "finding": "FAIL: k=0,1,2 only; non-monotone; finite growth alone never equals disproof",
+          "pass": false
+        }
+      ],
+      "family_activated": false,
+      "growth": {
+        "delete_maxima": [
+          3,
+          4,
+          7
+        ],
+        "exact_linear_growth": false,
+        "keep_differences": [
+          -2,
+          3
+        ],
+        "keep_maxima": [
+          7,
+          5,
+          8
+        ],
+        "monotone_growth": false
+      },
+      "hypothesis_id": "H-0006",
+      "reproduced_identical": true
+    }
+  ],
+  "global_reason": "No family carries closed-form (T_k,X_k,Y_k) with symbolic Splay-vs-OPT bounds and g/f->infinity; samples are H-residual maxima at k=0,1,2 only (T19: finite growth alone never equals disproof). Motif evidence remains samples-only, preserved for future work, never promoted.",
+  "spec": "SPEC 17 (WP-6 negative branch)",
+  "verdict": "P17_NOT_ACTIVATED"
+}

@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "bellman_U": true,
+    "bellman_V": true,
+    "forced": true,
+    "inequalities": true,
+    "lengths": true,
+    "values": true
+  },
+  "n": 2,
+  "verdict": "PASS"
+}

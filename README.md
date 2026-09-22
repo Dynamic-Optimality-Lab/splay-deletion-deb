@@ -68,3 +68,35 @@ Requirements: Python >= 3.12 (validated on 3.13.7), Rust stable (see
 - Bottom-up Splay only: ZIG / ZIG-ZIG LL / ZIG-ZIG RR / ZIG-ZAG LR / ZIG-ZAG RL.
 - Pair domain is diagonal-reachable `R_n` only. Unreachable pairs never enter
   solver or mining inputs.
+
+## Experiment-0 tables A–E (sealed exact values; decimals display-only)
+
+Fractions are exact `p/q`; parenthesized decimals are labeled display only,
+never authoritative. Full evidence: `artifacts/seal/FINAL_RESULT.json`.
+
+Table A — exact optima `b_n*` (sealed certificates, independent PASS):
+n=2: 1/1 (1.0); n=3: 1/1 (1.0); n=4: 3/2 (1.5); n=5: 8/5 (1.6);
+n=6: 8/5 (1.6); n=7: 23/14 (1.642857...).
+
+Table B — reachable domain sizes `|R_n|` (diagonal-rooted BFS):
+n=2: 4; n=3: 19; n=4: 196; n=5: 1764; n=6: 17424; n=7: 184041
+(total 203448 states; edges `E_n = 2n|R_n|`).
+
+Table C — canonical `b_n*` geometry maxima (U_max / V_max / forced):
+n=2: 2/1/2; n=3: 5/2/5; n=4: 33/7/14; n=5: 144/21/42; n=6: 172/35/132;
+n=7: 616/119/429 (forced = Catalan diagonals).
+
+Table D — fresh universal `b_H=2/1` geometry maxima (U_2 / V_2 / forced):
+n=2: 4/0/2; n=3: 10/1/5; n=4: 22/2/14; n=5: 38/3/42; n=6: 44/5/132;
+n=7: 58/6/429 (`artifacts/potentials/n{n}/hypothesis_bH/`).
+
+Table E — universal-hypothesis verdicts (all REJECTED; first failure UH-4):
+H-0001 UPPER from n=5 (52/352/3300 upper n=5/6/7); H-0002 UPPER from n=4
+(14/204/2028/31408); H-0003 UPPER from n=4 (same counts); H-0004 LOWER
+from n=5 (3/40/471 lower); H-0005 LOWER from n=5 (2/36/520 lower);
+H-0006 UPPER from n=3 (4/38/210/1694/16546). UH-5 counterexamples
+preserved as supplementary evidence.
+
+Sealed claim level: `FINITE_EXACT_BN_RESULTS` (no survivor, no proved
+lemma, no proved unbounded family; P15 closed, P17 not activated,
+Levy–Tarjan bridge not invoked).

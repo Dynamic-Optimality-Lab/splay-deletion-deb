@@ -1,0 +1,18 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "pass": [
+    "WP6-S-01",
+    "WP6-S-02",
+    "WP6-S-03",
+    "WP6-S-04",
+    "WP6-S-05",
+    "WP6-S-06",
+    "WP6-S-07",
+    "WP6-S-08",
+    "WP6-S-09",
+    "WP6-S-10"
+  ],
+  "wall_seconds": 1.6
+}

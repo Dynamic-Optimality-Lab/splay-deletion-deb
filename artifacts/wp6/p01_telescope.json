@@ -1,0 +1,42 @@
+{
+  "arithmetic": "exact integers (Python int); no floats",
+  "end": 49,
+  "endpoint_difference": 4,
+  "gate": "P01",
+  "identity_holds": true,
+  "n": 4,
+  "scope": "FINITE_MECHANISM_CHECK (not a theorem)",
+  "start": 0,
+  "steps": [
+    {
+      "from": 0,
+      "key": 1,
+      "local": 0,
+      "mode": 0,
+      "to": 150
+    },
+    {
+      "from": 150,
+      "key": 4,
+      "local": 2,
+      "mode": 1,
+      "to": 80
+    },
+    {
+      "from": 80,
+      "key": 2,
+      "local": -2,
+      "mode": 0,
+      "to": 105
+    },
+    {
+      "from": 105,
+      "key": 3,
+      "local": 4,
+      "mode": 1,
+      "to": 49
+    }
+  ],
+  "telescoped_sum": 4,
+  "verdict": "PASS"
+}

@@ -1,0 +1,180 @@
+{
+  "invariants": [
+    {
+      "invariant": "INV-035",
+      "status": "HOLDS"
+    },
+    {
+      "invariant": "INV-036",
+      "status": "HOLDS"
+    },
+    {
+      "invariant": "INV-037",
+      "status": "HOLDS"
+    },
+    {
+      "invariant": "INV-038",
+      "status": "HOLDS"
+    },
+    {
+      "invariant": "INV-039",
+      "status": "HOLDS"
+    },
+    {
+      "invariant": "INV-040",
+      "status": "HOLDS"
+    }
+  ],
+  "s02": [
+    {
+      "bn": true,
+      "critical": true,
+      "n": 2,
+      "uv": true
+    },
+    {
+      "bn": true,
+      "critical": true,
+      "n": 3,
+      "uv": true
+    },
+    {
+      "bn": true,
+      "critical": true,
+      "n": 4,
+      "uv": true
+    },
+    {
+      "bn": true,
+      "critical": true,
+      "n": 5,
+      "uv": true
+    },
+    {
+      "bn": true,
+      "critical": true,
+      "n": 6,
+      "uv": true
+    },
+    {
+      "bn": true,
+      "critical": true,
+      "n": 7,
+      "uv": true
+    }
+  ],
+  "s03_violations": [],
+  "threats": [
+    {
+      "evidence": "sealed transitions/trees byte-preserved; S01 rebuild identical",
+      "status": "COVERED",
+      "threat": "T1"
+    },
+    {
+      "evidence": "two-implementation Splay agreement 285/285 + independent reverify",
+      "status": "COVERED",
+      "threat": "T2"
+    },
+    {
+      "evidence": "Catalan enumeration + canonical IDs; S12 counts match sealed reach",
+      "status": "COVERED",
+      "threat": "T3"
+    },
+    {
+      "evidence": "cost c=depth+1 frozen; exact integer costs throughout",
+      "status": "COVERED",
+      "threat": "T4"
+    },
+    {
+      "evidence": "bottom-up Splay only; independent twin re-derives transitions",
+      "status": "COVERED",
+      "threat": "T5"
+    },
+    {
+      "evidence": "pair dynamics frozen; forward closure asserted in sweeps",
+      "status": "COVERED",
+      "threat": "T6"
+    },
+    {
+      "evidence": "no arbitrary LP phi mined (WP-4 audit; kernels track-separated)",
+      "status": "COVERED",
+      "threat": "T7"
+    },
+    {
+      "evidence": "scalar V-fit never substituted for derivatives (T8 gate WP-4)",
+      "status": "COVERED",
+      "threat": "T8"
+    },
+    {
+      "evidence": "held-out strata reported separately (D03; n8/H1 EMPTY)",
+      "status": "COVERED",
+      "threat": "T9"
+    },
+    {
+      "evidence": "history features tagged diagnostic-only unless reconstructed",
+      "status": "COVERED",
+      "threat": "T10"
+    },
+    {
+      "evidence": "state-only reconstruction rule enforced by static audit F01",
+      "status": "COVERED",
+      "threat": "T11"
+    },
+    {
+      "evidence": "coefficient domains versioned; no silent expansion",
+      "status": "COVERED",
+      "threat": "T12"
+    },
+    {
+      "evidence": "equation-basis + minimal-inconsistent-subsystem preserved",
+      "status": "COVERED",
+      "threat": "T13"
+    },
+    {
+      "evidence": "no per-size b_n* in universal validation (own frozen b_H only)",
+      "status": "COVERED",
+      "threat": "T14"
+    },
+    {
+      "evidence": "no additive overhead smuggled (UH-1 exact zeros 6/6)",
+      "status": "COVERED",
+      "threat": "T15"
+    },
+    {
+      "evidence": "no frontier confusion: 2026 results context only (recorded here)",
+      "status": "COVERED",
+      "threat": "T16"
+    },
+    {
+      "evidence": "feature redefinition creates new IDs (F-v0.1 immutable in-version)",
+      "status": "COVERED",
+      "threat": "T17"
+    },
+    {
+      "evidence": "post-freeze edits create new IDs; failures never overwritten",
+      "status": "COVERED",
+      "threat": "T18"
+    },
+    {
+      "evidence": "finite growth never promoted (P17 NOT activated; T19 cited)",
+      "status": "COVERED",
+      "threat": "T19"
+    },
+    {
+      "evidence": "no additive overhead smuggled (re-audited: UH-1 zeros hold)",
+      "status": "COVERED",
+      "threat": "T20"
+    },
+    {
+      "evidence": "no n-dependent constant in H/b (b_H=2/1 universal; formulas n-free)",
+      "status": "COVERED",
+      "threat": "T21"
+    },
+    {
+      "evidence": "2026 sublogarithmic result = context, not premise (this record)",
+      "status": "COVERED",
+      "threat": "T22"
+    }
+  ],
+  "verdict": "PASS"
+}

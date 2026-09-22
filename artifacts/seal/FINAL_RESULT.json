@@ -1,0 +1,91 @@
+{
+  "approximate_monotonicity_proved": false,
+  "best_H_hypothesis": null,
+  "bn_results": [
+    {
+      "b": {
+        "p": "1",
+        "q": "1"
+      },
+      "n": 2,
+      "outcome": "EXACT_BN_MIXED"
+    },
+    {
+      "b": {
+        "p": "1",
+        "q": "1"
+      },
+      "n": 3,
+      "outcome": "EXACT_BN_MIXED"
+    },
+    {
+      "b": {
+        "p": "3",
+        "q": "2"
+      },
+      "n": 4,
+      "outcome": "EXACT_BN_CYCLIC"
+    },
+    {
+      "b": {
+        "p": "8",
+        "q": "5"
+      },
+      "n": 5,
+      "outcome": "EXACT_BN_CYCLIC"
+    },
+    {
+      "b": {
+        "p": "8",
+        "q": "5"
+      },
+      "n": 6,
+      "outcome": "EXACT_BN_CYCLIC"
+    },
+    {
+      "b": {
+        "p": "23",
+        "q": "14"
+      },
+      "n": 7,
+      "outcome": "EXACT_BN_CYCLIC"
+    }
+  ],
+  "canonical_potentials_complete": true,
+  "claim_level": "FINITE_EXACT_BN_RESULTS",
+  "critical_derivatives_complete": true,
+  "dynamic_optimality_proved": false,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "finite_exact_sizes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "normative_spec_set": [
+    {
+      "sha256": "29070d39f54d40c3f8b1ccdde8b588545749dc3f60e8949c430036a0185f1565",
+      "version": "v0.1"
+    },
+    {
+      "sha256": "8B77278FF98F6AB5A3AA4D929A5787735F269647D5E3088CF4288F8ACF8C7726",
+      "version": "v0.1.1-SA01"
+    },
+    {
+      "sha256": "79C58ED0278A6F81FE42685955C2D50EEF9A6744CCD0A701B6FE8DF96EE41CDF",
+      "version": "v0.1.2-SA02"
+    },
+    {
+      "sha256": "BB407FAC46DB30FA58F8833E513152FC10182AC931AFD84DDB0C29B0217E25E1",
+      "version": "v0.1.3-SA03"
+    },
+    {
+      "sha256": "23046D37799860CCFD69BED21D6474F35ACA4E6FB91474FAAE2002617503E5FB",
+      "version": "v0.1.4-SA04"
+    }
+  ],
+  "unbounded_counterexample_family_proved": false,
+  "universal_pair_access_lemma": false
+}

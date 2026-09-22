@@ -1,10 +1,16 @@
-# THEOREM_MINING_REPORT.md — SPLAY-AM-PD v0.1 (SA-02 discovery, mining evidence only)
+# THEOREM_MINING_REPORT.md — SPLAY-AM-PD v0.1 FINAL (WP-6 seal)
 
-**Experiment:** `SPLAY-AM-PD-v0.1` | **Amendment:** SA-02 (v0.1.2) | **Plan:** v0.1.6
-**Claim ceiling:** `FINITE_EXACT_BN_RESULTS` (this report proves no theorem).
-**Status:** WP-4 SA-02 discovery complete (Tracks A/B + validation + holdout);
-WP-5/6 pending. All statements below are labeled
+**Experiment:** `SPLAY-AM-PD-v0.1` | **Plan:** v0.1.8 (SA-01..SA-04) |
+**Sealed claim:** `FINITE_EXACT_BN_RESULTS`
+(`artifacts/seal/FINAL_RESULT.json`, schema-validated).
+**Status:** WP-1..WP-6 complete; positive branch closed (no survivors);
+negative branch not activated (samples only); bridge not invoked.
+All statements below are labeled
 `CERTIFIED FACT` / `FINITE OBSERVATION` / `HYPOTHESIS` / `HEURISTIC`.
+Severity key: CERTIFIED FACT = sealed + independently verified;
+FINITE OBSERVATION = exact computation on certified sizes, no universal
+content; HYPOTHESIS = versioned falsifiable statement under test;
+HEURISTIC = exploration aid, never evidence.
 
 ---
 
@@ -130,6 +136,25 @@ WP-5/6 pending. All statements below are labeled
 - WP-5 UH-0..UH-8 for any future universal `(H,b_H)` (OG diagnostics
   alongside); adversaries; independent falsifier. WP-6 proof or unbounded
   family; seal with spec set base+SA01+SA02; §36 answers.
+
+## Z. WP-6 seal record (FINAL — closes §M)
+
+- CERTIFIED FACT: WP-5 executed fully (6 ERA-B hypotheses H-0001..H-0006,
+  `b_H=2/1`; UH-0/1/2/3 PASS; UH-4 REJECTED 6/6 with fresh b=2 sandwich —
+  UPPER failures H-0001/2/3/6 from n=5/4/4/3, LOWER failures H-0004/5 from
+  n=5; UH-5 counterexamples preserved supplementary; n8/H1 EMPTY).
+- CERTIFIED FACT: P15-01..05 + P16 `VACUOUS_NO_SUBJECT` (survivor census
+  empty; `artifacts/wp6/positive_branch_closure.json`).
+- FINITE OBSERVATION: P01 telescoping identity holds on the checked R_4
+  path (mechanism only); P02 five convention gaps recorded, bridge not
+  invoked.
+- FINITE OBSERVATION: six motif families reproduced identical (k=0,1,2);
+  P17 NOT activated (H-residual samples, no OPT quantity, no symbolic
+  bounds, no limit argument — T19).
+- CERTIFIED FACT: seal — FINAL_RESULT `FINITE_EXACT_BN_RESULTS`,
+  778-entry manifest (manifest never lists itself), deterministic archive,
+  S01 byte-identical rebuild 15/15, S02 18/18, S03 zero violations, T1–T22
+  covered, INV-035..040 hold. Terminal answers: `math/terminal_answers.md`.
 
 ---
 

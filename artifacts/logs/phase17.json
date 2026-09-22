@@ -1,0 +1,21 @@
+{
+  "cmd": "python python/wp6/p17_analysis.py",
+  "commit": "4e181150f7591ec2714413223404f097a5be0f61",
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "inputs": "sealed artifacts (read-only)",
+  "outputs": [
+    "artifacts/wp6/p17_activation.json"
+  ],
+  "phase": "phase17",
+  "result": "P17_NOT_ACTIVATED, 6/6 families reproduced identical",
+  "spec_sha256": {
+    "IMPLEMENTATION_SPEC.md": "276529e5a2d4a4156158f41c73b55f776eed0d42583e03760ba6db3b802b3627",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.1.md": "8b77278ff98f6ab5a3aa4d929a5787735f269647d5e3088cf4288f8acf8c7726",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.2.md": "79c58ed0278a6f81fe42685955c2d50eef9a6744ccd0a701b6fe8df96ee41cdf",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.3.md": "bb407fac46db30fa58f8833e513152fc10182ac931afd84ddb0c29b0217e25e1",
+    "SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.4.md": "23046d37799860ccfd69bed21d6474f35aca4e6fb91474faae2002617503e5fb",
+    "WorkPlan.md": "bddc493f4a13b7a8ee565673041217e6116a7b6783970ba533bb9fe898f758b8"
+  },
+  "utc": "2026-09-22T12:24:39Z"
+}

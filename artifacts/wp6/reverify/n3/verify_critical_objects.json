@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "below": true,
+    "coverage": true,
+    "cycles": true,
+    "forced_set": true,
+    "paths": true,
+    "provenance": true
+  },
+  "n": 3,
+  "verdict": "PASS"
+}

@@ -1,0 +1,41 @@
+{
+  "lemmas": [
+    {
+      "lemma": "P15-01",
+      "reason": "No UH-0..UH-8 survivor exists (6/6 REJECTED at UH-4; UH-5 supplementary); no universal statement to prove",
+      "status": "VACUOUS_NO_SUBJECT",
+      "title": "well-definedness on declared domain"
+    },
+    {
+      "lemma": "P15-02",
+      "reason": "No UH-0..UH-8 survivor exists (6/6 REJECTED at UH-4; UH-5 supplementary); no universal statement to prove",
+      "status": "VACUOUS_NO_SUBJECT",
+      "title": "H(T,T)=0"
+    },
+    {
+      "lemma": "P15-03",
+      "reason": "No UH-0..UH-8 survivor exists (6/6 REJECTED at UH-4; UH-5 supplementary); no universal statement to prove",
+      "status": "VACUOUS_NO_SUBJECT",
+      "title": "H>=0"
+    },
+    {
+      "lemma": "P15-04",
+      "reason": "No UH-0..UH-8 survivor exists (6/6 REJECTED at UH-4; UH-5 supplementary); no universal statement to prove",
+      "status": "VACUOUS_NO_SUBJECT",
+      "title": "KEEP inequality"
+    },
+    {
+      "lemma": "P15-05",
+      "reason": "No UH-0..UH-8 survivor exists (6/6 REJECTED at UH-4; UH-5 supplementary); no universal statement to prove",
+      "status": "VACUOUS_NO_SUBJECT",
+      "title": "DELETE inequality"
+    }
+  ],
+  "positive_branch": "CLOSED_NO_SUBJECT",
+  "spec": "SPEC 15 positive branch (WP-6)",
+  "survivors": [],
+  "telescoping_P16": {
+    "reason": "No proved Pair Access Lemma exists; telescoping has no premise to sum. The telescoping mechanism itself is unit-checked in P01 as finite algebra only, never as a theorem.",
+    "status": "VACUOUS_NO_SUBJECT"
+  }
+}
