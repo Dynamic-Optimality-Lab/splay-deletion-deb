@@ -3,6 +3,28 @@
 All notable changes to this repository are recorded here. Sealed exact results
 are never edited in place; corrections create new versions.
 
+## [0.1.6] - 2026-09-22 - SA-02 freeze (rules only; no fitting)
+
+- `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.2.md`: ratified amendment SA-02
+  (Adaptive Cycle-Discovery Mining Track; SHA-256
+  `79C58ED0278A6F81FE42685955C2D50EEF9A6744CCD0A701B6FE8DF96EE41CDF`),
+  triggered by sealed WP-3 FCYCLE observation before WP-4 fitting.
+- `WorkPlan.md` v0.1.6 FROZEN: normative stack base+SA-01+SA-02, two WP-4
+  tracks (A control 0 rows / B n=4,5 FCYCLE 20 rows), charter + firewall,
+  spec set + 18 schemas.
+- `prereg/wp4_sa02.yaml` (+ `.sha256`
+  `BDE98934623B8EDCE00369F0C426E0DFE1358F158A688BA1EA2D885628B3B826`):
+  Track-A/B selection/validation/holdout, prohibited reads, version rules.
+- `schemas/`: 18 schemas (16 + `wp4_dataset_manifest_v0.1` +
+  `cycle_anatomy_v0.1`).
+- `python/mining/holdout_firewall.py` + `tests/test_sa02_freeze.py`
+  (23/23) + `tests/test_fpath_orientation.py` (15/15) +
+  `math/fpath_orientation_note.md` (FPATH `U(source)+L-V(target)`; behaviour
+  correct, names ambiguous; NO WP-3 reseal).
+- `artifacts/audits/contamination_ledger.json`: previously known `b_7*`
+  aggregates ledgered; detailed n7/n6 unread attested.
+- `Path.md`: SA-02 freeze entry with trigger/starvation/Track-A/B/n7-known-vs-unread/hashes.
+
 ## [0.1.5] - 2026-09-20 - Plan frozen (v0.1.5)
 
 - `WorkPlan.md` v0.1.1-v0.1.5: external-audit remediations (T0 gates,

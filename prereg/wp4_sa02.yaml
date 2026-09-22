@@ -1,0 +1,83 @@
+# prereg/wp4_sa02.yaml — SA-02 WP-4 mining preregistration (frozen before coefficient search)
+# Experiment: SPLAY-AM-PD-v0.1 | Amendment: SA-02 (v0.1.2) | Plan: WorkPlan v0.1.6
+# Freeze rule: this file's SHA-256 is recorded EXTERNALLY in
+#   prereg/wp4_sa02.sha256, WorkPlan.md (v0.1.6 header), and Path.md (SA-02 entry).
+# It is NOT self-embedded (same precedent as SA-01/SA-02 amendments).
+# Any edit creates a new prereg version with a new hash; post-freeze edits
+# without a new audit finding are FORBIDDEN.
+experiment_id: SPLAY-AM-PD-v0.1
+amendment_id: SA-02
+spec_set: [v0.1, v0.1.1-SA01, v0.1.2-SA02]
+frozen_utc: "2026-09-22"
+trigger: sealed WP-3 FCYCLE observation at commit bd658be before WP-4 fitting
+tracks:
+  track_a_control:
+    purpose: original preregistered control, retained untouched
+    selection_sizes: [2, 3, 4, 5]
+    selection_rows: forced edges with reserved_family_holdout == false
+    exclusions:
+      - all FCYCLE rows (on_zero_cycle == true)
+      - declared DELETE-only reserve (mode == DELETE)
+      - declared zig-zag reserve (A-splay rotation signature contains LR or RL)
+    validation_size: 6
+    hard_holdout_size: 7
+    reinterpretation: forbidden
+    starvation_policy: record as scientific result, never repair
+  track_b_discovery:
+    purpose: learn from exact cyclic forcing without contaminating later sizes
+    selection_sizes: [4, 5]
+    selection_rows: all FCYCLE FORCED_DELTA rows at n=4,5
+    expected_counts: {n4: 12, n5: 8, total: 20}
+    reporting_strata_not_masks: [KEEP_DELETE, FPATH_FCYCLE_FGAP, zig_zigzig_zigzag, cost_discrepancy]
+    validation_size: 6
+    hard_holdout_size: 7
+    prohibitions:
+      - no n=6 row in initial coefficient fitting
+      - no detailed n=7 (forced_delta_edges, critical cycles, trajectories,
+        feature deltas, candidate residuals, per-edge provenance) before final freeze
+previously_known_aggregate_metadata_n7:
+  # Ledgered as PREVIOUSLY KNOWN; NOT permission for detailed reads.
+  b_7_star: {p: "23", q: "14"}
+  forced_delta_count: 10
+  critical_scc_count: 1
+  criticality_subtype: CYCLIC
+  top_level_status: EXACT_BN_CYCLIC
+  transient_corridor_count: 0
+  mode_share: {KEEP: 10, DELETE: 0}
+previously_known_aggregate_metadata_n6:
+  b_6_star: {p: "8", q: "5"}
+  forced_delta_count: 84
+  critical_scc_count: 11
+  criticality_subtype: CYCLIC
+  transient_corridor_count: 0
+prohibited_reads_before_initial_freeze:
+  - detailed n=6 cycle anatomy
+  - detailed n=6 forced deltas / residuals for fitting
+  - detailed n=7 of any kind for hypothesis generation
+prohibited_reads_before_final_freeze:
+  - detailed n=7 cycle anatomy
+  - detailed n=7 forced deltas / residuals / per-edge provenance
+  - n=7 candidate performance
+candidate_version_rules:
+  initial_freeze: {requires: [selection_only_fit, exact_linear_first], assigns: hypothesis_id_v1}
+  n6_revision: {assigns_new_hypothesis_id: true, marks_n6_as_development: true}
+  final_freeze_before_n7: {requires: [frozen_candidate_id, recorded_hash], unlocks_n7_once: true}
+  post_n7_change: {creates_new_track: true, loses_untouched_claim: true, preserves_old_evaluation: true}
+firewall:
+  module: python/mining/holdout_firewall.py
+  default_detailed_n7: false
+  unlock_requires: [final_candidate_id, recorded_hash]
+  tests: [HOLDOUT_FIREWALL_BLOCKS_N7, HOLDOUT_FIREWALL_BLOCKS_N6_DURING_FIT]
+cycle_anatomy:
+  selection_only_before_fit: [4, 5]
+  required_fields: [state_sequence, edge_index, source_state_id, target_state_id,
+    key, mode, a_i, y_i, L_i, cumulative_slack, A_access_path, B_access_path_KEEP,
+    A_rotation_signature, B_rotation_signature_KEEP, structural_deltas,
+    cycle_length, sum_a, sum_y, sum_L_zero, reduced_ratio, multiplier_k]
+  exact_checks: ["sum_L == 0", "p*sum_a == q*sum_y", "sum_a == q*k", "sum_y == p*k", "k > 0"]
+features: {program: F-v0.1, state_only: true, forbidden_inputs: [U, V, G, b_n_star,
+  criticality, bfs_parent, witness_ids, cycle_membership, forced_labels]}
+search_order: [exact_linear_over_Q_first, structured_atoms_only_after_exhaustion]
+validation_order: [fit_n45, freeze_initial, reveal_n6, revise_with_new_id_if_needed,
+  freeze_final, reveal_n7_once, compare_motifs_n4567]
+claim_ceiling: FINITE_EXACT_BN_RESULTS
