@@ -1,0 +1,15 @@
+{
+  "OG-1": "REPORTED",
+  "OG-2": "REPORTED",
+  "OG-3": "REPORTED",
+  "UH-0": "PASS",
+  "UH-1": "PASS",
+  "UH-2": "PASS",
+  "UH-3": "PASS",
+  "UH-4": "PENDING",
+  "UH-5": "REJECTED",
+  "UH-6": "PENDING",
+  "UH-7": "AGREEMENT-VERIFIED (candidate already REJECTED; not survival)",
+  "UH-8": "NOT_APPLICABLE (already REJECTED; adversarial runs supplementary)",
+  "hypothesis_id": "H-0001"
+}

@@ -1,0 +1,38 @@
+{
+  "mutants": [
+    {
+      "caught": true,
+      "keep_worst": "2",
+      "keep_worst_at": [
+        1,
+        0,
+        2
+      ],
+      "mutation_id": "MUT-H-0003-global-sign-flip",
+      "n": 2
+    },
+    {
+      "caught": true,
+      "keep_worst": "7",
+      "keep_worst_at": [
+        4,
+        0,
+        3
+      ],
+      "mutation_id": "MUT-H-0003-global-sign-flip",
+      "n": 3
+    },
+    {
+      "caught": true,
+      "keep_worst": "12",
+      "keep_worst_at": [
+        47,
+        0,
+        3
+      ],
+      "mutation_id": "MUT-H-0003-global-sign-flip",
+      "n": 4
+    }
+  ],
+  "parent": "H-0003"
+}

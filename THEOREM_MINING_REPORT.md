@@ -323,3 +323,18 @@ development/falsification data, never untouched holdout. `H-SA02-B-v1` and
 - Claim unchanged: FINITE_EXACT_BN_RESULTS. No theorem; mining only.
 
 *End of correction - fail-closed to claims.*
+
+---
+
+## WP-5 validation record (2026-09-22; all subjects REJECTED, evidence preserved)
+
+- H-0001 (depth-sum/H1, b_H=2): UH-1/2/3 PASS; UH-5 REJECTED (first-fails n=5; worst n=7 KEEP 6 / DELETE 7). OG-1 0/12 + 0/8; mirror-invariant.
+- H-0002 (ancestor-sym/H3, b_H=2): UH-1/2/3 PASS; UH-5 REJECTED (first-fails n=4; worst n=7 13/14). OG-1 0/12 + 0/8; mirror-invariant.
+- H-0003 (access-sym/H3, b_H=2): UH-1/2/3 PASS; UH-5 REJECTED (first-fails n=4; worst n=7 13/14). OG-1 0/12 + 0/8; mirror-invariant.
+- H-0004 (heavy-disagree/H5, b_H=2): UH-1/2/3 PASS; UH-5 REJECTED (first-fails n=3; DELETE passes everywhere). OG-1 4/12 + 0/8; mirror-VARIANT (heavy tie-break asymmetry, discovery).
+- H-0005 (parent-diff/H2, b_H=2): UH-1/2/3 PASS; UH-5 REJECTED (first-fails n=4; DELETE passes). OG-1 4/12 + 0/8; mirror-invariant.
+- H-0006 (depth+heavy combo/H6, b_H=2): UH-1/2/3 PASS; UH-5 REJECTED (first-fails n=3; worst 7/11 at n=7). OG-1 8/12 + 0/8; mirror-VARIANT.
+- Independent agreement on all six (maxima, argmaxes, counts, counterexamples, UH-1/2 counts; 0 transition mismatches); BH01–BH05 green; 18 sign-flip mutants caught; 1272 adversarial runs → 955 supplementary counterexamples; 6 sampled motif families (no proof).
+- Survivors: none. n8 + H1 holdouts unconsumed (both firewalls EMPTY). No universal claim; mining only.
+
+*End of WP-5 record - fail-closed to claims.*

@@ -1,0 +1,54 @@
+{
+  "b_H": {
+    "p": "2",
+    "q": "1"
+  },
+  "candidate_era": "POST_N7",
+  "candidate_source_hash": "b5014733b62d3febb8b03710ee85b50063b3ac16f8174b588badba56762c3d55",
+  "development_evidence": [
+    "sealed b_n* n=2..7",
+    "U/V/G n=2..7",
+    "critical cycles n=4..7",
+    "WP-4 MIS triple",
+    "kernel witnesses",
+    "failed F-v0.1 linear class"
+  ],
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "evaluation_source_hash": "993add4d7975c2a5a03c8d644df2ea3f131b7c6949fd8a7d2a69b5913f6a6692",
+  "formula_H": "H(A,B) = #{v : heavy_A(v) != heavy_B(v)}, b_H = 2/1",
+  "git_commit": "442b87c4002c7b1b7eb13e8e55e6742b88257e3b",
+  "heldout_sizes": [
+    8
+  ],
+  "hypothesis_id": "H-0004",
+  "manifest_sha256": "53d643eea486bc7488d67b238de36c752d25a4e920492c63e60beb5891d1f548",
+  "n7_status": "REVEALED_DEVELOPMENT_DATA",
+  "normalization": "H(T,T)=0 by construction: every summand vanishes on identical pairs",
+  "og_diagnostics": {
+    "ref": "H-0004.og.json"
+  },
+  "parent_hypothesis": null,
+  "provenance": "WP-4 F-v0.1 families + SA-01/02/03/04",
+  "schema_version": "v0.1",
+  "state_only": true,
+  "structural_definitions": "H(A,B) = #{v : heavy_A(v) != heavy_B(v)}, b_H = 2/1",
+  "tie_breaking_rules": "lexicographically-first maximizers over (pair_id, mode, key) with KEEP(1..n) then DELETE(1..n); H values exact integers, no tie-sensitive normalization exists",
+  "timestamp_meta": "2026-09-22T10:30:53.872308+00:00",
+  "uh_status": {
+    "UH-0": "PENDING",
+    "UH-1": "PENDING",
+    "UH-2": "PENDING",
+    "UH-3": "PENDING",
+    "UH-4": "PENDING",
+    "UH-5": "PENDING",
+    "UH-6": "PENDING",
+    "UH-7": "PENDING",
+    "UH-8": "PENDING"
+  },
+  "untouched_sizes": [],
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

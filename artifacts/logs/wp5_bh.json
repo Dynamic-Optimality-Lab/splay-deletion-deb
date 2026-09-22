@@ -1,0 +1,16 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "gate": "BH",
+  "pass": [
+    "BH01",
+    "BH02-transient",
+    "BH02-cycle",
+    "BH02-prefix",
+    "BH03",
+    "BH04",
+    "BH05"
+  ],
+  "wall_seconds": 0.1
+}

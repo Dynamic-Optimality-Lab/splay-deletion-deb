@@ -1,0 +1,14 @@
+{
+  "b_hypothesis": {
+    "p": "2",
+    "q": "1"
+  },
+  "b_is_universal_candidate": true,
+  "contract_version": "EC-v0.1",
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "hypothesis_id": "H-0003",
+  "track": "universal"
+}

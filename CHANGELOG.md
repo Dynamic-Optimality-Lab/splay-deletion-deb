@@ -3,6 +3,24 @@
 All notable changes to this repository are recorded here. Sealed exact results
 are never edited in place; corrections create new versions.
 
+## [0.1.11] - 2026-09-22 - WP-5 GATED_PASS (validation executed, zero survivors, no theorem)
+
+- Six ERA-B POST_N7 universal hypotheses frozen (H-0001 depth-sum/H1,
+  H-0002 ancestor-sym/H3, H-0003 access-sym/H3, H-0004 heavy-disagree/H5,
+  H-0005 parent-diff/H2, H-0006 depth+heavy combo/H6; H4 multiscale deferred
+  with T18 rationale), all with `b_H=2/1`, EC-v0.1 contracts, UH-3 PASS,
+  OG-1..OG-3 diagnostics.
+- All six REJECTED at UH-5 on revealed n<=7 with smallest exact
+  counterexamples preserved (first-fail sizes 5/4/4/3/4/3); UH-1/2/3 PASS
+  6/6; UH-4 moot (NO-SUBJECTS record, machinery proven at n=2);
+  UH-7 agreement-verified (not survival); UH-8 NOT_APPLICABLE with 1272
+  supplementary adversarial runs (955 counterexamples) + 6 sampled families.
+- Independent clean-room falsifier agrees exactly (maxima, argmaxes, counts,
+  counterexamples, UH-1/2 counts; 0 transition mismatches); BH01–BH05 7/7.
+- n8 + H1 holdouts UNCONSUMED (both firewalls `EMPTY`, no frozen set, no
+  `holdout/` dir). Claim stays `FINITE_EXACT_BN_RESULTS`; WP-6 BLOCKED
+  (no survivor, no systematic motif).
+
 ## [0.1.10] - 2026-09-22 - SA-04 freeze (n8 canary correction + H1 replacement holdout; rules only, no candidates)
 
 - `SPLAY_AM_PD_IMPLEMENTATION_SPEC_v0.1.4.md`: ratified amendment SA-04

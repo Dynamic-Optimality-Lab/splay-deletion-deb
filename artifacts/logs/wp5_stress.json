@@ -1,0 +1,13 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "pass": [
+    "STRESS-DET",
+    "STRESS-SEALED",
+    "STRESS-ADVDET",
+    "STRESS-FAULTY",
+    "STRESS-DIGEST"
+  ],
+  "wall_seconds": 0.1
+}

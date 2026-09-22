@@ -1,0 +1,19 @@
+{
+  "coefficient_domain": "structural-exact (no fitted coefficients; formula fixed by definition)",
+  "definition": "H(A,B) = #{(u,v), u!=v : anc_A(u,v) != anc_B(u,v)}, b_H = 2/1",
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "form_class": "H3",
+  "formula_id": "ancestor_sym",
+  "heldout_sizes": [
+    8
+  ],
+  "hypothesis_id": "H-0002",
+  "parent_hypothesis": null,
+  "state_only": true,
+  "status": "FROZEN-PRE-DEV",
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

@@ -1,0 +1,16 @@
+{
+  "OG-1_forced_derivatives": {
+    "4": {
+      "exact_agreements": 8,
+      "forced_edges": 12,
+      "note": "diagnostic only (SA-01 ARCH)"
+    },
+    "5": {
+      "exact_agreements": 0,
+      "forced_edges": 8,
+      "note": "diagnostic only (SA-01 ARCH)"
+    }
+  },
+  "OG-2_sandwich": "computed at falsification time (see falsify.py dev report)",
+  "OG-3_corridors": "reported at falsification time (see falsify.py dev report)"
+}

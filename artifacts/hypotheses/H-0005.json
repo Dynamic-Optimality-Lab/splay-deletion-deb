@@ -1,0 +1,19 @@
+{
+  "coefficient_domain": "structural-exact (no fitted coefficients; formula fixed by definition)",
+  "definition": "H(A,B) = #{v : parent_A(v) != parent_B(v)}, b_H = 2/1",
+  "discovery_sizes": [
+    4,
+    5
+  ],
+  "form_class": "H2",
+  "formula_id": "parent_diff",
+  "heldout_sizes": [
+    8
+  ],
+  "hypothesis_id": "H-0005",
+  "parent_hypothesis": null,
+  "state_only": true,
+  "status": "FROZEN-PRE-DEV",
+  "uses_b_n_star_table": false,
+  "uses_history": false
+}

@@ -23,6 +23,42 @@
       "hypothesis_id": "H-SA02-C-2",
       "sha256": "5a810cdf8e2451397a98d9239e2d837aaa84905953099df06e2361d1dcb6e539",
       "status": "POST-n7-DEVELOPMENT"
+    },
+    {
+      "definition": "H(A,B) = sum_x |depth_A(x) - depth_B(x)|, b_H = 2/1",
+      "hypothesis_id": "H-0001",
+      "sha256": "b20db8ad7c18a0ada9bd985db45eeb442e121b4f4b35cf547523db03468234d1",
+      "status": "REJECTED at UH-5 (development, preserved)"
+    },
+    {
+      "definition": "H(A,B) = #{(u,v), u!=v : anc_A(u,v) != anc_B(u,v)}, b_H = 2/1",
+      "hypothesis_id": "H-0002",
+      "sha256": "a67c69f9b5b2f2643594c532fed4f7dc1e1ff478c3d5d5d0c25172b6cfafcb8d",
+      "status": "REJECTED at UH-5 (development, preserved)"
+    },
+    {
+      "definition": "H(A,B) = sum_x |path_A(x) symmetric-difference path_B(x)|, b_H = 2/1",
+      "hypothesis_id": "H-0003",
+      "sha256": "f27841a42b47607340f44323b65563a793439d6b7fae8595602182b247950514",
+      "status": "REJECTED at UH-5 (development, preserved)"
+    },
+    {
+      "definition": "H(A,B) = #{v : heavy_A(v) != heavy_B(v)}, b_H = 2/1",
+      "hypothesis_id": "H-0004",
+      "sha256": "c2963e83cf0473598f807474bddbba75e458584c6fc7c0a4fa6670ad19cef351",
+      "status": "REJECTED at UH-5 (development, preserved)"
+    },
+    {
+      "definition": "H(A,B) = #{v : parent_A(v) != parent_B(v)}, b_H = 2/1",
+      "hypothesis_id": "H-0005",
+      "sha256": "e4eea432fbd2c807149bc47c1b2a9abd2f28a4d62b2294a2588ab5c6266febd3",
+      "status": "REJECTED at UH-5 (development, preserved)"
+    },
+    {
+      "definition": "H(A,B) = sum_x |depth_A(x)-depth_B(x)| + #{v : heavy_A(v) != heavy_B(v)}, b_H = 2/1",
+      "hypothesis_id": "H-0006",
+      "sha256": "8e081f689384259db5523630c265d2a66bfad3d9f28ee4cf993c2efb604d349f",
+      "status": "REJECTED at UH-5 (development, preserved)"
     }
   ]
 }

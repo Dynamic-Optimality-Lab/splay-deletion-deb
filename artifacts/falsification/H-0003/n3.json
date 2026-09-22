@@ -1,0 +1,24 @@
+{
+  "delete_argmax": [
+    0,
+    1,
+    1
+  ],
+  "delete_cex": [],
+  "delete_max": "0",
+  "delete_pos_count": 0,
+  "keep_argmax": [
+    0,
+    0,
+    3
+  ],
+  "keep_cex": [],
+  "keep_max": "-1",
+  "keep_pos_count": 0,
+  "n": 3,
+  "states": 19,
+  "uh1_count": 0,
+  "uh1_violations": [],
+  "uh2_count": 0,
+  "uh2_violations": []
+}

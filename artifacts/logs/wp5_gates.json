@@ -1,0 +1,32 @@
+{
+  "exit": 0,
+  "experiment_id": "SPLAY-AM-PD-v0.1",
+  "fail": [],
+  "gate": "all",
+  "pass": [
+    "H01",
+    "H02",
+    "H03-H-0001",
+    "H04-H-0001",
+    "H03-H-0002",
+    "H04-H-0002",
+    "H03-H-0003",
+    "H04-H-0003",
+    "H03-H-0004",
+    "H04-H-0004",
+    "H03-H-0005",
+    "H04-H-0005",
+    "H03-H-0006",
+    "H04-H-0006",
+    "H05",
+    "A01",
+    "A02",
+    "UH-LADDER",
+    "HOLDOUT-REFUSE",
+    "LOGS",
+    "MULTI-EMPTY",
+    "SCHEMA-LEDGER",
+    "SEALED"
+  ],
+  "wall_seconds": 1.4
+}

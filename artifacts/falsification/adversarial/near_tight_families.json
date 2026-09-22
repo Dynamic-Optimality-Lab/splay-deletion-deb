@@ -1,0 +1,224 @@
+[
+  {
+    "hypothesis_id": "H-0001",
+    "motif": {
+      "key": 7,
+      "mode": 0,
+      "n": 7
+    },
+    "samples": [
+      {
+        "delete_max": "-2",
+        "k": 0,
+        "keep_max": "6",
+        "n": 7
+      },
+      {
+        "delete_max": "3",
+        "k": 1,
+        "keep_max": "5",
+        "n": 8
+      },
+      {
+        "delete_max": "6",
+        "k": 2,
+        "keep_max": "6",
+        "n": 9
+      }
+    ],
+    "source": {
+      "keep_max": "6",
+      "key": 7,
+      "mode": 0,
+      "n": 7,
+      "pid": 2461
+    },
+    "status": "POTENTIAL_UNBOUNDED_PATTERN_FOUND (samples only; WP-6 P17 decides)",
+    "transformation": "embed motif skeletons under an extra-node left chain"
+  },
+  {
+    "hypothesis_id": "H-0002",
+    "motif": {
+      "key": 1,
+      "mode": 0,
+      "n": 7
+    },
+    "samples": [
+      {
+        "delete_max": "12",
+        "k": 0,
+        "keep_max": "13",
+        "n": 7
+      },
+      {
+        "delete_max": "16",
+        "k": 1,
+        "keep_max": "19",
+        "n": 8
+      },
+      {
+        "delete_max": "22",
+        "k": 2,
+        "keep_max": "26",
+        "n": 9
+      }
+    ],
+    "source": {
+      "keep_max": "13",
+      "key": 1,
+      "mode": 0,
+      "n": 7,
+      "pid": 429
+    },
+    "status": "POTENTIAL_UNBOUNDED_PATTERN_FOUND (samples only; WP-6 P17 decides)",
+    "transformation": "embed motif skeletons under an extra-node left chain"
+  },
+  {
+    "hypothesis_id": "H-0003",
+    "motif": {
+      "key": 1,
+      "mode": 0,
+      "n": 7
+    },
+    "samples": [
+      {
+        "delete_max": "12",
+        "k": 0,
+        "keep_max": "13",
+        "n": 7
+      },
+      {
+        "delete_max": "16",
+        "k": 1,
+        "keep_max": "19",
+        "n": 8
+      },
+      {
+        "delete_max": "22",
+        "k": 2,
+        "keep_max": "26",
+        "n": 9
+      }
+    ],
+    "source": {
+      "keep_max": "13",
+      "key": 1,
+      "mode": 0,
+      "n": 7,
+      "pid": 429
+    },
+    "status": "POTENTIAL_UNBOUNDED_PATTERN_FOUND (samples only; WP-6 P17 decides)",
+    "transformation": "embed motif skeletons under an extra-node left chain"
+  },
+  {
+    "hypothesis_id": "H-0004",
+    "motif": {
+      "key": 7,
+      "mode": 0,
+      "n": 7
+    },
+    "samples": [
+      {
+        "delete_max": "-2",
+        "k": 0,
+        "keep_max": "10",
+        "n": 7
+      },
+      {
+        "delete_max": "-2",
+        "k": 1,
+        "keep_max": "8",
+        "n": 8
+      },
+      {
+        "delete_max": "-2",
+        "k": 2,
+        "keep_max": "7",
+        "n": 9
+      }
+    ],
+    "source": {
+      "keep_max": "10",
+      "key": 7,
+      "mode": 0,
+      "n": 7,
+      "pid": 99956
+    },
+    "status": "POTENTIAL_UNBOUNDED_PATTERN_FOUND (samples only; WP-6 P17 decides)",
+    "transformation": "embed motif skeletons under an extra-node left chain"
+  },
+  {
+    "hypothesis_id": "H-0005",
+    "motif": {
+      "key": 7,
+      "mode": 0,
+      "n": 7
+    },
+    "samples": [
+      {
+        "delete_max": "-2",
+        "k": 0,
+        "keep_max": "9",
+        "n": 7
+      },
+      {
+        "delete_max": "-2",
+        "k": 1,
+        "keep_max": "8",
+        "n": 8
+      },
+      {
+        "delete_max": "-2",
+        "k": 2,
+        "keep_max": "7",
+        "n": 9
+      }
+    ],
+    "source": {
+      "keep_max": "9",
+      "key": 7,
+      "mode": 0,
+      "n": 7,
+      "pid": 99956
+    },
+    "status": "POTENTIAL_UNBOUNDED_PATTERN_FOUND (samples only; WP-6 P17 decides)",
+    "transformation": "embed motif skeletons under an extra-node left chain"
+  },
+  {
+    "hypothesis_id": "H-0006",
+    "motif": {
+      "key": 7,
+      "mode": 0,
+      "n": 7
+    },
+    "samples": [
+      {
+        "delete_max": "3",
+        "k": 0,
+        "keep_max": "7",
+        "n": 7
+      },
+      {
+        "delete_max": "4",
+        "k": 1,
+        "keep_max": "5",
+        "n": 8
+      },
+      {
+        "delete_max": "7",
+        "k": 2,
+        "keep_max": "8",
+        "n": 9
+      }
+    ],
+    "source": {
+      "keep_max": "7",
+      "key": 7,
+      "mode": 0,
+      "n": 7,
+      "pid": 28700
+    },
+    "status": "POTENTIAL_UNBOUNDED_PATTERN_FOUND (samples only; WP-6 P17 decides)",
+    "transformation": "embed motif skeletons under an extra-node left chain"
+  }
+]

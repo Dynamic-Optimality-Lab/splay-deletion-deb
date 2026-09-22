@@ -1,0 +1,449 @@
+{
+  "hypothesis_id": "H-0006",
+  "mutations": {
+    "mutants": [
+      {
+        "caught": true,
+        "keep_worst": "4",
+        "keep_worst_at": [
+          1,
+          0,
+          2
+        ],
+        "mutation_id": "MUT-H-0006-global-sign-flip",
+        "n": 2
+      },
+      {
+        "caught": true,
+        "keep_worst": "8",
+        "keep_worst_at": [
+          4,
+          0,
+          3
+        ],
+        "mutation_id": "MUT-H-0006-global-sign-flip",
+        "n": 3
+      },
+      {
+        "caught": true,
+        "keep_worst": "12",
+        "keep_worst_at": [
+          47,
+          0,
+          3
+        ],
+        "mutation_id": "MUT-H-0006-global-sign-flip",
+        "n": 4
+      }
+    ],
+    "parent": "H-0006"
+  },
+  "og": {
+    "2": {
+      "H_range": [
+        0,
+        4
+      ],
+      "corridor_H": [
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 0
+        },
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 3
+        }
+      ],
+      "cycle_H": [
+        {
+          "H_along_states": [
+            0
+          ],
+          "scc_id": 0
+        }
+      ],
+      "n": 2,
+      "note": "diagnostic only (b_n* geometry vs universal candidate)",
+      "states_above_U": 2,
+      "states_below_V": 0
+    },
+    "3": {
+      "H_range": [
+        0,
+        7
+      ],
+      "corridor_H": [
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 0
+        },
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 6
+        },
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 12
+        },
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 18
+        },
+        {
+          "H_along_states": [
+            0,
+            0
+          ],
+          "length": 1,
+          "path_to": 24
+        }
+      ],
+      "cycle_H": [
+        {
+          "H_along_states": [
+            0
+          ],
+          "scc_id": 0
+        },
+        {
+          "H_along_states": [
+            5
+          ],
+          "scc_id": 3
+        },
+        {
+          "H_along_states": [
+            5
+          ],
+          "scc_id": 8
+        },
+        {
+          "H_along_states": [
+            0
+          ],
+          "scc_id": 9
+        }
+      ],
+      "n": 3,
+      "note": "diagnostic only (b_n* geometry vs universal candidate)",
+      "states_above_U": 14,
+      "states_below_V": 0
+    },
+    "4": {
+      "H_range": [
+        0,
+        12
+      ],
+      "corridor_H": [],
+      "cycle_H": [
+        {
+          "H_along_states": [
+            5,
+            6
+          ],
+          "scc_id": 32
+        },
+        {
+          "H_along_states": [
+            5,
+            5
+          ],
+          "scc_id": 53
+        },
+        {
+          "H_along_states": [
+            5,
+            5
+          ],
+          "scc_id": 87
+        },
+        {
+          "H_along_states": [
+            6,
+            5
+          ],
+          "scc_id": 163
+        }
+      ],
+      "n": 4,
+      "note": "diagnostic only (b_n* geometry vs universal candidate)",
+      "states_above_U": 0,
+      "states_below_V": 0
+    },
+    "5": {
+      "H_range": [
+        0,
+        17
+      ],
+      "corridor_H": [],
+      "cycle_H": [
+        {
+          "H_along_states": [
+            9,
+            9,
+            8,
+            9
+          ],
+          "scc_id": 1715
+        }
+      ],
+      "n": 5,
+      "note": "diagnostic only (b_n* geometry vs universal candidate)",
+      "states_above_U": 0,
+      "states_below_V": 300
+    },
+    "6": {
+      "H_range": [
+        0,
+        24
+      ],
+      "corridor_H": [],
+      "cycle_H": [
+        {
+          "H_along_states": [
+            11,
+            10,
+            10,
+            11
+          ],
+          "scc_id": 3530
+        },
+        {
+          "H_along_states": [
+            10,
+            9,
+            9,
+            9
+          ],
+          "scc_id": 9277
+        },
+        {
+          "H_along_states": [
+            12,
+            11,
+            12,
+            11
+          ],
+          "scc_id": 10647
+        },
+        {
+          "H_along_states": [
+            12,
+            12,
+            13,
+            11
+          ],
+          "scc_id": 12238
+        }
+      ],
+      "n": 6,
+      "note": "diagnostic only (b_n* geometry vs universal candidate)",
+      "states_above_U": 0,
+      "states_below_V": 3319
+    },
+    "7": {
+      "H_range": [
+        0,
+        31
+      ],
+      "corridor_H": [],
+      "cycle_H": [
+        {
+          "H_along_states": [
+            15,
+            15,
+            17,
+            12,
+            13,
+            15,
+            15,
+            17,
+            12,
+            13
+          ],
+          "scc_id": 182544
+        }
+      ],
+      "n": 7,
+      "note": "diagnostic only (b_n* geometry vs universal candidate)",
+      "states_above_U": 0,
+      "states_below_V": 137900
+    },
+    "mirror_probe": {
+      "4": {
+        "checked": 196,
+        "mismatches": 22,
+        "n": 4,
+        "note": "discovery only (symmetry not required)"
+      },
+      "5": {
+        "checked": 200,
+        "mismatches": 39,
+        "n": 5,
+        "note": "discovery only (symmetry not required)"
+      },
+      "6": {
+        "checked": 200,
+        "mismatches": 32,
+        "n": 6,
+        "note": "discovery only (symmetry not required)"
+      }
+    }
+  },
+  "out_of_domain": {
+    "2": {
+      "keep_worst": "None",
+      "keep_worst_at": null,
+      "label": "OUT_OF_DOMAIN_NOT_LOGICALLY_REQUIRED",
+      "n": 2,
+      "unreachable_states": 0
+    },
+    "3": {
+      "keep_worst": "0",
+      "keep_worst_at": [
+        9,
+        0,
+        3
+      ],
+      "label": "OUT_OF_DOMAIN_NOT_LOGICALLY_REQUIRED",
+      "n": 3,
+      "unreachable_states": 6
+    },
+    "4": {
+      "keep_worst": "None",
+      "keep_worst_at": null,
+      "label": "OUT_OF_DOMAIN_NOT_LOGICALLY_REQUIRED",
+      "n": 4,
+      "unreachable_states": 0
+    },
+    "5": {
+      "keep_worst": "None",
+      "keep_worst_at": null,
+      "label": "OUT_OF_DOMAIN_NOT_LOGICALLY_REQUIRED",
+      "n": 5,
+      "unreachable_states": 0
+    }
+  },
+  "sizes": {
+    "2": {
+      "delete_argmax": [
+        0,
+        1,
+        1
+      ],
+      "delete_max": "0",
+      "keep_argmax": [
+        0,
+        0,
+        2
+      ],
+      "keep_max": "-1",
+      "uh1_count": 0,
+      "uh2_count": 0
+    },
+    "3": {
+      "delete_argmax": [
+        0,
+        1,
+        1
+      ],
+      "delete_max": "1",
+      "keep_argmax": [
+        0,
+        0,
+        3
+      ],
+      "keep_max": "-1",
+      "uh1_count": 0,
+      "uh2_count": 0
+    },
+    "4": {
+      "delete_argmax": [
+        0,
+        1,
+        2
+      ],
+      "delete_max": "3",
+      "keep_argmax": [
+        82,
+        0,
+        4
+      ],
+      "keep_max": "1",
+      "uh1_count": 0,
+      "uh2_count": 0
+    },
+    "5": {
+      "delete_argmax": [
+        0,
+        1,
+        2
+      ],
+      "delete_max": "5",
+      "keep_argmax": [
+        417,
+        0,
+        5
+      ],
+      "keep_max": "3",
+      "uh1_count": 0,
+      "uh2_count": 0
+    },
+    "6": {
+      "delete_argmax": [
+        0,
+        1,
+        3
+      ],
+      "delete_max": "8",
+      "keep_argmax": [
+        5279,
+        0,
+        6
+      ],
+      "keep_max": "5",
+      "uh1_count": 0,
+      "uh2_count": 0
+    },
+    "7": {
+      "delete_argmax": [
+        0,
+        1,
+        3
+      ],
+      "delete_max": "11",
+      "keep_argmax": [
+        28700,
+        0,
+        7
+      ],
+      "keep_max": "7",
+      "uh1_count": 0,
+      "uh2_count": 0
+    }
+  }
+}

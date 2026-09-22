@@ -1,0 +1,93 @@
+{
+  "b_H": {
+    "p": "2",
+    "q": "1"
+  },
+  "hypothesis_id": "H-0001",
+  "records": [
+    {
+      "b_H": {
+        "p": "2",
+        "q": "1"
+      },
+      "b_n_star": {
+        "p": "1",
+        "q": "1"
+      },
+      "comparison": "p_H*q_n >= p_n*q_H -> True",
+      "failure_witness": null,
+      "n": 2,
+      "verdict": "PASS"
+    },
+    {
+      "b_H": {
+        "p": "2",
+        "q": "1"
+      },
+      "b_n_star": {
+        "p": "1",
+        "q": "1"
+      },
+      "comparison": "p_H*q_n >= p_n*q_H -> True",
+      "failure_witness": null,
+      "n": 3,
+      "verdict": "PASS"
+    },
+    {
+      "b_H": {
+        "p": "2",
+        "q": "1"
+      },
+      "b_n_star": {
+        "p": "3",
+        "q": "2"
+      },
+      "comparison": "p_H*q_n >= p_n*q_H -> True",
+      "failure_witness": null,
+      "n": 4,
+      "verdict": "PASS"
+    },
+    {
+      "b_H": {
+        "p": "2",
+        "q": "1"
+      },
+      "b_n_star": {
+        "p": "8",
+        "q": "5"
+      },
+      "comparison": "p_H*q_n >= p_n*q_H -> True",
+      "failure_witness": null,
+      "n": 5,
+      "verdict": "PASS"
+    },
+    {
+      "b_H": {
+        "p": "2",
+        "q": "1"
+      },
+      "b_n_star": {
+        "p": "8",
+        "q": "5"
+      },
+      "comparison": "p_H*q_n >= p_n*q_H -> True",
+      "failure_witness": null,
+      "n": 6,
+      "verdict": "PASS"
+    },
+    {
+      "b_H": {
+        "p": "2",
+        "q": "1"
+      },
+      "b_n_star": {
+        "p": "23",
+        "q": "14"
+      },
+      "comparison": "p_H*q_n >= p_n*q_H -> True",
+      "failure_witness": null,
+      "n": 7,
+      "verdict": "PASS"
+    }
+  ]
+}
